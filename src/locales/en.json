@@ -1,0 +1,247 @@
+{
+	"nav": {
+		"ariaMain": "Main navigation",
+		"home": "Home",
+		"about": "About Us",
+		"team": "Team",
+		"services": "Services",
+		"portfolio": "Portfolio",
+		"blog": "Blog",
+		"contact": "Contact Us"
+	},
+	"cta": {
+		"startProject": "Start Your Project"
+	},
+	"hero": {
+		"line1": "Let's talk",
+		"line2": "and grow your brand",
+		"line3Prefix": "with",
+		"line3Brand": "Marketly",
+		"intro": "A creative marketing agency that helps brands grow and connect with their audience through strategy, content, and design.",
+		"officeAlt": "Modern office workspace",
+		"scrollDown": "Scroll down"
+	},
+	"subHero": {
+		"title": "Why Marketly",
+		"heading_prefix": "Why ",
+		"heading_highlight": "Marketly",
+		"body": "Our vision is to become a leading creative marketing agency that inspires brands to grow and connect with their audience. We help businesses achieve real growth through creative marketing strategies, powerful digital content, and data-driven campaigns—from social media and branding to SEO and content creation."
+	},
+	"whyMarketlyStack": {
+		"panel3Line1": "Ready when you are.",
+		"panel3Line2": "Explore more below."
+	},
+	"servicesPreview": {
+		"kicker": "Services Preview",
+		"heading": "Our Services",
+		"expandLabel": "Show details for {{name}}",
+		"collapseLabel": "Hide details for {{name}}",
+		"social": {
+			"title": "Social Media Marketing",
+			"desc": "Managing social platforms and engaging content that connects brands with their audience.",
+			"detail": "We build content calendars, community management, paid and organic campaigns, and clear reporting—so you see what works across Instagram, LinkedIn, TikTok, and more."
+		},
+		"content": {
+			"title": "Content Creation",
+			"desc": "Creative, on-brand marketing content that captures attention and drives action.",
+			"detail": "From scripts and copy to visuals and motion, we produce assets tailored to each channel while keeping your voice consistent and your message sharp."
+		},
+		"branding": {
+			"title": "Branding",
+			"desc": "Strong visual identities that help you stand out and stay memorable.",
+			"detail": "We define positioning, logo systems, color and type, and brand guidelines—everything needed for a cohesive look across digital and print touchpoints."
+		},
+		"seo": {
+			"title": "SEO",
+			"desc": "Search optimization that improves visibility and brings qualified traffic.",
+			"detail": "Technical audits, keyword strategy, on-page optimization, and performance tracking help your site rank for the queries that matter to your business."
+		},
+		"strategy": {
+			"title": "Marketing Strategy",
+			"desc": "Data-backed plans that align channels, messaging, and growth goals.",
+			"detail": "We map your audience, funnels, and KPIs, then prioritize tactics and budgets so every channel pulls in the same direction."
+		}
+	},
+	"sections": {
+		"portfolio": "Portfolio",
+		"blog": "Blog"
+	},
+	"portfolio": {
+		"kicker": "Selected work",
+		"heading": "Portfolio highlights",
+		"body": "A few examples of how we combine strategy, design, and content to help brands show up clearly and convert with confidence.",
+		"cta": "Start a project",
+		"view": "View case study",
+		"items": [
+			{
+				"tag": "Brand",
+				"title": "Brand refresh for a modern agency",
+				"excerpt": "A new visual system, messaging direction, and scalable components for consistent campaigns."
+			},
+			{
+				"tag": "Social",
+				"title": "Social content series that drives engagement",
+				"excerpt": "A weekly format with templates, hooks, and reporting to iterate fast across platforms."
+			},
+			{
+				"tag": "Web",
+				"title": "High-converting landing page redesign",
+				"excerpt": "Improved structure, faster performance, and stronger CTAs with a clean, premium look."
+			},
+			{
+				"tag": "SEO",
+				"title": "SEO foundation + content roadmap",
+				"excerpt": "Technical cleanup, keyword mapping, and a content plan built around real search intent."
+			},
+			{
+				"tag": "Content",
+				"title": "Campaign creative for product launch",
+				"excerpt": "Cross-channel assets designed for clarity, consistency, and quick iteration."
+			},
+			{
+				"tag": "Strategy",
+				"title": "Channel strategy and performance tracking",
+				"excerpt": "A measurement framework that connects creative output to KPIs and next actions."
+			}
+		]
+	},
+	"blogs": {
+		"kicker": "From our blog",
+		"heading": "Latest insights & ideas",
+		"showAll": "Show all",
+		"showLess": "Show less",
+		"readMore": "Read more",
+		"items": [
+			{
+				"tag": "Strategy",
+				"title": "How to build a content strategy that converts",
+				"excerpt": "A practical framework for planning topics, mapping journeys, and measuring results without guesswork.",
+				"date": "Mar 20, 2026",
+				"readTime": "6 min read"
+			},
+			{
+				"tag": "Design",
+				"title": "Design systems for marketing teams: what to standardize",
+				"excerpt": "Create reusable UI patterns that speed up production while keeping campaigns consistent across channels.",
+				"date": "Mar 14, 2026",
+				"readTime": "5 min read"
+			},
+			{
+				"tag": "SEO",
+				"title": "SEO basics in plain language (and how to start today)",
+				"excerpt": "Learn what matters most: intent, structure, and performance—and turn it into an action plan you can ship.",
+				"date": "Mar 08, 2026",
+				"readTime": "7 min read"
+			},
+			{
+				"tag": "Content",
+				"title": "Writing hooks that earn attention in 5 seconds",
+				"excerpt": "Improve clarity and curiosity with repeatable formulas for headlines, intros, and social captions.",
+				"date": "Feb 28, 2026",
+				"readTime": "4 min read"
+			},
+			{
+				"tag": "Growth",
+				"title": "Turning analytics into better creative decisions",
+				"excerpt": "A lightweight process to connect engagement data to creative iterations and content quality over time.",
+				"date": "Feb 18, 2026",
+				"readTime": "6 min read"
+			},
+			{
+				"tag": "Brand",
+				"title": "Brand consistency across websites, emails, and ads",
+				"excerpt": "Keep messaging and visuals aligned by defining voice, components, and approvals that scale with your team.",
+				"date": "Feb 10, 2026",
+				"readTime": "5 min read"
+			}
+		]
+	},
+	"about": {
+		"kicker": "About Marketly",
+		"heading": "A team built for modern marketing",
+		"storyTitle": "Story",
+		"story": "We help brands grow through strategy, content, and design that feels human and performs. Our process balances creative thinking with measurable outcomes—so every campaign has a clear purpose and a clear result.",
+		"visionTitle": "Vision",
+		"visionBody": "To become a leading creative marketing agency that inspires brands to grow and connect with their audience.",
+		"missionTitle": "Mission",
+		"missionBody": "Helping businesses achieve real growth through creative marketing strategies and powerful digital content.",
+		"valuesTitle": "What you can expect",
+		"values": [
+			"Clear strategy before execution",
+			"High-quality design with consistency",
+			"Fast iteration and transparent reporting",
+			"Partnership mindset—your goals first"
+		],
+		"teamKicker": "Our team",
+		"teamHeading": "People behind the work",
+		"teamCardTitle": "Our Team",
+		"team": [
+			{
+				"name": "Content Strategist",
+				"role": "Content Strategy",
+				"bio": "Turns brand goals into content plans, messaging, and a roadmap your team can execute."
+			},
+			{
+				"name": "Social Media Manager",
+				"role": "Social Media",
+				"bio": "Builds calendars, manages communities, and optimizes campaigns across platforms."
+			},
+			{
+				"name": "Designer",
+				"role": "Design",
+				"bio": "Creates on-brand visuals and systems that keep every touchpoint consistent."
+			},
+			{
+				"name": "Programmer",
+				"role": "Web Development",
+				"bio": "Ships fast, accessible experiences—landing pages, websites, and performance improvements."
+			}
+		]
+	},
+	"contact": {
+		"kicker": "Contact",
+		"heading": "Let’s talk about your next project",
+		"body": "Tell us what you’re building and what success looks like. We’ll get back to you with next steps and a clear plan.",
+		"form": {
+			"name": "Name",
+			"email": "Email",
+			"message": "Message",
+			"submit": "Send message",
+			"success": "Thanks—your message was sent."
+		},
+		"info": {
+			"heading": "Contact info",
+			"email": "Email",
+			"emailValue": "hello@marketly.agency",
+			"phone": "Phone",
+			"phoneValue": "+1 555 010 0200",
+			"whatsapp": "WhatsApp",
+			"whatsappValue": "+15550100200",
+			"location": "Location",
+			"locationValue": "Remote & on-site (by request)"
+		},
+		"social": {
+			"heading": "Social",
+			"instagram": "Instagram",
+			"instagramHref": "https://instagram.com/",
+			"linkedin": "LinkedIn",
+			"linkedinHref": "https://linkedin.com/",
+			"facebook": "Facebook",
+			"facebookHref": "https://facebook.com/"
+		}
+	},
+	"footer": {
+		"aria": "Footer",
+		"agency": "Marketly",
+		"rights": "Copyright © {{year}} {{agency}}. All rights reserved."
+	},
+
+	"a11y": {
+		"openMenu": "Open menu"
+	},
+	"lang": {
+		"en": "English",
+		"ar": "العربية",
+		"switchTo": "Switch language"
+	}
+}
