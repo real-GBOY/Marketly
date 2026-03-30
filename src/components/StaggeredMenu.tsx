@@ -603,7 +603,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   );
 
   if (isFixed) {
-    return createPortal(menuContent, document.body);
+    return createPortal(menuContent, document.getElementById('overlay-root') ?? document.body);
   }
 
   return menuContent;
