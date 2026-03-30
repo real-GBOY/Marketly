@@ -2,15 +2,17 @@
 
 import { Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import FooterTopEdgeSvg from "./FooterTopEdgeSvg";
 
 const footerLinks = [
-	{ href: "#home", key: "nav.home" },
-	{ href: "#about", key: "nav.about" },
-	{ href: "#services", key: "nav.services" },
-	{ href: "#portfolio", key: "nav.portfolio" },
-	{ href: "#blog", key: "nav.blog" },
-	{ href: "#contact", key: "nav.contact" },
+	{ to: "/#home", key: "nav.home" },
+	{ to: "/#about", key: "nav.about" },
+	{ to: "/team", key: "nav.team" },
+	{ to: "/#services", key: "nav.services" },
+	{ to: "/portfolio", key: "nav.portfolio" },
+	{ to: "/blogs", key: "nav.blog" },
+	{ to: "/#contact", key: "nav.contact" },
 ] as const;
 
 const socialLinks = [
@@ -35,24 +37,24 @@ export function Footer() {
 				<div className='rounded-t-[2.25rem] border-x border-t border-dividerOnLight bg-surface px-6 py-10 md:px-10 md:py-12'>
 					<div className='grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end'>
 						<div>
-							<a
-								href='#home'
+							<Link
+								to='/'
 								className='inline-flex items-center text-2xl font-medium md:text-[30px]'>
 								<span className='text-brand'>Market</span>
 								<span className='text-navy'>ly</span>
 								<span className='text-brand'>.</span>
-							</a>
+							</Link>
 
 							<nav
 								className='mt-6 flex flex-wrap gap-x-5 gap-y-2 font-manrope text-sm text-textSecondary md:text-[15px]'
 								aria-label={t("nav.ariaMain")}>
-								{footerLinks.map(({ href, key }) => (
-									<a
-										key={href}
-										href={href}
+								{footerLinks.map(({ to, key }) => (
+									<Link
+										key={to + key}
+										to={to}
 										className='relative inline-flex py-1 transition-colors duration-300 ease-out hover:text-textPrimary after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-full after:origin-left after:scale-x-0 after:bg-brand after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100'>
 										{t(key)}
-									</a>
+									</Link>
 								))}
 							</nav>
 						</div>

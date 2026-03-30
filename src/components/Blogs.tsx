@@ -2,6 +2,7 @@
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { useId, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { BoxReveal } from "./BoxReveal";
 
 // Use one office image for all mock items
@@ -117,13 +118,12 @@ export function Blogs() {
 
 							<div className='mt-5 flex items-center justify-between gap-4'>
 								<p className='text-xs font-manrope text-textSecondary'>{item.readTime}</p>
-								<a
-									href='#'
-									onClick={(e) => e.preventDefault()}
-									className='inline-flex items-center gap-2 text-sm font-semibold text-textPrimary transition-colors group-hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60'>
+									<Link
+										to={`/blogs/${index}`}
+										className='inline-flex items-center gap-2 text-sm font-semibold text-textPrimary transition-colors group-hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60'>
 									{t("blogs.readMore")}
 									<ArrowRight className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5' aria-hidden />
-								</a>
+									</Link>
 							</div>
 						</article>
 					))}

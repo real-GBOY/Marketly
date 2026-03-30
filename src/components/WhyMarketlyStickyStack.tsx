@@ -49,14 +49,8 @@ export function WhyMarketlyStickyStack() {
 							<span className='text-charcoal'>
 								{t("subHero.heading_prefix")}
 							</span>
-							<span className='relative inline-block align-baseline font-bold text-charcoal'>
-								<span className='relative z-[1]'>
-									{t("subHero.heading_highlight")}
-								</span>
-								<span
-									className='pointer-events-none absolute start-0 end-0 bottom-[0.06em] z-0 block h-[0.5em] bg-brand md:h-[0.48em]'
-									aria-hidden
-								/>
+							<span className='inline-block align-baseline font-bold text-charcoal'>
+								{t("subHero.heading_highlight")}
 							</span>
 						</h2>
 						<ScrollReveal
@@ -84,7 +78,7 @@ export function WhyMarketlyStickyStack() {
 			<section className='relative z-20 flex min-h-[72vh] w-full items-center overflow-hidden bg-slate-950 text-white'>
 				<StackGridOverlay disableMask />
 				<motion.div
-					className='relative z-10 mx-auto grid w-full max-w-[1920px] grid-cols-1 items-center gap-8 px-5 py-14 md:grid-cols-2 md:gap-10 md:px-9 md:py-16 lg:px-[137px] lg:py-20'
+					className='relative z-10 mx-auto flex w-full max-w-[1920px] flex-col items-start gap-10 px-5 py-14 md:grid md:grid-cols-2 md:items-center md:gap-10 md:px-9 md:py-16 lg:px-[137px] lg:py-20'
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 0.45 }}
@@ -110,15 +104,15 @@ export function WhyMarketlyStickyStack() {
 							</p>
 						</BoxReveal>
 					</div>
-					<div className='relative flex h-[390px] w-full min-w-0 items-center md:h-[520px]'>
+					<div className='relative flex h-[340px] w-full min-w-0 items-center justify-center sm:h-[390px] md:h-[520px]'>
 						<CardSwap
 							width='min(82vw, 560px)'
-							height='260px'
+							height='220px'
 							cardDistance={55}
 							verticalDistance={56}
 							delay={5000}
 							pauseOnHover={false}
-							containerClassName='translate-y-[4px] md:translate-y-[8px] md:translate-x-[2%] md:scale-95 max-[768px]:translate-x-[8%]'
+							containerClassName='md:translate-y-[8px] md:translate-x-[2%] md:scale-95'
 							easing='elastic'>
 							<Card customClass='bg-navy text-white shadow-[0_24px_80px_rgba(0,0,0,0.45)]'>
 								<div className='flex h-full flex-col justify-between rounded-xl border border-white/10 p-6 md:p-8'>

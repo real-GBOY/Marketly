@@ -25,7 +25,7 @@
 		"title": "Why Marketly",
 		"heading_prefix": "Why ",
 		"heading_highlight": "Marketly",
-		"body": "Our vision is to become a leading creative marketing agency that inspires brands to grow and connect with their audience. We help businesses achieve real growth through creative marketing strategies, powerful digital content, and data-driven campaigns—from social media and branding to SEO and content creation."
+		"body": "Our vision is to become a [[leading creative marketing agency]] that inspires brands to grow and connect with their audience. We help businesses achieve real growth through [[creative marketing strategies]], powerful digital content, and data-driven campaigns—from social media and branding to SEO and content creation."
 	},
 	"whyMarketlyStack": {
 		"panel3Line1": "Ready when you are.",
@@ -229,6 +229,72 @@
 			"facebook": "Facebook",
 			"facebookHref": "https://facebook.com/"
 		}
+	},
+	"aboutPage": {
+		"kicker": "Who We Are",
+		"heading": "About Marketly",
+		"subtitle": "A creative marketing agency that helps brands grow and connect with their audience through strategy, content, and design."
+	},
+	"teamPage": {
+		"kicker": "Our team",
+		"heading": "Meet the people behind Marketly",
+		"subtitle": "Strategists, creators, and builders who plan campaigns, craft content, and ship experiences that help your brand grow.",
+		"mainAria": "Team directory",
+		"filterAria": "Filter team by discipline",
+		"resultsCount": "{{count}} people",
+		"filters": {
+			"all": "All",
+			"leadership": "Leadership",
+			"strategy": "Strategy",
+			"social": "Social",
+			"design": "Design",
+			"development": "Development"
+		},
+		"members": [
+			{
+				"id": "jordan",
+				"category": "leadership",
+				"name": "Jordan Ellis",
+				"role": "Managing Director",
+				"bio": "Sets the agency direction, nurtures client partnerships, and keeps strategy, creative, and delivery working as one team.",
+				"email": "jordan@marketly.agency"
+			},
+			{
+				"id": "sam",
+				"category": "strategy",
+				"name": "Sam Rivera",
+				"role": "Lead Content Strategist",
+				"bio": "Turns brand goals into messaging frameworks, editorial plans, and measurable content roadmaps your stakeholders can trust."
+			},
+			{
+				"id": "morgan",
+				"category": "strategy",
+				"name": "Morgan Lee",
+				"role": "Campaign Strategist",
+				"bio": "Connects audience insights to channel plans, so every touchpoint reinforces the story and moves people toward action."
+			},
+			{
+				"id": "casey",
+				"category": "social",
+				"name": "Casey Nguyen",
+				"role": "Social Media Lead",
+				"bio": "Runs calendars, community, and paid social with clear reporting—balancing brand voice with platform-native creative."
+			},
+			{
+				"id": "riley",
+				"category": "design",
+				"name": "Riley Brooks",
+				"role": "Senior Designer",
+				"bio": "Shapes visual systems and campaign assets that stay recognizable across web, social, and print without feeling repetitive."
+			},
+			{
+				"id": "taylor",
+				"category": "development",
+				"name": "Taylor Kim",
+				"role": "Web Developer",
+				"bio": "Builds fast, accessible sites and landing pages, then tunes performance and analytics so marketing can see what converts."
+			}
+		]
 	},
 	"footer": {
 		"aria": "Footer",

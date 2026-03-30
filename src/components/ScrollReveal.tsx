@@ -2,7 +2,14 @@
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React, { useEffect, useMemo, useRef, type ReactNode, type RefObject } from "react";
+import React, {
+	useEffect,
+	useMemo,
+	useRef,
+	type ReactNode,
+	type RefObject,
+} from "react";
+import { Highlighter } from "./ui/highlighter";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,14 +42,45 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
 	const splitText = useMemo(() => {
 		const text = typeof children === "string" ? children : "";
-		return text.split(/(\s+)/).map((word, index) => {
-			if (/^\s+$/.test(word)) return word;
-			return (
-				<span className='word inline-block' key={index}>
-					{word}
-				</span>
-			);
+		const highlightedChunks = text.split(/(\[\[.*?\]\])/g).filter(Boolean);
+		const nodes: ReactNode[] = [];
+		let tokenIndex = 0;
+
+		highlightedChunks.forEach((chunk) => {
+			const highlightMatch = chunk.match(/^\[\[(.*?)\]\]$/);
+			if (highlightMatch) {
+				const phrase = highlightMatch[1];
+				nodes.push(
+					<span className='word inline-block' key={`highlight-${tokenIndex++}`}>
+						<Highlighter
+							action='highlight'
+							color='#b5ed3d'
+							strokeWidth={1.4}
+							iterations={1}
+							animationDuration={800}
+							padding={-2}>
+							{phrase}
+						</Highlighter>
+					</span>,
+				);
+				return;
+			}
+
+			chunk.split(/(\s+)/).forEach((word) => {
+				if (word.length === 0) return;
+				if (/^\s+$/.test(word)) {
+					nodes.push(word);
+					return;
+				}
+				nodes.push(
+					<span className='word inline-block' key={`word-${tokenIndex++}`}>
+						{word}
+					</span>,
+				);
+			});
 		});
+
+		return nodes;
 	}, [children]);
 
 	useEffect(() => {
@@ -125,7 +163,8 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
 	return (
 		<h2 ref={containerRef} className={`my-5 ${containerClassName}`}>
-			<p className={`text-[clamp(1.6rem,4vw,3rem)] font-semibold leading-[1.5] ${textClassName}`}>
+			<p
+				className={`text-[clamp(1.6rem,4vw,3rem)] font-semibold leading-[1.5] ${textClassName}`}>
 				{splitText}
 			</p>
 		</h2>

@@ -114,7 +114,7 @@ export function Services({ stickyPanel = false }: ServicesProps) {
 									ease: "easeOut",
 									delay: index * 0.05,
 								}}
-								className='border-b-[0.5px] border-dividerOnLight py-8 first:pt-2 md:py-10'>
+								className='border-b-[0.5px] border-dividerOnLight py-5 first:pt-2 sm:py-8 md:py-10'>
 								<button
 									type='button'
 									id={`${uid}-trigger-${key}`}
@@ -126,10 +126,10 @@ export function Services({ stickyPanel = false }: ServicesProps) {
 										:	t("servicesPreview.expandLabel", { name: title })
 									}
 									onClick={() => toggle(key)}
-									className='flex w-full cursor-pointer flex-col gap-5 text-left [-webkit-tap-highlight-color:transparent] sm:flex-row sm:items-center sm:justify-between sm:gap-8'>
-									<div className='flex min-w-0 flex-1 flex-row items-start gap-4 sm:items-center sm:gap-8'>
+									className='flex w-full cursor-pointer flex-row items-center justify-between gap-3 text-left [-webkit-tap-highlight-color:transparent] sm:gap-8'>
+									<div className='flex min-w-0 flex-1 flex-row items-center gap-3 sm:gap-8'>
 										<div
-											className={`relative flex h-11 w-36 shrink-0 items-center justify-center overflow-hidden rounded-2xl ring-1 ring-black/5 sm:h-10 ${pillClass}`}>
+											className={`relative flex h-10 w-20 shrink-0 items-center justify-center overflow-hidden rounded-2xl ring-1 ring-black/5 sm:h-11 sm:w-36 ${pillClass}`}>
 											<Icon
 												className='size-5 text-white/95'
 												strokeWidth={2}
@@ -137,14 +137,14 @@ export function Services({ stickyPanel = false }: ServicesProps) {
 											/>
 										</div>
 										<div className='min-w-0 flex-1'>
-											<h3 className='font-raleway text-2xl font-semibold tracking-tight text-textPrimary md:text-[1.75rem] md:leading-tight lg:text-[2.125rem]'>
+											<h3 className='font-raleway text-lg font-semibold tracking-tight text-textPrimary sm:text-2xl md:text-[1.75rem] md:leading-tight lg:text-[2.125rem]'>
 												{title}
 											</h3>
 										</div>
 									</div>
-									<div className='flex shrink-0 items-center justify-center self-start pt-1 sm:self-center'>
+									<div className='flex shrink-0 items-center justify-center'>
 										<Plus
-											className={`size-9 text-textPrimary transition-transform duration-300 ease-out sm:size-10 ${
+											className={`size-7 text-textPrimary transition-transform duration-300 ease-out sm:size-9 md:size-10 ${
 												isOpen ? "rotate-45" : ""
 											}`}
 											strokeWidth={1.25}
@@ -168,7 +168,7 @@ export function Services({ stickyPanel = false }: ServicesProps) {
 										ease: [0.4, 0, 0.2, 1],
 									}}
 									className='overflow-hidden'>
-									<div className='pt-4 sm:ps-[10rem]'>
+									<div className='ps-[5.75rem] pt-3 sm:ps-[10rem] sm:pt-4'>
 										<p className='font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
 											{t(`servicesPreview.${key}.desc`)}
 										</p>

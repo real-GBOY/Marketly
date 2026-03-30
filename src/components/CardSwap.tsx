@@ -259,7 +259,7 @@ const CardSwap = ({
 			ref={container}
 			// Center the whole 3D stack vertically by default.
 			// This prevents the "card" from looking bottom-aligned when the parent is flex/centered.
-			className={`absolute right-0 top-1/2 origin-top-right translate-x-[5%] -translate-y-1/2 overflow-visible perspective-[900px] max-[768px]:translate-x-[25%] max-[768px]:translate-y-[25%] max-[768px]:scale-[0.75] max-[480px]:translate-x-[25%] max-[480px]:translate-y-[25%] max-[480px]:scale-[0.55] ${containerClassName}`.trim()}
+			className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 origin-center scale-[0.65] overflow-visible perspective-[900px] sm:scale-[0.8] md:left-auto md:right-0 md:translate-x-[5%] md:origin-top-right md:scale-100 ${containerClassName}`.trim()}
 			style={{ width, height }}>
 			{rendered}
 		</div>
