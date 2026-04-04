@@ -2,6 +2,16 @@
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import {
+	homeBodyText,
+	homeCardBorder,
+	homeH2,
+	homeKickerIcon,
+	homeKickerText,
+	homeSecondaryCta,
+	homeSectionPad,
+} from "../theme/homepageSections";
 import { BoxReveal } from "./BoxReveal";
 
 // Use one office image for all mock items
@@ -38,38 +48,32 @@ export function Portfolio() {
 			id='portfolio'
 			className='scroll-mt-24 bg-white'
 			aria-label={t("sections.portfolio")}>
-			<div className='mx-auto max-w-[1920px] px-5 py-16 md:px-9 md:py-24 lg:px-[137px]'>
+			<div className={homeSectionPad}>
 				<div className='flex flex-col gap-6 md:flex-row md:items-end md:justify-between'>
 					<div className='max-w-[760px]'>
-						<div className='flex items-center gap-2 text-textSecondary'>
+						<div className='flex items-center gap-2'>
 							<ArrowDownRight
-								className='size-8 shrink-0 text-brand'
+								className={homeKickerIcon}
 								strokeWidth={2}
 								aria-hidden
 							/>
-							<p className='font-manrope text-sm font-semibold uppercase tracking-[0.2em] text-textSecondary'>
-								{t("portfolio.kicker")}
-							</p>
+							<p className={homeKickerText}>{t("portfolio.kicker")}</p>
 						</div>
 						<BoxReveal boxColor='#382260' duration={0.55}>
-							<h2 className='mt-4 font-raleway text-3xl font-semibold tracking-tight text-textPrimary md:text-4xl lg:text-5xl'>
-								{t("portfolio.heading")}
-							</h2>
+							<h2 className={`mt-4 ${homeH2}`}>{t("portfolio.heading")}</h2>
 						</BoxReveal>
-						<p className='mt-5 max-w-[70ch] font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
+						<p className={`mt-5 max-w-[70ch] ${homeBodyText}`}>
 							{t("portfolio.body")}
 						</p>
 					</div>
 
-					<a
-						href='#contact'
-						className='group inline-flex h-12 items-center justify-center gap-3 rounded-full border border-dividerOnLight bg-white px-5 font-manrope text-sm font-semibold text-textPrimary transition hover:border-brand/50 hover:bg-brand/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60'>
+					<Link to='/contact' className={homeSecondaryCta}>
 						<span>{t("portfolio.cta")}</span>
 						<ArrowRight
 							className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5'
 							aria-hidden
 						/>
-					</a>
+					</Link>
 				</div>
 
 				<div
@@ -79,7 +83,7 @@ export function Portfolio() {
 						<article
 							key={`${item.title}-${index}`}
 							role='listitem'
-							className='group relative overflow-hidden rounded-2xl border border-dividerOnLight bg-surface p-5 shadow-[0_6px_28px_rgba(2,6,23,0.04)] transition hover:-translate-y-0.5'>
+							className={`group relative overflow-hidden ${homeCardBorder} p-5 transition hover:-translate-y-0.5`}>
 							<div className='relative overflow-hidden rounded-xl bg-surface'>
 								<img
 									src={item.imageUrl}
@@ -89,7 +93,7 @@ export function Portfolio() {
 									className='h-full w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-[1.04]'
 								/>
 								<div
-									className='pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/10 via-slate-950/0 to-slate-950/0'
+									className='pointer-events-none absolute inset-0 bg-gradient-to-t from-homerunInk/10 via-transparent to-transparent'
 									aria-hidden
 								/>
 							</div>
@@ -100,24 +104,22 @@ export function Portfolio() {
 								</span>
 							</div>
 
-							<h3 className='mt-4 font-raleway text-xl font-semibold tracking-tight text-textPrimary transition-colors group-hover:text-brand md:text-2xl'>
+							<h3 className='mt-4 font-dynapuff text-xl font-bold tracking-tight text-homerunInk transition-colors group-hover:text-homerunBlue md:text-2xl'>
 								{item.title}
 							</h3>
 
-							<p className='mt-3 font-manrope text-sm leading-relaxed text-textSecondary'>
-								{item.excerpt}
-							</p>
+							<p className={`mt-3 ${homeBodyText}`}>{item.excerpt}</p>
 
 							<div className='mt-5 flex items-center justify-between gap-4'>
-								<a
-									href='#contact'
-									className='inline-flex items-center gap-2 text-sm font-semibold text-textPrimary transition-colors group-hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60'>
+								<Link
+									to='/contact'
+									className='inline-flex items-center gap-2 text-sm font-semibold text-homerunInk transition-colors group-hover:text-homerunBlue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-homerunBlue/40'>
 									{t("portfolio.view")}
 									<ArrowRight
 										className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5'
 										aria-hidden
 									/>
-								</a>
+								</Link>
 							</div>
 						</article>
 					))}

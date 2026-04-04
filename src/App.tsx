@@ -7,6 +7,8 @@ import { Navigate, Routes, Route, useLocation } from "react-router-dom";
 import { About } from "./components/About";
 import { Blogs } from "./components/Blogs";
 import { Contact } from "./components/Contact";
+import { ContactPage } from "./components/ContactPage";
+import { PreContactCta } from "./components/PreContactCta";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { HomerunHeroNav } from "./components/HomerunHeroNav";
@@ -48,6 +50,7 @@ function HomePage() {
 				<About />
 				<Portfolio />
 				<Blogs />
+				<PreContactCta />
 				<Contact />
 				<Footer />
 			</div>
@@ -67,6 +70,7 @@ function App() {
 				<Route path='/portfolio' element={<PortfolioPage />} />
 				<Route path='/blogs' element={<BlogsPage />} />
 				<Route path='/blogs/:id' element={<BlogDetailPage />} />
+				<Route path='/contact' element={<ContactPage />} />
 				<Route
 					path='/about'
 					element={<Navigate to={{ pathname: "/", hash: "about" }} replace />}

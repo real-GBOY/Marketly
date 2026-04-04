@@ -46,7 +46,7 @@
 		"title": "Why Marketly",
 		"heading_prefix": "Why ",
 		"heading_highlight": "Marketly",
-		"body": "Our vision is to become a <mark>leading creative marketing agency</mark> that inspires brands to grow and connect with their audiences. We help businesses achieve real growth through <mark>creative marketing strategies</mark>, powerful digital content, and data-driven campaigns—from social media and branding to SEO and content creation."
+		"body": "Our vision is to become a leading creative marketing agency that inspires brands to grow and connect with their audiences. We help businesses achieve real growth through creative marketing strategies, powerful digital content, and data-driven campaigns—from social media and branding to SEO and content creation."
 	},
 	"whyMarketlyStack": {
 		"panel3Line1": "Ready when you are.",
@@ -218,6 +218,14 @@
 				"bio": "Ships fast, accessible experiences—landing pages, websites, and performance improvements."
 			}
 		]
+	},
+	"trialCta": {
+		"aria": "Free trial call to action",
+		"heading": "Start your free Homerun trial today",
+		"cta": "Start hiring for free",
+		"ctaHref": "/contact",
+		"trust1": "The first job is free",
+		"trust2": "No credit card needed"
 	},
 	"contact": {
 		"kicker": "Contact",

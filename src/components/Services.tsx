@@ -13,6 +13,12 @@ import {
 } from "lucide-react";
 import { useId, useState } from "react";
 import { useTranslation } from "react-i18next";
+import {
+	homeBodyText,
+	homeH2,
+	homeKickerIcon,
+	homeKickerText,
+} from "../theme/homepageSections";
 
 type ServiceKey = "social" | "content" | "branding" | "seo" | "strategy";
 
@@ -25,30 +31,31 @@ const serviceConfig: {
 		key: "social",
 		icon: Share2,
 		pillClass:
-			"bg-gradient-to-br from-slate-700 via-indigo-900/80 to-slate-900",
+			"bg-gradient-to-br from-[#4B73FF] via-[#5a63c8] to-[#382260]",
 	},
 	{
 		key: "content",
 		icon: PenLine,
 		pillClass:
-			"bg-gradient-to-br from-emerald-900/80 via-teal-800/60 to-slate-900",
+			"bg-gradient-to-br from-[#382260] via-[#4a3470] to-[#1e1433]",
 	},
 	{
 		key: "branding",
 		icon: Palette,
 		pillClass:
-			"bg-gradient-to-br from-fuchsia-900/50 via-violet-900/70 to-slate-900",
+			"bg-gradient-to-br from-[#2D2926] via-[#382260] to-[#4B73FF]/70",
 	},
 	{
 		key: "seo",
 		icon: Search,
 		pillClass:
-			"bg-gradient-to-br from-rose-900/60 via-orange-900/40 to-slate-900",
+			"bg-gradient-to-br from-[#3d4d8f] via-[#4B73FF] to-[#382260]",
 	},
 	{
 		key: "strategy",
 		icon: Target,
-		pillClass: "bg-gradient-to-br from-cyan-900/50 via-sky-900/50 to-slate-900",
+		pillClass:
+			"bg-gradient-to-br from-[#382260] via-[#4B73FF]/85 to-[#2D2926]",
 	},
 ];
 
@@ -79,20 +86,18 @@ export function Services({ stickyPanel = false }: ServicesProps) {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 0.4 }}
 					transition={{ duration: 0.5, ease: "easeOut" }}>
-					<div className='flex items-center gap-2 text-textSecondary'>
+					<div className='flex items-center gap-2'>
 						<ArrowDownRight
-							className='size-8 shrink-0 text-brand'
+							className={homeKickerIcon}
 							strokeWidth={2}
 							aria-hidden
 						/>
-						<p className='font-manrope text-sm font-semibold uppercase tracking-[0.2em] text-textSecondary'>
-							{t("servicesPreview.kicker")}
-						</p>
+						<p className={homeKickerText}>{t("servicesPreview.kicker")}</p>
 					</div>
 					<div className='flex flex-wrap items-end gap-3'>
 						<h2
 							id='services-heading'
-							className='font-raleway text-3xl font-semibold tracking-tight text-textPrimary md:text-4xl lg:text-[2.75rem] lg:leading-tight'>
+							className={`${homeH2} lg:text-[2.75rem] lg:leading-tight`}>
 							{t("servicesPreview.heading")}
 						</h2>
 					</div>
@@ -137,14 +142,14 @@ export function Services({ stickyPanel = false }: ServicesProps) {
 											/>
 										</div>
 										<div className='min-w-0 flex-1'>
-											<h3 className='font-raleway text-lg font-semibold tracking-tight text-textPrimary sm:text-2xl md:text-[1.75rem] md:leading-tight lg:text-[2.125rem]'>
+											<h3 className='font-dynapuff text-lg font-bold tracking-tight text-homerunInk sm:text-2xl md:text-[1.75rem] md:leading-tight lg:text-[2.125rem]'>
 												{title}
 											</h3>
 										</div>
 									</div>
 									<div className='flex shrink-0 items-center justify-center'>
 										<Plus
-											className={`size-7 text-textPrimary transition-transform duration-300 ease-out sm:size-9 md:size-10 ${
+											className={`size-7 text-homerunInk transition-transform duration-300 ease-out sm:size-9 md:size-10 ${
 												isOpen ? "rotate-45" : ""
 											}`}
 											strokeWidth={1.25}
@@ -169,10 +174,8 @@ export function Services({ stickyPanel = false }: ServicesProps) {
 									}}
 									className='overflow-hidden'>
 									<div className='ps-[5.75rem] pt-3 sm:ps-[10rem] sm:pt-4'>
-										<p className='font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
-											{t(`servicesPreview.${key}.desc`)}
-										</p>
-										<p className='mt-3 font-manrope text-sm leading-relaxed text-textSecondary/80 md:text-base'>
+										<p className={homeBodyText}>{t(`servicesPreview.${key}.desc`)}</p>
+										<p className={`mt-3 ${homeBodyText} opacity-90`}>
 											{t(`servicesPreview.${key}.detail`)}
 										</p>
 									</div>

@@ -3,6 +3,10 @@
 /**
  * Single source of truth for app colors. Use via Tailwind (`bg-brand`, `text-navy`, …)
  * or import this object when inline styles are required.
+ *
+ * Homepage cohesion: pair `cream`, `homerunInk`, `homerunBlue`, `homerunMuted`,
+ * `homerunSecondaryBtn` with `src/theme/homepageSections.ts` class tokens so
+ * sections below the hero share the same palette and rhythm as the framed hero.
  */
 export const colors = {
 	primary: "#2563EB",

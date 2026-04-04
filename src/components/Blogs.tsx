@@ -3,6 +3,15 @@ import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { useId, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import {
+	homeBodyText,
+	homeCardBorder,
+	homeH2,
+	homeKickerIcon,
+	homeKickerText,
+	homeSecondaryCta,
+	homeSectionPad,
+} from "../theme/homepageSections";
 import { BoxReveal } from "./BoxReveal";
 
 // Use one office image for all mock items
@@ -46,25 +55,21 @@ export function Blogs() {
 	return (
 		<section
 			id='blog'
-			className='scroll-mt-24 bg-white'
+			className='scroll-mt-24 bg-cream/35'
 			aria-label={t("sections.blog")}>
-			<div className='mx-auto max-w-[1920px] px-5 py-16 md:px-9 md:py-24 lg:px-[137px]'>
+			<div className={homeSectionPad}>
 				<div className='flex flex-col gap-6 md:flex-row md:items-end md:justify-between'>
 					<div className='max-w-[720px]'>
-						<div className='flex items-center gap-2 text-textSecondary'>
+						<div className='flex items-center gap-2'>
 							<ArrowDownRight
-								className='size-8 shrink-0 text-brand'
+								className={homeKickerIcon}
 								strokeWidth={2}
 								aria-hidden
 							/>
-							<p className='font-manrope text-sm font-semibold uppercase tracking-[0.2em] text-textSecondary'>
-								{t("blogs.kicker")}
-							</p>
+							<p className={homeKickerText}>{t("blogs.kicker")}</p>
 						</div>
 						<BoxReveal boxColor='#382260' duration={0.55}>
-							<h2 className='mt-4 font-raleway text-3xl font-semibold tracking-tight text-textPrimary md:text-4xl lg:text-5xl'>
-								{t("blogs.heading")}
-							</h2>
+							<h2 className={`mt-4 ${homeH2}`}>{t("blogs.heading")}</h2>
 						</BoxReveal>
 					</div>
 
@@ -73,7 +78,7 @@ export function Blogs() {
 						onClick={() => setShowAll((v) => !v)}
 						aria-expanded={showAll}
 						aria-controls={`${uid}-grid`}
-						className='group inline-flex h-12 items-center justify-center gap-3 rounded-full border border-dividerOnLight bg-white px-5 font-manrope text-sm font-semibold text-textPrimary transition hover:border-brand/50 hover:bg-brand/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60'>
+						className={homeSecondaryCta}>
 						<span>{showAll ? t("blogs.showLess") : t("blogs.showAll")}</span>
 						<ArrowRight
 							className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5'
@@ -90,7 +95,7 @@ export function Blogs() {
 						<article
 							key={`${item.title}-${index}`}
 							role='listitem'
-							className='group relative overflow-hidden rounded-2xl border border-dividerOnLight bg-surface p-5 shadow-[0_6px_28px_rgba(2,6,23,0.04)] transition hover:-translate-y-0.5'>
+							className={`group relative overflow-hidden ${homeCardBorder} p-5 transition hover:-translate-y-0.5`}>
 							<div className='relative overflow-hidden rounded-xl bg-surface'>
 								<img
 									src={item.imageUrl}
@@ -105,22 +110,20 @@ export function Blogs() {
 								<span className='inline-flex items-center rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-brand'>
 									{item.tag}
 								</span>
-								<time className='text-xs font-manrope text-textSecondary'>{item.date}</time>
+								<time className='text-xs font-manrope text-homerunMuted'>{item.date}</time>
 							</div>
 
-							<h3 className='mt-4 font-raleway text-xl font-semibold tracking-tight text-textPrimary transition-colors group-hover:text-brand md:text-2xl'>
+							<h3 className='mt-4 font-dynapuff text-xl font-bold tracking-tight text-homerunInk transition-colors group-hover:text-homerunBlue md:text-2xl'>
 								{item.title}
 							</h3>
 
-							<p className='mt-3 font-manrope text-sm leading-relaxed text-textSecondary'>
-								{item.excerpt}
-							</p>
+							<p className={`mt-3 ${homeBodyText}`}>{item.excerpt}</p>
 
 							<div className='mt-5 flex items-center justify-between gap-4'>
-								<p className='text-xs font-manrope text-textSecondary'>{item.readTime}</p>
+								<p className='text-xs font-manrope text-homerunMuted'>{item.readTime}</p>
 									<Link
 										to={`/blogs/${index}`}
-										className='inline-flex items-center gap-2 text-sm font-semibold text-textPrimary transition-colors group-hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60'>
+										className='inline-flex items-center gap-2 text-sm font-semibold text-homerunInk transition-colors group-hover:text-homerunBlue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-homerunBlue/40'>
 									{t("blogs.readMore")}
 									<ArrowRight className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5' aria-hidden />
 									</Link>

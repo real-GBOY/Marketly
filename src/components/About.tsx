@@ -2,12 +2,18 @@
 
 import { useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import {
 	motion,
 	useScroll,
 	useTransform,
 	type MotionValue,
 } from "framer-motion";
+import {
+	homeBodyText,
+	homeCardBorder,
+	homeSectionPadAboutIntro,
+} from "../theme/homepageSections";
 import { BoxReveal } from "./BoxReveal";
 
 // Local assets (replaces remote image URLs)
@@ -57,16 +63,19 @@ function StackCard({
 	const scale = useTransform(progress, range, [1, targetScale]);
 
 	return (
-		<div ref={container} className='sticky top-0 h-[100svh]'>
+		<div
+			ref={container}
+			className='sticky top-0 h-[100svh]'
+			style={{ zIndex: i }}>
 			<div className='mx-auto flex h-full max-w-[1920px] items-center px-5 md:px-9 lg:px-[137px]'>
 				<motion.div
 					style={{
 						scale,
 						top: `calc(-5vh + ${i * 22}px)`,
 					}}
-					className={`relative -top-[18%] w-full origin-top overflow-hidden rounded-2xl border border-black/10 ${colorClass}`}>
+					className={`relative -top-[18%] w-full origin-top overflow-hidden rounded-2xl border border-white/15 shadow-[0_24px_60px_rgba(45,41,38,0.18)] ${colorClass}`}>
 					<div className='grid gap-6 p-5 md:grid-cols-[1.1fr_1.2fr] md:items-stretch md:gap-10 md:p-8 lg:grid-cols-[1.2fr_1.35fr]'>
-						<div className='flex min-w-0 flex-col justify-between gap-6'>
+						<div className='relative z-10 flex min-h-0 min-w-0 flex-col justify-between gap-6'>
 							<div>
 								<p className='font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-white/85'>
 									{role}
@@ -79,28 +88,33 @@ function StackCard({
 								</p>
 							</div>
 
-							<a
-								href='#contact'
+							<Link
+								to='/contact'
 								className='inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 font-manrope text-sm font-semibold text-white transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40'>
 								{ctaLabel}
 								<span aria-hidden>→</span>
-							</a>
+							</Link>
 						</div>
 
-						<div className='relative overflow-hidden rounded-xl bg-black/10 ring-1 ring-black/10'>
+						<div className='relative min-h-[220px] overflow-hidden rounded-xl ring-1 ring-white/20 md:min-h-0'>
 							<motion.div
 								style={{ scale: imageScale }}
-								className='h-full w-full'>
+								className='h-full min-h-[260px] w-full md:min-h-[320px]'>
 								<img
 									src={imageUrl}
 									alt={title}
 									loading='lazy'
 									decoding='async'
-									className='h-[260px] w-full object-cover md:h-full'
+									className='h-[260px] w-full object-cover md:h-full md:min-h-[320px]'
 								/>
 							</motion.div>
+							{/* Tint ties photo to the same hue as the text column (opaque card bg reads as one block). */}
 							<div
-								className='pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-black/0'
+								className='pointer-events-none absolute inset-0 bg-gradient-to-r from-black/35 via-black/10 to-transparent'
+								aria-hidden
+							/>
+							<div
+								className='pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10'
 								aria-hidden
 							/>
 						</div>
@@ -126,28 +140,28 @@ export function About() {
 				role: t("about.team.0.role"),
 				description: t("about.team.0.bio"),
 				imageUrl: IMG_A,
-				colorClass: "bg-[#5196fd]/90",
+				colorClass: "bg-[#5a82ff]",
 			},
 			{
 				title: t("about.team.1.name"),
 				role: t("about.team.1.role"),
 				description: t("about.team.1.bio"),
 				imageUrl: IMG_A,
-				colorClass: "bg-[#8f89ff]/90",
+				colorClass: "bg-[#4B73FF]",
 			},
 			{
 				title: t("about.team.2.name"),
 				role: t("about.team.2.role"),
 				description: t("about.team.2.bio"),
 				imageUrl: IMG_A,
-				colorClass: "bg-[#13006c]/90",
+				colorClass: "bg-[#382260]",
 			},
 			{
 				title: t("about.team.3.name"),
 				role: t("about.team.3.role"),
 				description: t("about.team.3.bio"),
 				imageUrl: IMG_A,
-				colorClass: "bg-[#ed649e]/90",
+				colorClass: "bg-[#2D2926]",
 			},
 		],
 		[t],
@@ -157,53 +171,52 @@ export function About() {
 		<section
 			id='about'
 			ref={container}
-			className='scroll-mt-24 bg-white text-charcoal'
+			className='scroll-mt-24 bg-cream/35 text-charcoal'
 			aria-label={t("nav.about")}>
-			<div className='relative mx-auto max-w-[1920px] px-5 pt-16 md:px-9 md:pt-24 lg:px-[137px]'>
+			<div className={homeSectionPadAboutIntro}>
 				<BoxReveal boxColor='#382260' duration={0.5}>
-					<h2 className='font-raleway text-4xl font-semibold tracking-tight text-textPrimary md:text-5xl lg:text-6xl'>
-						<span className='text-brand'>{t("about.kicker")}</span>
-						<span className='mt-4 block text-textPrimary'>
+					<h2 className='font-dynapuff text-4xl font-bold tracking-tight text-homerunInk md:text-5xl lg:text-6xl'>
+						<span className='text-homerunBlue'>{t("about.kicker")}</span>
+						<span className='mt-4 block text-homerunInk'>
 							{t("about.heading")}
 						</span>
 					</h2>
 				</BoxReveal>
 				<BoxReveal boxColor='#382260' duration={0.6}>
-					<p className='mt-6 max-w-[68ch] font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
+					<p className={`mt-6 max-w-[68ch] ${homeBodyText}`}>
 						{t("about.story")}
 					</p>
 				</BoxReveal>
 
 				{/* Requirements.md: Story / Vision / Mission + Our Team container */}
 				<div className='mt-10 grid gap-6 lg:grid-cols-3'>
-					<div className='rounded-2xl border border-dividerOnLight bg-surface p-6 shadow-[0_6px_28px_rgba(2,6,23,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-brand/35 hover:shadow-[0_16px_40px_rgba(2,6,23,0.12)]'>
-						<h3 className='font-raleway text-xl font-semibold tracking-tight text-textPrimary md:text-2xl'>
+					<div
+						className={`${homeCardBorder} p-6 transition-all duration-300 hover:-translate-y-1 hover:border-homerunBlue/25 hover:shadow-[0_16px_40px_rgba(45,41,38,0.1)]`}>
+						<h3 className='font-dynapuff text-xl font-bold tracking-tight text-homerunInk md:text-2xl'>
 							{t("about.storyTitle")}
 						</h3>
-						<p className='mt-3 font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
-							{t("about.story")}
-						</p>
+						<p className={`mt-3 ${homeBodyText}`}>{t("about.story")}</p>
 					</div>
-					<div className='rounded-2xl border border-dividerOnLight bg-surface p-6 shadow-[0_6px_28px_rgba(2,6,23,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-brand/35 hover:shadow-[0_16px_40px_rgba(2,6,23,0.12)]'>
-						<h3 className='font-raleway text-xl font-semibold tracking-tight text-textPrimary md:text-2xl'>
+					<div
+						className={`${homeCardBorder} p-6 transition-all duration-300 hover:-translate-y-1 hover:border-homerunBlue/25 hover:shadow-[0_16px_40px_rgba(45,41,38,0.1)]`}>
+						<h3 className='font-dynapuff text-xl font-bold tracking-tight text-homerunInk md:text-2xl'>
 							{t("about.visionTitle")}
 						</h3>
-						<p className='mt-3 font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
-							{t("about.visionBody")}
-						</p>
+						<p className={`mt-3 ${homeBodyText}`}>{t("about.visionBody")}</p>
 					</div>
-					<div className='rounded-2xl border border-dividerOnLight bg-surface p-6 shadow-[0_6px_28px_rgba(2,6,23,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-brand/35 hover:shadow-[0_16px_40px_rgba(2,6,23,0.12)]'>
-						<h3 className='font-raleway text-xl font-semibold tracking-tight text-textPrimary md:text-2xl'>
+					<div
+						className={`${homeCardBorder} p-6 transition-all duration-300 hover:-translate-y-1 hover:border-homerunBlue/25 hover:shadow-[0_16px_40px_rgba(45,41,38,0.1)]`}>
+						<h3 className='font-dynapuff text-xl font-bold tracking-tight text-homerunInk md:text-2xl'>
 							{t("about.missionTitle")}
 						</h3>
-						<p className='mt-3 font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
-							{t("about.missionBody")}
-						</p>
+						<p className={`mt-3 ${homeBodyText}`}>{t("about.missionBody")}</p>
 					</div>
 				</div>
 			</div>
 
-			<div id='team' className='relative scroll-mt-24 pb-12'>
+			<div
+				id='team'
+				className='relative isolate scroll-mt-24 bg-cream/40 pb-12'>
 				{stackCards.map((c, i) => {
 					const targetScale = 1 - (stackCards.length - i) * 0.06;
 					return (

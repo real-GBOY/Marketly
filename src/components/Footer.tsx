@@ -12,7 +12,7 @@ const footerLinks = [
 	{ to: "/#services", key: "nav.services" },
 	{ to: "/portfolio", key: "nav.portfolio" },
 	{ to: "/blogs", key: "nav.blog" },
-	{ to: "/#contact", key: "nav.contact" },
+	{ to: "/contact", key: "nav.contact" },
 ] as const;
 
 const socialLinks = [
@@ -28,7 +28,7 @@ export function Footer() {
 	const year = new Date().getFullYear();
 
 	return (
-		<footer className='bg-white' aria-label={t("footer.aria")}>
+		<footer className='border-t border-black/[0.04] bg-cream/30' aria-label={t("footer.aria")}>
 			<div className='relative mx-auto max-w-[1920px] px-5 pt-14 pb-0 md:px-9 md:pt-16 lg:px-[137px]'>
 				<FooterTopEdgeSvg
 					aria-hidden

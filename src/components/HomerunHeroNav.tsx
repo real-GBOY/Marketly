@@ -30,7 +30,7 @@ const DROPDOWN_LINKS = [
 	{ key: "homerunNav.team", href: "/team", kind: "route" as const },
 	{ key: "homerunNav.useCases", href: "#portfolio", kind: "hash" as const },
 	{ key: "homerunNav.learn", href: "/blogs", kind: "route" as const },
-	{ key: "homerunNav.pricing", href: "#contact", kind: "hash" as const },
+	{ key: "homerunNav.pricing", href: "/contact", kind: "route" as const },
 ] as const;
 
 /** Nav pill: vertical center on the top edge of the framed shell (`relative` parent in App). */
@@ -120,18 +120,16 @@ export function HomerunHeroNav() {
 						</nav>
 
 						<div className='flex shrink-0 items-center justify-end justify-self-end gap-2 md:gap-3'>
-							<a
-								href='#contact'
-								onClick={(e) => handleSmoothNav(e, "#contact")}
+							<Link
+								to='/contact'
 								className='font-manrope hidden text-sm font-semibold text-homerunMuted transition hover:text-homerunInk md:inline'>
 								{t("homerunNav.logIn")}
-							</a>
-							<a
-								href='#contact'
-								onClick={(e) => handleSmoothNav(e, "#contact")}
+							</Link>
+							<Link
+								to='/contact'
 								className='font-manrope hidden h-10 items-center justify-center rounded-full bg-homerunBlue px-4 text-sm font-semibold text-white shadow-sm transition hover:brightness-105 sm:inline-flex md:h-11 md:px-5'>
 								{t("homerunNav.startFree")}
-							</a>
+							</Link>
 
 							<button
 								type='button'
@@ -186,12 +184,12 @@ export function HomerunHeroNav() {
 									)}
 								</div>
 							</div>
-							<a
-								href='#contact'
-								onClick={(e) => handleSmoothNav(e, "#contact")}
+							<Link
+								to='/contact'
+								onClick={() => setMobileOpen(false)}
 								className='mb-[max(0.25rem,env(safe-area-inset-bottom,0px))] mt-2 flex min-h-11 w-full shrink-0 items-center justify-center rounded-full bg-homerunBlue px-4 py-3 text-center text-[15px] font-semibold leading-tight text-white transition hover:brightness-105 active:brightness-95 sm:mt-3 sm:min-h-0 sm:h-11 sm:py-0 sm:text-base'>
 								{t("homerunNav.startFree")}
-							</a>
+							</Link>
 						</nav>
 					:	null}
 				</div>

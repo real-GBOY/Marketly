@@ -14,7 +14,7 @@ const navLinks = [
 	{ kind: "hash" as const, href: "#services", key: "nav.services" },
 	{ kind: "route" as const, href: "/portfolio", key: "nav.portfolio" },
 	{ kind: "route" as const, href: "/blogs", key: "nav.blog" },
-	{ kind: "hash" as const, href: "#contact", key: "nav.contact" },
+	{ kind: "route" as const, href: "/contact", key: "nav.contact" },
 ] as const;
 
 export function Header() {
@@ -171,12 +171,11 @@ export function Header() {
 								ع
 							</button>
 						</div>
-						<a
-							href='#contact'
-							onClick={(event) => handleSmoothNav(event, "#contact")}
+						<Link
+							to='/contact'
 							className='hidden lg:flex h-12 items-center justify-center rounded-[31px] border-2 border-white px-4 font-semibold text-white transition hover:bg-white/10 md:h-[60px] md:px-6 md:text-lg'>
 							{t("cta.startProject")}
-						</a>
+						</Link>
 					</div>
 				</header>,
 				document.getElementById("overlay-root") ?? document.body,
@@ -229,12 +228,11 @@ export function Header() {
 										ع
 									</button>
 								</div>
-								<a
-									href='#contact'
-									onClick={(event) => handleSmoothNav(event, "#contact")}
+								<Link
+									to='/contact'
 									className='flex h-12 items-center justify-center rounded-[31px] bg-brand px-6 font-semibold text-white transition hover:brightness-110 text-base'>
 									{t("cta.startProject")}
-								</a>
+								</Link>
 							</div>
 						}
 					/>
