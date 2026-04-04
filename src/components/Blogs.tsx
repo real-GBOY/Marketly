@@ -61,7 +61,7 @@ export function Blogs() {
 								{t("blogs.kicker")}
 							</p>
 						</div>
-						<BoxReveal boxColor='#b5ed3d' duration={0.55}>
+						<BoxReveal boxColor='#382260' duration={0.55}>
 							<h2 className='mt-4 font-raleway text-3xl font-semibold tracking-tight text-textPrimary md:text-4xl lg:text-5xl'>
 								{t("blogs.heading")}
 							</h2>
@@ -90,7 +90,7 @@ export function Blogs() {
 						<article
 							key={`${item.title}-${index}`}
 							role='listitem'
-							className='group relative overflow-hidden rounded-2xl border border-dividerOnLight bg-surface p-5 shadow-[0_6px_28px_rgba(2,6,23,0.04)] transition hover:-translate-y-0.5 hover:border-brand/40 focus-within:ring-2 focus-within:ring-brand/70'>
+							className='group relative overflow-hidden rounded-2xl border border-dividerOnLight bg-surface p-5 shadow-[0_6px_28px_rgba(2,6,23,0.04)] transition hover:-translate-y-0.5'>
 							<div className='relative overflow-hidden rounded-xl bg-surface'>
 								<img
 									src={item.imageUrl}

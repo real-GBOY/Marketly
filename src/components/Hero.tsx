@@ -3,25 +3,17 @@
 import { motion } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { useTranslation } from "react-i18next";
+import BlueCharIcon from "../icons/blueChar";
+import Blue2Icon from "../icons/blue2";
+import Blue3Icon from "../icons/blue3";
 import { WHY_MARKETLY_ID } from "./SmoothScroll";
-import { Header } from "./Header";
-
-// Local assets (replaces Figma-hosted image URLs)
-const IMG_GRADIENT = new URL(
-	"../../assets/eb591f92-257d-4ea2-b5b2-5e059598dc04.png",
-	import.meta.url,
-).href;
-const IMG_OFFICE = new URL(
-	"../../assets/9caf5948-a733-47de-9d1d-70809876d17e.jpg",
-	import.meta.url,
-).href;
 
 export function Hero() {
 	const { t } = useTranslation();
 	const lenis = useLenis();
 
-	const scrollToNext = () => {
-		const target = document.getElementById(WHY_MARKETLY_ID);
+	const scrollToId = (id: string) => {
+		const target = document.getElementById(id);
 		if (!target) return;
 
 		if (lenis) {
@@ -31,80 +23,72 @@ export function Hero() {
 		}
 	};
 
+	const scrollToServices = () => scrollToId("services");
+	const scrollToNext = () => scrollToId(WHY_MARKETLY_ID);
+
 	return (
 		<motion.section
 			id='home'
-			className='relative min-h-screen scroll-mt-0 bg-navy'
-			initial={{ opacity: 0, y: 40 }}
+			className='relative z-30 isolate scroll-mt-0 bg-transparent pb-8 pt-8 md:pb-12 md:pt-11'
+			initial={{ opacity: 0, y: 24 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.7, ease: "easeOut" }}>
-			{/* Gradient background layer */}
-			<div className='absolute inset-0 flex items-center justify-center overflow-hidden'>
-				<div className='h-full w-full scale-y-[-1] rotate-180'>
-					<img
-						src={IMG_GRADIENT}
-						alt=''
-						className='h-[106%] w-[107%] max-w-none object-cover object-[center_-3%] pointer-events-none select-none'
-					/>
-				</div>
-			</div>
-
-			{/* Header inside hero */}
-			<div className='relative z-10 mx-auto max-w-[1920px] px-5 pt-6 md:px-9 lg:px-[137px]'>
-				<Header />
-			</div>
-
-			{/* Hero content */}
-			<div className='relative z-10 mx-auto max-w-[1920px] px-5 pt-10 pb-0 md:px-9 md:pt-16 lg:px-[137px]'>
-				{/* Headline + intro row */}
-				<div className='grid gap-8 lg:grid-cols-[1fr_auto] lg:items-start lg:gap-10'>
-					<motion.div
-						className='pt-2 md:pt-4'
-						initial={{ opacity: 0, x: 60 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						viewport={{ once: true, amount: 0.6 }}
-						transition={{ duration: 0.6, ease: "easeOut" }}>
-						<h1 className='font-raleway text-[clamp(2.5rem,6.5vw,88px)] font-bold leading-[0.95] tracking-[-0.05em] text-white'>
-							<span className='block'>{t("hero.line1")}</span>
-							<span className='block ps-6 md:ps-16'>{t("hero.line2")}</span>
-							<span className='block pt-1 md:pt-2'>
-								{t("hero.line3Prefix")}{" "}
-								<span className='text-brand'>{t("hero.line3Brand")}</span>.
-							</span>
-						</h1>
-					</motion.div>
-					<motion.div
-						className='font-manrope flex flex-col items-start gap-4 lg:max-w-[280px] lg:pt-24 xl:pt-32'
-						initial={{ opacity: 0, y: 30 }}
+			transition={{ duration: 0.65, ease: "easeOut" }}>
+			<div className='mx-auto max-w-[1920px] px-5 md:px-9 lg:px-[137px]'>
+				<div className='mx-auto max-w-[min(100%,90rem)] px-5 pb-12 pt-[4.5rem] text-center sm:px-8 sm:pb-14 sm:pt-[5.25rem] md:px-12 md:pb-16 md:pt-28 lg:px-16'>
+					<motion.h1
+						className='font-sans text-[clamp(2.375rem,6.5vw,4.75rem)] font-bold leading-[1.06] tracking-[-0.035em] text-homerunInk'
+						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, amount: 0.6 }}
-						transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}>
-						<p className='text-lg leading-[30px] text-blush md:text-xl'>
-							{t("hero.intro")}
-						</p>
+						viewport={{ once: true, amount: 0.5 }}
+						transition={{ duration: 0.55, ease: "easeOut" }}>
+						<span className='flex flex-wrap items-end justify-center gap-x-4 gap-y-2 sm:gap-x-5'>
+							<BlueCharIcon
+								className='h-[4rem] w-auto shrink-0 sm:h-[5rem] md:h-[5.5rem] lg:h-24'
+								aria-hidden
+							/>
+							<span className='pb-1 sm:pb-1.5'>{t("homerunHero.line1")}</span>
+							<Blue2Icon
+								className='h-[4rem] w-auto shrink-0 sm:h-[5rem] md:h-[5.5rem] lg:h-24'
+								aria-hidden
+							/>
+						</span>
+						<span className='mt-2 block sm:mt-2.5'>{t("homerunHero.line2")}</span>
+						<span className='mt-2 flex flex-wrap items-end justify-center gap-x-4 gap-y-2 sm:mt-2.5 sm:gap-x-5'>
+							<span className='pb-1 sm:pb-1.5'>{t("homerunHero.line3")}</span>
+							<Blue3Icon
+								className='h-[4rem] w-auto shrink-0 sm:h-[5rem] md:h-[5.5rem] lg:h-24'
+								aria-hidden
+							/>
+						</span>
+					</motion.h1>
+
+					<motion.p
+						className='font-manrope mx-auto mt-8 max-w-[40rem] text-lg leading-relaxed text-homerunMuted md:mt-10 md:text-xl md:leading-[1.55]'
+						initial={{ opacity: 0, y: 16 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true, amount: 0.5 }}
+						transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}>
+						{t("homerunHero.subhead")}
+					</motion.p>
+
+					<motion.div
+						className='mt-10 flex flex-col items-center justify-center gap-4 sm:mt-12 sm:flex-row sm:gap-5'
+						initial={{ opacity: 0, y: 16 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true, amount: 0.5 }}
+						transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}>
 						<button
 							type='button'
-							className='h-px w-full bg-blush transition hover:opacity-90'
+							onClick={scrollToServices}
+							className='font-manrope inline-flex h-14 w-full max-w-[min(100%,20rem)] items-center justify-center rounded-full bg-homerunSecondaryBtn px-8 text-base font-semibold text-homerunInk transition hover:bg-[#dedbd6] sm:w-auto sm:max-w-none md:h-[3.75rem] md:px-10 md:text-lg'>
+							{t("homerunHero.demoVideo")}
+						</button>
+						<button
+							type='button'
 							onClick={scrollToNext}
-							aria-label={t("hero.scrollDown")}
-						/>
-					</motion.div>
-				</div>
-
-				{/* Office image + scroll indicator */}
-				<div className='relative z-20 mt-8 md:mt-12 lg:mt-16'>
-					<motion.div
-						className='relative h-[280px] w-full overflow-hidden rounded-2xl md:h-[400px] lg:h-[500px] xl:h-[560px]'
-						initial={{ opacity: 0, y: 40, scale: 0.96 }}
-						whileInView={{ opacity: 1, y: 0, scale: 1 }}
-						viewport={{ once: true, amount: 0.5 }}
-						transition={{ duration: 0.7, ease: "easeOut" }}>
-						<div className='absolute inset-0 bg-black/15' />
-						<img
-							src={IMG_OFFICE}
-							alt={t("hero.officeAlt")}
-							className='h-full w-full object-cover object-center'
-						/>
+							className='font-manrope h-14 w-full max-w-[min(100%,22rem)] rounded-full bg-homerunBlue px-8 text-base font-semibold text-white shadow-sm transition hover:brightness-105 sm:w-auto sm:max-w-none md:h-[3.75rem] md:px-10 md:text-lg'>
+							{t("homerunHero.startHiring")}
+						</button>
 					</motion.div>
 				</div>
 			</div>

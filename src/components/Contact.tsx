@@ -52,7 +52,7 @@ export function Contact() {
 								{t("contact.kicker")}
 							</p>
 						</div>
-						<BoxReveal boxColor='#b5ed3d' duration={0.55}>
+						<BoxReveal boxColor='#382260' duration={0.55}>
 							<h2 className='mt-4 font-raleway text-3xl font-semibold tracking-tight text-textPrimary md:text-4xl lg:text-5xl'>
 								{t("contact.heading")}
 							</h2>
@@ -142,7 +142,7 @@ export function Contact() {
 								size={100}
 								className='z-0'
 								initialOffset={-10}
-								colorFrom='#b5ed3d'
+								colorFrom='#382260'
 								colorTo='#14B8A6'
 							/>
 						</form>

@@ -34,7 +34,7 @@ export function CtaSection() {
 					<div className='flex flex-col gap-3 sm:flex-row md:justify-end'>
 						<a
 							href='#contact'
-							className='group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-brand px-6 font-manrope text-sm font-semibold text-navy transition hover:brightness-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/70 md:h-[54px] md:px-8 md:text-base'>
+							className='group inline-flex h-12 items-center justify-center gap-3 rounded-full bg-brand px-6 font-manrope text-sm font-semibold text-white transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/70 md:h-[54px] md:px-8 md:text-base'>
 							{t("ctaSection.primary")}
 							<ArrowRight
 								className='size-4 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5'
@@ -52,4 +52,3 @@ export function CtaSection() {
 		</section>
 	);
 }
-

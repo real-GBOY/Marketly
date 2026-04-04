@@ -21,11 +21,32 @@
 		"officeAlt": "Modern office workspace",
 		"scrollDown": "Scroll down"
 	},
+	"homerunNav": {
+		"ariaMain": "Main navigation",
+		"logo": "Marketly",
+		"product": "Services",
+		"team": "Team",
+		"pricing": "Contact",
+		"useCases": "Portfolio",
+		"learn": "Blog",
+		"logIn": "Contact us",
+		"startFree": "Start your project",
+		"openMenu": "Open menu",
+		"closeMenu": "Close menu"
+	},
+	"homerunHero": {
+		"line1": "Let's talk",
+		"line2": "and grow your brand",
+		"line3": "with Marketly",
+		"subhead": "A creative marketing agency that helps brands grow and connect with their audience through strategy, content, and design.",
+		"demoVideo": "View our services",
+		"startHiring": "Why Marketly"
+	},
 	"subHero": {
 		"title": "Why Marketly",
 		"heading_prefix": "Why ",
 		"heading_highlight": "Marketly",
-		"body": "Our vision is to become a [[leading creative marketing agency]] that inspires brands to grow and connect with their audience. We help businesses achieve real growth through [[creative marketing strategies]], powerful digital content, and data-driven campaigns—from social media and branding to SEO and content creation."
+		"body": "Our vision is to become a <mark>leading creative marketing agency</mark> that inspires brands to grow and connect with their audiences. We help businesses achieve real growth through <mark>creative marketing strategies</mark>, powerful digital content, and data-driven campaigns—from social media and branding to SEO and content creation."
 	},
 	"whyMarketlyStack": {
 		"panel3Line1": "Ready when you are.",

@@ -4,8 +4,8 @@ import { ArrowLeft } from "lucide-react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
-import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { FramedPageShell } from "./FramedPageShell";
 
 const OFFICE_IMG = new URL(
 	"../../assets/9caf5948-a733-47de-9d1d-70809876d17e.jpg",
@@ -36,14 +36,8 @@ export function BlogDetailPage() {
 	}, [index, t]);
 
 	return (
-		<div className='min-h-screen bg-white text-charcoal'>
-			<section className='bg-navy pb-6'>
-				<div className='relative mx-auto max-w-[1920px] px-5 pt-6 md:px-9 lg:px-[137px]'>
-					<Header />
-				</div>
-			</section>
-
-			<main className='mx-auto max-w-[1920px] px-5 py-10 md:px-9 md:py-14 lg:px-[137px]'>
+		<FramedPageShell>
+			<main className='mx-auto max-w-[1920px] px-5 py-10 text-charcoal md:px-9 md:py-14 lg:px-[137px]'>
 				<div className='mb-6 flex items-center gap-3'>
 					<Link
 						to='/blogs'
@@ -85,6 +79,6 @@ export function BlogDetailPage() {
 			</main>
 
 			<Footer />
-		</div>
+		</FramedPageShell>
 	);
 }

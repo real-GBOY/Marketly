@@ -38,7 +38,7 @@ html.lang-refresh::after {
 	pointer-events: none;
 	transform-origin: left center;
 	transform: scaleX(0);
-	background: linear-gradient(90deg, #b5ed3d 0%, #fff 55%, #b5ed3d 100%);
+	background: linear-gradient(90deg, #382260 0%, #fff 55%, #382260 100%);
 	animation: lang-refresh-bar 0.72s ease-out forwards;
 }
 

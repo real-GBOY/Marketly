@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Mail } from "lucide-react";
 import { Footer } from "./Footer";
-import { Header } from "./Header";
+import { FramedPageShell } from "./FramedPageShell";
 
 type TeamMemberCategory =
 	| "strategy"
@@ -69,8 +69,9 @@ export function TeamPage() {
 		:	members.filter((m) => m.category === active);
 
 	return (
-		<div className='min-h-screen bg-white text-charcoal'>
-			<section className='relative bg-navy pb-10 md:pb-14'>
+		<FramedPageShell>
+			<div className='text-charcoal'>
+			<section className='relative overflow-hidden rounded-b-3xl bg-navy pb-10 md:rounded-b-[2rem] md:pb-14'>
 				<div className='absolute inset-0 flex items-center justify-center overflow-hidden opacity-90'>
 					<div className='h-full w-full scale-y-[-1] rotate-180 blur-[1px]'>
 						<img
@@ -83,10 +84,7 @@ export function TeamPage() {
 						/>
 					</div>
 				</div>
-				<div className='relative z-10 mx-auto max-w-[1920px] px-5 pt-6 md:px-9 lg:px-[137px]'>
-					<Header />
-				</div>
-				<div className='relative z-10 mx-auto max-w-[1920px] px-5 pt-10 text-center md:px-9 md:pt-14 lg:px-[137px]'>
+				<div className='relative z-10 mx-auto max-w-[1920px] px-5 pb-2 pt-16 text-center sm:pt-[4.5rem] md:px-9 md:pb-4 md:pt-[5.25rem] lg:px-[137px]'>
 					<p className='font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-brand'>
 						{t("teamPage.kicker")}
 					</p>
@@ -121,7 +119,7 @@ export function TeamPage() {
 								onClick={() => setActive(id)}
 								className={`rounded-full border px-4 py-2 font-manrope text-sm font-semibold transition md:px-5 md:text-[15px] ${
 									isOn ?
-										"border-brand bg-brand text-navy shadow-sm"
+										"border-brand bg-brand text-white shadow-sm"
 									:	"border-dividerOnLight bg-surface text-textSecondary hover:border-brand/40 hover:text-textPrimary"
 								}`}>
 								{t(labelKey)}
@@ -189,6 +187,7 @@ export function TeamPage() {
 			</main>
 
 			<Footer />
-		</div>
+			</div>
+		</FramedPageShell>
 	);
 }

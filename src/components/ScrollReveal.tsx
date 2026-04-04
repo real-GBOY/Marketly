@@ -41,25 +41,33 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 	const containerRef = useRef<HTMLHeadingElement>(null);
 
 	const splitText = useMemo(() => {
-		const text = typeof children === "string" ? children : "";
-		const highlightedChunks = text.split(/(\[\[.*?\]\])/g).filter(Boolean);
+		const raw = typeof children === "string" ? children : "";
+		/** Support `<mark>…</mark>` in JSON; normalize legacy `[[…]]` so brackets never leak. */
+		const text = raw.replace(
+			/\[\[([\s\S]*?)\]\]/g,
+			(_full, inner: string) =>
+				`<mark>${String(inner).trim()}</mark>`,
+		);
+		const highlightedChunks = text
+			.split(/(<mark>[\s\S]*?<\/mark>)/gi)
+			.filter(Boolean);
 		const nodes: ReactNode[] = [];
 		let tokenIndex = 0;
 
 		highlightedChunks.forEach((chunk) => {
-			const highlightMatch = chunk.match(/^\[\[(.*?)\]\]$/);
+			const highlightMatch = chunk.match(/^<mark>([\s\S]*?)<\/mark>$/i);
 			if (highlightMatch) {
-				const phrase = highlightMatch[1];
+				const phrase = highlightMatch[1].trim();
 				nodes.push(
 					<span className='word inline-block' key={`highlight-${tokenIndex++}`}>
 						<Highlighter
 							action='highlight'
-							color='#b5ed3d'
+							color='#382260'
 							strokeWidth={1.4}
 							iterations={1}
 							animationDuration={800}
 							padding={-2}>
-							{phrase}
+							<span className='text-white'>{phrase}</span>
 						</Highlighter>
 					</span>,
 				);

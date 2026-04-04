@@ -159,13 +159,8 @@ export function About() {
 			ref={container}
 			className='scroll-mt-24 bg-white text-charcoal'
 			aria-label={t("nav.about")}>
-			<div
-				className='pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f1f_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f1f_1px,transparent_1px)] opacity-60 [background-size:54px_54px] [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,#000_55%,transparent_100%)] [-webkit-mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,#000_55%,transparent_100%)]'
-				aria-hidden
-			/>
-
 			<div className='relative mx-auto max-w-[1920px] px-5 pt-16 md:px-9 md:pt-24 lg:px-[137px]'>
-				<BoxReveal boxColor='#b5ed3d' duration={0.5}>
+				<BoxReveal boxColor='#382260' duration={0.5}>
 					<h2 className='font-raleway text-4xl font-semibold tracking-tight text-textPrimary md:text-5xl lg:text-6xl'>
 						<span className='text-brand'>{t("about.kicker")}</span>
 						<span className='mt-4 block text-textPrimary'>
@@ -173,7 +168,7 @@ export function About() {
 						</span>
 					</h2>
 				</BoxReveal>
-				<BoxReveal boxColor='#b5ed3d' duration={0.6}>
+				<BoxReveal boxColor='#382260' duration={0.6}>
 					<p className='mt-6 max-w-[68ch] font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
 						{t("about.story")}
 					</p>

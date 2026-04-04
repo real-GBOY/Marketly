@@ -201,7 +201,7 @@ export function Header() {
 						changeMenuColorOnOpen
 						colors={["#131b3a", "#0b132e"]}
 						showLogo={false}
-						accentColor='#b5ed3d'
+						accentColor='#382260'
 						footerContent={
 							<div className='flex flex-col gap-4'>
 								<div
@@ -213,7 +213,7 @@ export function Header() {
 										onClick={() => void handleLanguageSwitch("en")}
 										className={`rounded-full px-4 py-1.5 transition ${
 											i18n.language.startsWith("en") ?
-												"bg-brand text-navy"
+												"bg-brand text-white"
 											:	"text-white/60 hover:text-white"
 										}`}>
 										EN
@@ -223,7 +223,7 @@ export function Header() {
 										onClick={() => void handleLanguageSwitch("ar")}
 										className={`rounded-full px-4 py-1.5 transition ${
 											i18n.language.startsWith("ar") ?
-												"bg-brand text-navy"
+												"bg-brand text-white"
 											:	"text-white/60 hover:text-white"
 										}`}>
 										ع
@@ -232,7 +232,7 @@ export function Header() {
 								<a
 									href='#contact'
 									onClick={(event) => handleSmoothNav(event, "#contact")}
-									className='flex h-12 items-center justify-center rounded-[31px] bg-brand px-6 font-semibold text-navy transition hover:brightness-110 text-base'>
+									className='flex h-12 items-center justify-center rounded-[31px] bg-brand px-6 font-semibold text-white transition hover:brightness-110 text-base'>
 									{t("cta.startProject")}
 								</a>
 							</div>
