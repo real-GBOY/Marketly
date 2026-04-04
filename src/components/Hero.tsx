@@ -36,7 +36,7 @@ export function Hero() {
 			<div className='mx-auto max-w-[1920px] px-5 md:px-9 lg:px-[137px]'>
 				<div className='mx-auto max-w-[min(100%,90rem)] px-5 pb-12 pt-[4.5rem] text-center sm:px-8 sm:pb-14 sm:pt-[5.25rem] md:px-12 md:pb-16 md:pt-28 lg:px-16'>
 					<motion.h1
-						className='font-sans text-[clamp(2.375rem,6.5vw,4.75rem)] font-bold leading-[1.06] tracking-[-0.035em] text-homerunInk'
+						className='font-dynapuff text-[clamp(2.375rem,6.5vw,4.75rem)] font-bold leading-[1.06] tracking-tight text-homerunInk'
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.5 }}

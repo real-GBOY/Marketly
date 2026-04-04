@@ -10,6 +10,13 @@ export default {
         sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
         manrope: ['Manrope', 'system-ui', 'sans-serif'],
         raleway: ['Raleway', 'system-ui', 'sans-serif'],
+        dynapuff: [
+          'DynaPuff',
+          'Noto Sans Arabic',
+          'cursive',
+          'system-ui',
+          'sans-serif',
+        ],
       },
       colors: {
         ...colors,
