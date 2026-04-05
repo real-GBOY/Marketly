@@ -9,9 +9,9 @@
  * sections below the hero share the same palette and rhythm as the framed hero.
  */
 export const colors = {
-	primary: "#2563EB",
-	primaryLight: "#EFF6FF",
-	primaryDark: "#1D4ED8",
+	primary: "#946B8E",
+	primaryLight: "#F5EFF4",
+	primaryDark: "#6F4F6A",
 	accent: "#14B8A6",
 	accentLight: "#CCFBF1",
 	textPrimary: "#111827",
@@ -35,7 +35,7 @@ export const colors = {
 	dividerOnLight: "rgba(0, 0, 0, 0.1)",
 	/** Homerun-style marketing hero (Figma reference) */
 	cream: "#f4eee4",
-	homerunBlue: "#4B73FF",
+	homerunBlue: "#382260",
 	homerunInk: "#2D2926",
 	homerunMuted: "#4A4A4A",
 	homerunSecondaryBtn: "#e8e6e1",

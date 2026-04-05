@@ -38,13 +38,19 @@ type FilterId = (typeof FILTER_ORDER)[number];
 
 /** Used when `photo` is missing or fails to load (same keys as locale `id`) */
 const TEAM_PHOTO_FALLBACK: Record<string, string> = {
-	jordan:
-		"https://i.postimg.cc/t4TDRqmd/gb.jpg",
-	sam: "https://i.postimg.cc/t4TDRqmd/gb.jpg",
-	morgan: "https://i.postimg.cc/t4TDRqmd/gb.jpg",
-	casey: "https://i.postimg.cc/t4TDRqmd/gb.jpg",
-	riley: "https://i.postimg.cc/t4TDRqmd/gb.jpg",
-	taylor: "https://i.postimg.cc/t4TDRqmd/gb.jpg",
+
+	shrouk: "https://i.postimg.cc/PJPYw0My/sh.jpg",
+	amira: "https://i.postimg.cc/5yCj1Jgz/Whats-App-Image-2026-04-04-at-22-30-54.jpg",
+	salma: "https://i.postimg.cc/ZR1DskqK/Whats-App-Image-2026-04-04-at-22-30-58.jpg",
+	nesma: "https://i.postimg.cc/c4c8XQDQ/Whats-App-Image-2026-04-04-at-22-30-59.jpg",
+	ola: "https://i.postimg.cc/WpHytk6v/Whats-App-Image-2026-04-04-at-22-30-59-(1).jpg",
+	esraa: "https://i.postimg.cc/VkjZ7Hyw/Whats-App-Image-2026-04-04-at-22-31-00.jpg",
+	asmaa: "https://i.postimg.cc/fWcKQS2q/Whats-App-Image-2026-04-04-at-22-31-10.jpg",
+	roqaya: "https://i.postimg.cc/SQHp35Ps/Whats-App-Image-2026-04-04-at-22-31-16.jpg",
+	sanaa: "https://i.postimg.cc/QMNLcrFP/Whats-App-Image-2026-04-04-at-22-31-17.jpg",
+	maibel: "https://i.postimg.cc/FRq2tdTQ/Whats-App-Image-2026-04-04-at-23-13-37.jpg",
+
+
 };
 
 function teamMemberPhotoSrc(member: TeamMember): string {
@@ -111,26 +117,11 @@ export function TeamPage() {
 								`teamPage.filters.${id}`
 							);
 						return (
-							<button
-								key={id}
-								type='button'
-								role='tab'
-								aria-selected={isOn}
-								onClick={() => setActive(id)}
-								className={`rounded-full border px-4 py-2 font-manrope text-sm font-semibold transition md:px-5 md:text-[15px] ${
-									isOn ?
-										"border-brand bg-brand text-white shadow-sm"
-									:	"border-dividerOnLight bg-surface text-textSecondary hover:border-brand/40 hover:text-textPrimary"
-								}`}>
-								{t(labelKey)}
-							</button>
+						<></>
 						);
 					})}
 				</div>
 
-				<p className='mt-8 font-manrope text-sm text-textSecondary'>
-					{t("teamPage.resultsCount", { count: filtered.length })}
-				</p>
 
 				<ul className='mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3'>
 					{filtered.map((member) => (
@@ -158,9 +149,7 @@ export function TeamPage() {
 								</div>
 								<div className='flex flex-1 flex-col gap-4 p-5 md:p-6'>
 									<div>
-										<p className='font-manrope text-xs font-semibold uppercase tracking-wider text-brand'>
-											{t(`teamPage.filters.${member.category}`)}
-										</p>
+									
 										<h2 className='mt-1 font-raleway text-lg font-semibold leading-tight tracking-tight text-textPrimary md:text-xl lg:text-2xl'>
 											{member.name}
 										</h2>
@@ -171,14 +160,7 @@ export function TeamPage() {
 									<p className='flex-1 font-manrope text-sm leading-relaxed text-textSecondary md:text-[15px]'>
 										{member.bio}
 									</p>
-									{member.email ?
-										<a
-											href={`mailto:${member.email}`}
-											className='inline-flex w-fit max-w-full items-center gap-2 rounded-full border border-dividerOnLight px-3 py-2 font-manrope text-sm font-semibold text-textPrimary transition hover:border-brand/50 hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/50'>
-											<Mail className='size-4 shrink-0' aria-hidden />
-											<span className='truncate'>{member.email}</span>
-										</a>
-									:	null}
+								
 								</div>
 							</article>
 						</motion.li>

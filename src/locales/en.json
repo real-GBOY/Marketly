@@ -281,46 +281,74 @@
 		},
 		"members": [
 			{
-				"id": "jordan",
-				"category": "leadership",
-				"name": "Jordan Ellis",
-				"role": "Managing Director",
+				"id": "shrouk",
+				"category": "SEO Specialist (Beginner Level)",
+				"name": "Shrouk Abdeazize Omar ",
+				"role": "SEO Specialist (Beginner Level)",
 				"bio": "Sets the agency direction, nurtures client partnerships, and keeps strategy, creative, and delivery working as one team.",
 				"email": "jordan@marketly.agency"
 			},
 			{
-				"id": "sam",
-				"category": "strategy",
-				"name": "Sam Rivera",
-				"role": "Lead Content Strategist",
+				"id": "amira",
+				"category": "Content Creator",
+				"name": "Amira Hossam",
+				"role": "Content Creator",
 				"bio": "Turns brand goals into messaging frameworks, editorial plans, and measurable content roadmaps your stakeholders can trust."
 			},
 			{
-				"id": "morgan",
+				"id": "salma",
 				"category": "strategy",
-				"name": "Morgan Lee",
-				"role": "Campaign Strategist",
+				"name": "Salma Elkholy",
+				"role": "Campaign Coordinator",
 				"bio": "Connects audience insights to channel plans, so every touchpoint reinforces the story and moves people toward action."
 			},
 			{
-				"id": "casey",
+				"id": "nesma",
 				"category": "social",
-				"name": "Casey Nguyen",
-				"role": "Social Media Lead",
+				"name": "Nesma Sakr",
+				"role": "Creative Contributor",
 				"bio": "Runs calendars, community, and paid social with clear reporting—balancing brand voice with platform-native creative."
 			},
 			{
-				"id": "riley",
+				"id": "ola",
 				"category": "design",
-				"name": "Riley Brooks",
-				"role": "Senior Designer",
+				"name": "Ola Emad",
+				"role": "Research & Strategy Coordinator",
 				"bio": "Shapes visual systems and campaign assets that stay recognizable across web, social, and print without feeling repetitive."
 			},
 			{
-				"id": "taylor",
+				"id": "esraa",
 				"category": "development",
-				"name": "Taylor Kim",
-				"role": "Web Developer",
+				"name": "Esraa samy",
+				"role": "Social Media Coordinator",
+				"bio": "Builds fast, accessible sites and landing pages, then tunes performance and analytics so marketing can see what converts."
+			},
+			{
+				"id": "asmaa",
+				"category": "development",
+				"name": "Asmaa  fahmey",
+				"role": "Video Editor / Motion Designer",
+				"bio": "Builds fast, accessible sites and landing pages, then tunes performance and analytics so marketing can see what converts."
+			},
+			{
+				"id": "roqaya",
+				"category": "development",
+				"name": "Roqaya Mahmoud",
+				"role": "Trend Researcher",
+				"bio": "Builds fast, accessible sites and landing pages, then tunes performance and analytics so marketing can see what converts."
+			},
+			{
+				"id": "sanaa",
+				"category": "development",
+				"name": "Sanaa Khaled",
+				"role": "Quality Checker",
+				"bio": "Builds fast, accessible sites and landing pages, then tunes performance and analytics so marketing can see what converts."
+			},
+			{
+				"id": "maibel",
+				"category": "development",
+				"name": "Maibel Emad",
+				"role": "Graphic Designer",
 				"bio": "Builds fast, accessible sites and landing pages, then tunes performance and analytics so marketing can see what converts."
 			}
 		]
