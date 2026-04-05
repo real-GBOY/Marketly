@@ -5,25 +5,7 @@ import { useState, type MouseEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-function ChevronDown({ className }: { className?: string }) {
-	return (
-		<svg
-			className={className}
-			width='10'
-			height='6'
-			viewBox='0 0 10 6'
-			fill='none'
-			aria-hidden>
-			<path
-				d='M1 1L5 5L9 1'
-				stroke='currentColor'
-				strokeWidth='1.5'
-				strokeLinecap='round'
-				strokeLinejoin='round'
-			/>
-		</svg>
-	);
-}
+
 
 const DROPDOWN_LINKS = [
 	{ key: "homerunNav.product", href: "#services", kind: "hash" as const },
@@ -106,7 +88,6 @@ export function HomerunHeroNav() {
 										to={item.href}
 										className='inline-flex items-center gap-1 transition hover:text-homerunInk'>
 										{t(item.key)}
-										<ChevronDown className='opacity-70' />
 									</Link>
 								:	<a
 										key={item.key}
@@ -114,7 +95,6 @@ export function HomerunHeroNav() {
 										onClick={(e) => handleSmoothNav(e, item.href)}
 										className='inline-flex items-center gap-1 transition hover:text-homerunInk'>
 										{t(item.key)}
-										<ChevronDown className='opacity-70' />
 									</a>,
 							)}
 						</nav>

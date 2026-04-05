@@ -181,7 +181,8 @@
 		"kicker": "About Marketly",
 		"heading": "A team built for modern marketing",
 		"storyTitle": "Story",
-		"story": "We help brands grow through strategy, content, and design that feels human and performs. Our process balances creative thinking with measurable outcomes—so every campaign has a clear purpose and a clear result.",
+		"intro": "We help brands grow through strategy, content, and design that feels human and performs. Our process balances creative thinking with measurable outcomes—so every campaign has a clear purpose and a clear result.",
+		"story": "Marketly started when a group of creators, strategists, and designers realized that great marketing doesn't come from big budgets—it comes from clear thinking, sharp execution, and genuine care for the brands we work with. Today we're a tight-knit team turning that belief into results every day.",
 		"visionTitle": "Vision",
 		"visionBody": "To become a leading creative marketing agency that inspires brands to grow and connect with their audience.",
 		"missionTitle": "Mission",
@@ -198,34 +199,34 @@
 		"teamCardTitle": "Our Team",
 		"team": [
 			{
-				"name": "Content Strategist",
-				"role": "Content Strategy",
-				"bio": "Turns brand goals into content plans, messaging, and a roadmap your team can execute."
+				"name": "Content & Social Media",
+				"role": "Content Creation · Social Coordination",
+				"bio": "From writing captions and blog posts to scheduling and community management—our content and social team keeps your brand voice active, consistent, and engaging across every platform."
 			},
 			{
-				"name": "Social Media Manager",
-				"role": "Social Media",
-				"bio": "Builds calendars, manages communities, and optimizes campaigns across platforms."
+				"name": "Creative & Design",
+				"role": "Graphic Design · Video Editing · Motion",
+				"bio": "Our creative crew brings ideas to life through on-brand graphics, polished presentations, dynamic reels, and motion design that grabs attention and communicates your story visually."
 			},
 			{
-				"name": "Designer",
-				"role": "Design",
-				"bio": "Creates on-brand visuals and systems that keep every touchpoint consistent."
+				"name": "Research & Strategy",
+				"role": "Trend Research · Campaign Planning · SEO",
+				"bio": "From tracking emerging trends to mapping keyword strategies and coordinating campaign timelines—our research and strategy team makes sure every move is backed by insight and delivered on brief."
 			},
 			{
-				"name": "Programmer",
-				"role": "Web Development",
-				"bio": "Ships fast, accessible experiences—landing pages, websites, and performance improvements."
+				"name": "Quality & Production",
+				"role": "Quality Assurance · Brand Consistency",
+				"bio": "Before anything goes live, our quality team reviews every deliverable for accuracy, brand alignment, and consistency—so your audience always sees polished, error-free work."
 			}
 		]
 	},
 	"trialCta": {
-		"aria": "Free trial call to action",
-		"heading": "Start your free Homerun trial today",
-		"cta": "Start hiring for free",
+		"aria": "Get started call to action",
+		"heading": "Ready to grow your brand with Marketly?",
+		"cta": "Start your project",
 		"ctaHref": "/contact",
-		"trust1": "The first job is free",
-		"trust2": "No credit card needed"
+		"trust1": "Free consultation",
+		"trust2": "No commitment needed"
 	},
 	"contact": {
 		"kicker": "Contact",
@@ -283,9 +284,9 @@
 			{
 				"id": "shrouk",
 				"category": "SEO Specialist (Beginner Level)",
-				"name": "Shrouk Abdeazize Omar ",
+				"name": "Shrouk Abdeazize Omar",
 				"role": "SEO Specialist (Beginner Level)",
-				"bio": "Sets the agency direction, nurtures client partnerships, and keeps strategy, creative, and delivery working as one team.",
+				"bio": "Researches keywords, optimizes on-page elements, and tracks search rankings to improve organic visibility and drive qualified traffic.",
 				"email": "jordan@marketly.agency"
 			},
 			{
@@ -293,63 +294,63 @@
 				"category": "Content Creator",
 				"name": "Amira Hossam",
 				"role": "Content Creator",
-				"bio": "Turns brand goals into messaging frameworks, editorial plans, and measurable content roadmaps your stakeholders can trust."
+				"bio": "Crafts engaging written and visual content—from social captions to blog posts—that captures attention and communicates brand stories."
 			},
 			{
 				"id": "salma",
 				"category": "strategy",
 				"name": "Salma Elkholy",
 				"role": "Campaign Coordinator",
-				"bio": "Connects audience insights to channel plans, so every touchpoint reinforces the story and moves people toward action."
+				"bio": "Organizes campaign timelines, coordinates team deliverables, and ensures every piece launches on schedule and on brief."
 			},
 			{
 				"id": "nesma",
 				"category": "social",
 				"name": "Nesma Sakr",
 				"role": "Creative Contributor",
-				"bio": "Runs calendars, community, and paid social with clear reporting—balancing brand voice with platform-native creative."
+				"bio": "Generates fresh creative concepts and supports the team with ideas, visuals, and copy that push campaigns beyond the expected."
 			},
 			{
 				"id": "ola",
 				"category": "design",
 				"name": "Ola Emad",
 				"role": "Research & Strategy Coordinator",
-				"bio": "Shapes visual systems and campaign assets that stay recognizable across web, social, and print without feeling repetitive."
+				"bio": "Gathers market and audience insights, synthesizes data into actionable briefs, and aligns research findings with campaign strategy."
 			},
 			{
 				"id": "esraa",
 				"category": "development",
-				"name": "Esraa samy",
+				"name": "Esraa Samy",
 				"role": "Social Media Coordinator",
-				"bio": "Builds fast, accessible sites and landing pages, then tunes performance and analytics so marketing can see what converts."
+				"bio": "Schedules posts, monitors engagement, and manages day-to-day community interactions to keep brand presence active and responsive."
 			},
 			{
 				"id": "asmaa",
 				"category": "development",
-				"name": "Asmaa  fahmey",
+				"name": "Asmaa Fahmey",
 				"role": "Video Editor / Motion Designer",
-				"bio": "Builds fast, accessible sites and landing pages, then tunes performance and analytics so marketing can see what converts."
+				"bio": "Cuts, colors, and animates video content—from short-form reels to brand stories—adding motion and polish that grabs attention."
 			},
 			{
 				"id": "roqaya",
 				"category": "development",
 				"name": "Roqaya Mahmoud",
 				"role": "Trend Researcher",
-				"bio": "Builds fast, accessible sites and landing pages, then tunes performance and analytics so marketing can see what converts."
+				"bio": "Monitors emerging trends, viral formats, and cultural moments, then translates them into timely content opportunities for the team."
 			},
 			{
 				"id": "sanaa",
 				"category": "development",
 				"name": "Sanaa Khaled",
 				"role": "Quality Checker",
-				"bio": "Builds fast, accessible sites and landing pages, then tunes performance and analytics so marketing can see what converts."
+				"bio": "Reviews all deliverables for accuracy, consistency, and brand alignment before they go live—ensuring nothing ships with errors."
 			},
 			{
 				"id": "maibel",
 				"category": "development",
 				"name": "Maibel Emad",
 				"role": "Graphic Designer",
-				"bio": "Builds fast, accessible sites and landing pages, then tunes performance and analytics so marketing can see what converts."
+				"bio": "Designs on-brand visuals—social graphics, presentations, and marketing collateral—that communicate clearly and look polished across every channel."
 			}
 		]
 	},

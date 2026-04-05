@@ -9,6 +9,12 @@ import BlueCharIcon from "../icons/blueChar";
 import BlueMain from "../icons/blueMain";
 import { homePrimaryCta } from "../theme/homepageSections";
 
+/** Brighter CTA for the dark CTA band — warm coral that pops against homerunInk. */
+const ctaBright = homePrimaryCta
+	.replace("bg-homerunBlue", "bg-[#E85D3A]")
+	.replace("hover:brightness-105", "hover:brightness-110")
+	.replace("focus-visible:ring-homerunBlue/50", "focus-visible:ring-[#E85D3A]/50");
+
 /** Same horizontal inset as `homeSectionPad` so the band aligns with section content. */
 const layoutInset = "mx-auto w-full max-w-[1920px] px-5 md:px-9 lg:px-[137px]";
 
@@ -47,12 +53,9 @@ export function PreContactCta() {
 								<Blue3Icon
 									className={`${iconClass} -translate-y-1 sm:-translate-y-1.5`}
 								/>
-								<div className='flex h-[3.25rem] w-[3.25rem] shrink-0 translate-y-2.5 items-center justify-center overflow-hidden rounded-2xl bg-white/[0.07] shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:h-14 sm:w-14 sm:translate-y-3 md:h-[3.75rem] md:w-[3.75rem]'>
-									<BlueMain
-										className='h-[42%] w-auto min-w-[120%] max-w-none -translate-x-[8%]'
-										aria-hidden
-									/>
-								</div>
+								<BlueMain
+									className={`${iconClass} translate-y-2 sm:translate-y-2.5`}
+								/>
 							</div>
 
 							<h2 className='font-dynapuff text-[clamp(1.65rem,5vw,2.75rem)] font-bold leading-[1.15] tracking-tight text-white'>
@@ -63,18 +66,18 @@ export function PreContactCta() {
 								<button
 									type='button'
 									onClick={goContact}
-									className={`mt-8 ${homePrimaryCta}`}>
+									className={`mt-8 ${ctaBright}`}>
 									{t("trialCta.cta")}
 								</button>
 							: isInternalRoute ?
-								<Link to={href} className={`mt-8 ${homePrimaryCta}`}>
+								<Link to={href} className={`mt-8 ${ctaBright}`}>
 									{t("trialCta.cta")}
 								</Link>
 							:	<a
 									href={href}
 									target='_blank'
 									rel='noopener noreferrer'
-									className={`mt-8 ${homePrimaryCta}`}>
+									className={`mt-8 ${ctaBright}`}>
 									{t("trialCta.cta")}
 								</a>
 							}

@@ -184,7 +184,7 @@ export function About() {
 				</BoxReveal>
 				<BoxReveal boxColor='#382260' duration={0.6}>
 					<p className={`mt-6 max-w-[68ch] ${homeBodyText}`}>
-						{t("about.story")}
+						{t("about.intro")}
 					</p>
 				</BoxReveal>
 
