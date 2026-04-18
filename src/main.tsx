@@ -2,6 +2,7 @@
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
 import "./i18n";
 import App from "./App.tsx";
@@ -12,12 +13,14 @@ import { SmoothScroll } from "./components/SmoothScroll";
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
-		<BrowserRouter>
-			<ThemeProvider>
-				<SmoothScroll>
-					<App />
-				</SmoothScroll>
-			</ThemeProvider>
-		</BrowserRouter>
+		<HelmetProvider>
+			<BrowserRouter>
+				<ThemeProvider>
+					<SmoothScroll>
+						<App />
+					</SmoothScroll>
+				</ThemeProvider>
+			</BrowserRouter>
+		</HelmetProvider>
 	</StrictMode>,
 );

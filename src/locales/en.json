@@ -356,10 +356,44 @@
 	},
 	"footer": {
 		"aria": "Footer",
+		"ariaNav": "Footer links",
 		"agency": "Marketly",
-		"rights": "Copyright © {{year}} {{agency}}. All rights reserved."
+		"rights": "Copyright © {{year}} {{agency}}. All rights reserved.",
+		"social": {
+			"twitter": "Twitter",
+			"linkedin": "LinkedIn",
+			"github": "GitHub",
+			"facebook": "Facebook",
+			"instagram": "Instagram"
+		}
 	},
 
+	"seo": {
+		"siteName": "Marketly",
+		"home": {
+			"title": "Marketly | Creative Marketing Agency",
+			"description": "Marketly is a creative marketing agency helping brands grow through strategy, content, design, and SEO."
+		},
+		"team": {
+			"title": "Meet Our Team | Marketly",
+			"description": "Meet the strategists, creators, and builders at Marketly who plan campaigns, craft content, and ship experiences that help your brand grow."
+		},
+		"portfolio": {
+			"title": "Portfolio & Case Studies | Marketly",
+			"description": "Selected work from Marketly: strategy, design, and content that helps brands show up clearly and convert with confidence."
+		},
+		"blogs": {
+			"title": "Blog & Insights | Marketly",
+			"description": "Latest insights on marketing strategy, content, design, SEO, and growth from the Marketly team."
+		},
+		"contact": {
+			"title": "Contact Us | Marketly",
+			"description": "Get in touch with Marketly to discuss your next project. We respond with clear next steps and a practical plan."
+		},
+		"blogPost": {
+			"title": "{{title}} | Marketly"
+		}
+	},
 	"a11y": {
 		"openMenu": "Open menu"
 	},

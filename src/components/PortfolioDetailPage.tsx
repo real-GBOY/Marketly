@@ -15,7 +15,7 @@ const OFFICE_IMG = new URL(
 
 const ITEMS_COUNT = 6;
 
-export function BlogDetailPage() {
+export function PortfolioDetailPage() {
 	const { t } = useTranslation();
 	const params = useParams();
 
@@ -28,32 +28,28 @@ export function BlogDetailPage() {
 
 	const data = useMemo(() => {
 		return {
-			tag: t(`blogs.items.${index}.tag`),
-			title: t(`blogs.items.${index}.title`),
-			excerpt: t(`blogs.items.${index}.excerpt`),
-			date: t(`blogs.items.${index}.date`),
-			readTime: t(`blogs.items.${index}.readTime`),
+			tag: t(`portfolio.items.${index}.tag`),
+			title: t(`portfolio.items.${index}.title`),
+			excerpt: t(`portfolio.items.${index}.excerpt`),
 		};
 	}, [index, t]);
-
-	const pageTitle = t("seo.blogPost.title", { title: data.title });
 
 	return (
 		<FramedPageShell>
 			<Seo
-				title={pageTitle}
+				title={`${data.title} | ${t("seo.siteName")}`}
 				description={data.excerpt}
-				path={`/blogs/${index}`}
+				path={`/portfolio/${index}`}
 				imagePath={OFFICE_IMG}
 				ogType='article'
 			/>
 			<main className='mx-auto max-w-[1920px] px-5 py-10 text-charcoal md:px-9 md:py-14 lg:px-[137px]'>
 				<div className='mb-6 flex items-center gap-3'>
 					<Link
-						to='/blogs'
+						to='/portfolio'
 						className='inline-flex items-center gap-2 text-sm font-semibold text-textPrimary transition hover:text-brand rtl:flex-row-reverse'>
 						<ArrowLeft className='size-4' aria-hidden />
-						<span>{t("blogs.readMore")}</span>
+						<span>{t("portfolio.view")}</span>
 					</Link>
 				</div>
 
@@ -62,20 +58,17 @@ export function BlogDetailPage() {
 						<img
 							src={OFFICE_IMG}
 							alt={data.title}
-							className='h-[260px] w-full object-cover'
+							className='h-[280px] w-full object-cover md:h-[380px]'
 						/>
 						<div className='pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/20 to-slate-950/0' />
-						<div className='absolute left-0 top-0 flex h-full w-full items-end p-5 md:p-7'>
+						<div className='absolute left-0 top-0 flex h-full w-full items-end p-5 md:p-8'>
 							<div>
 								<p className='inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-white'>
 									{data.tag}
 								</p>
-								<h1 className='mt-3 font-raleway text-3xl font-semibold tracking-tight text-white md:text-4xl'>
+								<h1 className='mt-3 font-raleway text-3xl font-semibold tracking-tight text-white md:text-4xl lg:text-5xl'>
 									{data.title}
 								</h1>
-								<p className='mt-2 text-sm font-manrope text-white/80'>
-									{data.date} · {data.readTime}
-								</p>
 							</div>
 						</div>
 					</div>

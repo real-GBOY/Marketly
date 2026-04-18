@@ -65,9 +65,10 @@ type ServicesProps = {
 };
 
 export function Services({ stickyPanel = false }: ServicesProps) {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const uid = useId();
 	const [openKey, setOpenKey] = useState<ServiceKey | null>(null);
+	const isRtl = i18n.dir() === "rtl";
 
 	const toggle = (key: ServiceKey) => {
 		setOpenKey((prev) => (prev === key ? null : key));
@@ -131,8 +132,11 @@ export function Services({ stickyPanel = false }: ServicesProps) {
 										:	t("servicesPreview.expandLabel", { name: title })
 									}
 									onClick={() => toggle(key)}
-									className='flex w-full cursor-pointer flex-row items-center justify-between gap-3 text-left [-webkit-tap-highlight-color:transparent] sm:gap-8'>
-									<div className='flex min-w-0 flex-1 flex-row items-center gap-3 sm:gap-8'>
+									className={`flex w-full cursor-pointer items-center justify-between gap-3 [-webkit-tap-highlight-color:transparent] sm:gap-8 flex-row ${
+										isRtl ? "text-right" : "text-left"
+									}`}>
+									<div
+										className='flex min-w-0 flex-1 flex-row items-center gap-3 sm:gap-8'>
 										<div
 											className={`relative flex h-10 w-20 shrink-0 items-center justify-center overflow-hidden rounded-2xl ring-1 ring-black/5 sm:h-11 sm:w-36 ${pillClass}`}>
 											<Icon
@@ -141,7 +145,7 @@ export function Services({ stickyPanel = false }: ServicesProps) {
 												aria-hidden
 											/>
 										</div>
-										<div className='min-w-0 flex-1'>
+										<div className={`min-w-0 flex-1 ${isRtl ? "text-right" : ""}`}>
 											<h3 className='font-dynapuff text-lg font-bold tracking-tight text-homerunInk sm:text-2xl md:text-[1.75rem] md:leading-tight lg:text-[2.125rem]'>
 												{title}
 											</h3>

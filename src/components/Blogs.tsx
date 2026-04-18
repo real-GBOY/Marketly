@@ -69,7 +69,10 @@ export function Blogs() {
 							<p className={homeKickerText}>{t("blogs.kicker")}</p>
 						</div>
 						<BoxReveal boxColor='#382260' duration={0.55}>
-							<h2 className={`mt-4 ${homeH2}`}>{t("blogs.heading")}</h2>
+							<h2
+								className={`mt-4 ${homeH2} leading-[1.22] md:leading-[1.2] lg:leading-[1.2]`}>
+								{t("blogs.heading")}
+							</h2>
 						</BoxReveal>
 					</div>
 
@@ -78,10 +81,10 @@ export function Blogs() {
 						onClick={() => setShowAll((v) => !v)}
 						aria-expanded={showAll}
 						aria-controls={`${uid}-grid`}
-						className={homeSecondaryCta}>
+						className={`${homeSecondaryCta} rtl:flex-row-reverse`}>
 						<span>{showAll ? t("blogs.showLess") : t("blogs.showAll")}</span>
 						<ArrowRight
-							className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5'
+							className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5'
 							aria-hidden
 						/>
 					</button>
@@ -125,7 +128,7 @@ export function Blogs() {
 										to={`/blogs/${index}`}
 										className='inline-flex items-center gap-2 text-sm font-semibold text-homerunInk transition-colors group-hover:text-homerunBlue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-homerunBlue/40'>
 									{t("blogs.readMore")}
-									<ArrowRight className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5' aria-hidden />
+									<ArrowRight className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5' aria-hidden />
 									</Link>
 							</div>
 						</article>

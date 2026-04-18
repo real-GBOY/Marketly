@@ -5,8 +5,6 @@ import { useState, type MouseEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-
-
 const DROPDOWN_LINKS = [
 	{ key: "homerunNav.product", href: "#services", kind: "hash" as const },
 	{ key: "homerunNav.team", href: "/team", kind: "route" as const },
@@ -17,12 +15,24 @@ const DROPDOWN_LINKS = [
 
 /** Nav pill: vertical center on the top edge of the framed shell (`relative` parent in App). */
 export function HomerunHeroNav() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const lenis = useLenis();
 	const location = useLocation();
 	const navigate = useNavigate();
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const isHomePage = location.pathname === "/";
+
+	const handleLanguageSwitch = async (lang: "en" | "ar") => {
+		if (i18n.language.startsWith(lang)) return;
+
+		document.documentElement.classList.add("lang-refresh");
+		window.scrollTo({ top: 0, behavior: "auto" });
+		await i18n.changeLanguage(lang);
+
+		window.setTimeout(() => {
+			document.documentElement.classList.remove("lang-refresh");
+		}, 720);
+	};
 
 	const handleSmoothNav = (
 		event: MouseEvent<HTMLAnchorElement>,
@@ -68,7 +78,7 @@ export function HomerunHeroNav() {
 						:	"rounded-full"
 					}`}>
 					<div className='grid w-full min-w-0 grid-cols-[1fr_auto_1fr] items-center gap-2 md:gap-3'>
-						<div className='flex min-w-0 justify-self-start overflow-hidden'>
+						<div className='flex min-w-0 items-center justify-self-start gap-2 overflow-hidden md:gap-3'>
 							<Link
 								to='/'
 								className='min-w-0 shrink font-sans text-base font-bold italic tracking-tight text-homerunInk md:text-lg'>
@@ -76,6 +86,31 @@ export function HomerunHeroNav() {
 									{t("homerunNav.logo")}
 								</span>
 							</Link>
+							<div
+								className='hidden items-center rounded-full border border-black/20 p-0.5 text-[11px] font-semibold text-homerunMuted lg:flex'
+								role='group'
+								aria-label={t("lang.switchTo")}>
+								<button
+									type='button'
+									onClick={() => void handleLanguageSwitch("en")}
+									className={`rounded-full px-2.5 py-1 transition ${
+										i18n.language.startsWith("en") ?
+											"bg-homerunBlue text-white"
+										:	"text-homerunMuted hover:text-homerunInk"
+									}`}>
+									EN
+								</button>
+								<button
+									type='button'
+									onClick={() => void handleLanguageSwitch("ar")}
+									className={`rounded-full px-2.5 py-1 transition ${
+										i18n.language.startsWith("ar") ?
+											"bg-homerunBlue text-white"
+										:	"text-homerunMuted hover:text-homerunInk"
+									}`}>
+									ع
+								</button>
+							</div>
 						</div>
 
 						<nav
@@ -142,8 +177,7 @@ export function HomerunHeroNav() {
 						<nav
 							className='font-manrope mt-2 flex w-full min-w-0 flex-col border-t border-black/10 pt-2 sm:mt-3 sm:pt-3 lg:hidden'
 							aria-label={t("homerunNav.ariaMain")}>
-							<div
-								className='max-h-[min(52dvh,20rem)] min-h-0 w-full overflow-x-hidden overflow-y-auto overscroll-y-contain [-webkit-overflow-scrolling:touch] sm:max-h-[min(50dvh,18rem)]'>
+							<div className='max-h-[min(52dvh,20rem)] min-h-0 w-full overflow-x-hidden overflow-y-auto overscroll-y-contain [-webkit-overflow-scrolling:touch] sm:max-h-[min(50dvh,18rem)]'>
 								<div className='flex flex-col gap-0.5 pb-1 sm:gap-1'>
 									{DROPDOWN_LINKS.map((item) =>
 										item.kind === "route" ?
@@ -170,6 +204,33 @@ export function HomerunHeroNav() {
 								className='mb-[max(0.25rem,env(safe-area-inset-bottom,0px))] mt-2 flex min-h-11 w-full shrink-0 items-center justify-center rounded-full bg-homerunBlue px-4 py-3 text-center text-[15px] font-semibold leading-tight text-white transition hover:brightness-105 active:brightness-95 sm:mt-3 sm:min-h-0 sm:h-11 sm:py-0 sm:text-base'>
 								{t("homerunNav.startFree")}
 							</Link>
+							<div
+								className='mb-[max(0.15rem,env(safe-area-inset-bottom,0px))] mt-2 flex justify-center sm:mt-3'
+								role='group'
+								aria-label={t("lang.switchTo")}>
+								<div className='flex items-center rounded-full border border-black/15 p-0.5 text-sm font-semibold text-homerunMuted'>
+									<button
+										type='button'
+										onClick={() => void handleLanguageSwitch("en")}
+										className={`rounded-full px-4 py-1.5 transition ${
+											i18n.language.startsWith("en") ?
+												"bg-homerunBlue text-white"
+											:	"text-homerunMuted hover:text-homerunInk"
+										}`}>
+										EN
+									</button>
+									<button
+										type='button'
+										onClick={() => void handleLanguageSwitch("ar")}
+										className={`rounded-full px-4 py-1.5 transition ${
+											i18n.language.startsWith("ar") ?
+												"bg-homerunBlue text-white"
+											:	"text-homerunMuted hover:text-homerunInk"
+										}`}>
+										ع
+									</button>
+								</div>
+							</div>
 						</nav>
 					:	null}
 				</div>

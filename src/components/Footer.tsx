@@ -16,11 +16,31 @@ const footerLinks = [
 ] as const;
 
 const socialLinks = [
-	{ href: "https://twitter.com/", icon: Twitter, label: "Twitter" },
-	{ href: "https://linkedin.com/", icon: Linkedin, label: "LinkedIn" },
-	{ href: "https://github.com/", icon: Github, label: "GitHub" },
-	{ href: "https://facebook.com/", icon: Facebook, label: "Facebook" },
-	{ href: "https://instagram.com/", icon: Instagram, label: "Instagram" },
+	{
+		href: "https://twitter.com/",
+		icon: Twitter,
+		labelKey: "footer.social.twitter",
+	},
+	{
+		href: "https://linkedin.com/",
+		icon: Linkedin,
+		labelKey: "footer.social.linkedin",
+	},
+	{
+		href: "https://github.com/",
+		icon: Github,
+		labelKey: "footer.social.github",
+	},
+	{
+		href: "https://facebook.com/",
+		icon: Facebook,
+		labelKey: "footer.social.facebook",
+	},
+	{
+		href: "https://instagram.com/",
+		icon: Instagram,
+		labelKey: "footer.social.instagram",
+	},
 ] as const;
 
 export function Footer() {
@@ -28,7 +48,9 @@ export function Footer() {
 	const year = new Date().getFullYear();
 
 	return (
-		<footer className='border-t border-black/[0.04] bg-cream/30' aria-label={t("footer.aria")}>
+		<footer
+			className='border-t border-black/[0.04] bg-cream/30'
+			aria-label={t("footer.aria")}>
 			<div className='relative mx-auto max-w-[1920px] px-5 pt-14 pb-0 md:px-9 md:pt-16 lg:px-[137px]'>
 				<FooterTopEdgeSvg
 					aria-hidden
@@ -40,19 +62,21 @@ export function Footer() {
 							<Link
 								to='/'
 								className='inline-flex items-center text-2xl font-medium md:text-[30px]'>
-								<span className='text-brand'>Market</span>
-								<span className='text-navy'>ly</span>
-								<span className='text-brand'>.</span>
+								<span className='inline-flex items-center' dir='ltr'>
+									<span className='text-brand'>Market</span>
+									<span className='text-navy'>ly</span>
+									<span className='text-brand'>.</span>
+								</span>
 							</Link>
 
 							<nav
 								className='mt-6 flex flex-wrap gap-x-5 gap-y-2 font-manrope text-sm text-textSecondary md:text-[15px]'
-								aria-label={t("nav.ariaMain")}>
+								aria-label={t("footer.ariaNav")}>
 								{footerLinks.map(({ to, key }) => (
 									<Link
 										key={to + key}
 										to={to}
-										className='relative inline-flex py-1 transition-colors duration-300 ease-out hover:text-textPrimary after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-full after:origin-left after:scale-x-0 after:bg-brand after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100'>
+										className='relative inline-flex py-1 transition-colors duration-300 ease-out hover:text-textPrimary after:absolute after:bottom-0 after:start-0 after:h-[1.5px] after:w-full after:origin-left after:scale-x-0 after:bg-brand after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 rtl:after:origin-right'>
 										{t(key)}
 									</Link>
 								))}
@@ -60,13 +84,13 @@ export function Footer() {
 						</div>
 
 						<div className='flex flex-wrap items-center gap-3'>
-							{socialLinks.map(({ href, icon: Icon, label }) => (
+							{socialLinks.map(({ href, icon: Icon, labelKey }) => (
 								<a
-									key={label}
+									key={labelKey}
 									href={href}
 									target='_blank'
 									rel='noreferrer'
-									aria-label={label}
+									aria-label={t(labelKey)}
 									className='inline-flex h-9 w-9 items-center justify-center rounded-full border border-dividerOnLight text-textSecondary transition hover:border-brand/50 hover:text-textPrimary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60'>
 									<Icon className='size-4' aria-hidden />
 								</a>

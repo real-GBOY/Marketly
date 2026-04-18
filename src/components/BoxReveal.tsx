@@ -32,7 +32,9 @@ export function BoxReveal({
 	}, []);
 
 	return (
-		<div ref={ref} className='relative overflow-hidden'>
+		<div
+			ref={ref}
+			className='relative overflow-hidden pb-[0.35em]'>
 			<motion.div
 				initial={{ x: "-100%" }}
 				animate={{ x: isVisible ? "100%" : "-100%" }}

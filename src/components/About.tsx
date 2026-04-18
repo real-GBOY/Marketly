@@ -175,7 +175,7 @@ export function About() {
 			aria-label={t("nav.about")}>
 			<div className={homeSectionPadAboutIntro}>
 				<BoxReveal boxColor='#382260' duration={0.5}>
-					<h2 className='font-dynapuff text-4xl font-bold tracking-tight text-homerunInk md:text-5xl lg:text-6xl'>
+					<h2 className='font-dynapuff text-4xl font-bold leading-[1.22] tracking-tight text-homerunInk md:text-5xl md:leading-[1.2] lg:text-6xl lg:leading-[1.2]'>
 						<span className='text-homerunBlue'>{t("about.kicker")}</span>
 						<span className='mt-4 block text-homerunInk'>
 							{t("about.heading")}

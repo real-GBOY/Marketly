@@ -119,9 +119,11 @@ export function Header() {
 					<Link
 						to='/'
 						className='shrink-0 text-[22px] font-medium md:text-[30px]'>
-						<span className='text-brand'>Market</span>
-						<span className='text-white'>ly</span>
-						<span className='text-brand'>.</span>
+						<span className='inline-flex items-center' dir='ltr'>
+							<span className='text-brand'>Market</span>
+							<span className='text-white'>ly</span>
+							<span className='text-brand'>.</span>
+						</span>
 					</Link>
 
 					<nav

@@ -50,8 +50,8 @@ export function Portfolio() {
 			aria-label={t("sections.portfolio")}>
 			<div className={homeSectionPad}>
 				<div className='flex flex-col gap-6 md:flex-row md:items-end md:justify-between'>
-					<div className='max-w-[760px]'>
-						<div className='flex items-center gap-2'>
+					<div className='max-w-[760px] rtl:text-right'>
+						<div className='flex items-center gap-2 rtl:flex-row'>
 							<ArrowDownRight
 								className={homeKickerIcon}
 								strokeWidth={2}
@@ -67,10 +67,10 @@ export function Portfolio() {
 						</p>
 					</div>
 
-					<Link to='/contact' className={homeSecondaryCta}>
+					<Link to='/contact' className={`${homeSecondaryCta} rtl:flex-row-reverse`}>
 						<span>{t("portfolio.cta")}</span>
 						<ArrowRight
-							className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5'
+							className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5'
 							aria-hidden
 						/>
 					</Link>
@@ -112,11 +112,11 @@ export function Portfolio() {
 
 							<div className='mt-5 flex items-center justify-between gap-4'>
 								<Link
-									to='/contact'
+									to={`/portfolio/${index}`}
 									className='inline-flex items-center gap-2 text-sm font-semibold text-homerunInk transition-colors group-hover:text-homerunBlue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-homerunBlue/40'>
 									{t("portfolio.view")}
 									<ArrowRight
-										className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5'
+										className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5'
 										aria-hidden
 									/>
 								</Link>
