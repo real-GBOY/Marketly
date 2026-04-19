@@ -47,12 +47,14 @@ export function Hero() {
 								aria-hidden
 							/>
 							<span className='pb-1 sm:pb-1.5'>{t("homerunHero.line1")}</span>
+						</span>
+						<span className='mt-2 flex flex-wrap items-end justify-center gap-x-4 gap-y-2 sm:mt-2.5 sm:gap-x-5'>
 							<Blue2Icon
 								className='h-[4rem] w-auto shrink-0 sm:h-[5rem] md:h-[5.5rem] lg:h-24'
 								aria-hidden
 							/>
+							<span className='pb-1 sm:pb-1.5'>{t("homerunHero.line2")}</span>
 						</span>
-						<span className='mt-2 block sm:mt-2.5'>{t("homerunHero.line2")}</span>
 						<span className='mt-2 flex flex-wrap items-end justify-center gap-x-4 gap-y-2 sm:mt-2.5 sm:gap-x-5'>
 							<span className='pb-1 sm:pb-1.5'>{t("homerunHero.line3")}</span>
 							<Blue3Icon
