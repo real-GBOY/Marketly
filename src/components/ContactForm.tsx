@@ -12,7 +12,9 @@ export function ContactForm() {
 	>("idle");
 	const [errorMessage, setErrorMessage] = useState("");
 	const [form, setForm] = useState({ name: "", email: "", message: "" });
-	const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+	const accessKey = (import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? "")
+		.trim()
+		.replace(/^['"]|['"]$/g, "");
 
 	const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
