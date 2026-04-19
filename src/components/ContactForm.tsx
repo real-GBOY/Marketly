@@ -10,14 +10,17 @@ export function ContactForm() {
 	const [status, setStatus] = useState<
 		"idle" | "submitting" | "success" | "error"
 	>("idle");
+	const [errorMessage, setErrorMessage] = useState("");
 	const [form, setForm] = useState({ name: "", email: "", message: "" });
 	const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
 	const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setStatus("submitting");
+		setErrorMessage("");
 
 		if (!accessKey) {
+			setErrorMessage(t("contact.form.missingKey"));
 			setStatus("error");
 			return;
 		}
@@ -37,15 +40,20 @@ export function ContactForm() {
 				method: "POST",
 				body: payload,
 			});
-			const data: { success?: boolean } = await response.json();
+			const data: { success?: boolean; message?: string } =
+				await response.json();
 
 			if (response.ok && data.success) {
 				setStatus("success");
+				setErrorMessage("");
 				setForm({ name: "", email: "", message: "" });
 				return;
 			}
+
+			setErrorMessage(data.message || t("contact.form.error"));
 		} catch {
 			// handled below by setting generic error state
+			setErrorMessage(t("contact.form.error"));
 		}
 
 		setStatus("error");
@@ -128,7 +136,7 @@ export function ContactForm() {
 						<p
 							role='status'
 							className='rounded-full bg-red-500/10 px-4 py-2 font-manrope text-sm font-medium text-red-700'>
-							{t("contact.form.error")}
+							{errorMessage || t("contact.form.error")}
 						</p>
 					)}
 					<button

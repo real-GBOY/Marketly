@@ -239,7 +239,8 @@
 			"submit": "Send message",
 			"submitting": "Sending...",
 			"success": "Thanks—your message was sent.",
-			"error": "Sorry, your message could not be sent. Please try again."
+			"error": "Sorry, your message could not be sent. Please try again.",
+			"missingKey": "Contact form is not configured on this deployment yet."
 		},
 		"info": {
 			"heading": "Contact info",
