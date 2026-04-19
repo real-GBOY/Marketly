@@ -1,23 +1,68 @@
 /** @format */
 
-import { useState } from "react";
+import { type FormEvent, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { homePrimaryCta } from "../theme/homepageSections";
 import { BorderBeam } from "./ui/border-beam";
 
 export function ContactForm() {
 	const { t } = useTranslation();
-	const [status, setStatus] = useState<"idle" | "success">("idle");
+	const [status, setStatus] = useState<
+		"idle" | "submitting" | "success" | "error"
+	>("idle");
 	const [form, setForm] = useState({ name: "", email: "", message: "" });
+	const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+	const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		setStatus("submitting");
+
+		if (!accessKey) {
+			setStatus("error");
+			return;
+		}
+
+		const payload = new FormData();
+		payload.append("access_key", accessKey);
+		payload.append("name", form.name);
+		payload.append("email", form.email);
+		payload.append("message", form.message);
+		payload.append("subject", "New contact message from Marketly website");
+		payload.append("from_name", "Marketly Website");
+		// Honeypot field. If a bot fills this, Web3Forms rejects it.
+		payload.append("botcheck", "");
+
+		try {
+			const response = await fetch("https://api.web3forms.com/submit", {
+				method: "POST",
+				body: payload,
+			});
+			const data: { success?: boolean } = await response.json();
+
+			if (response.ok && data.success) {
+				setStatus("success");
+				setForm({ name: "", email: "", message: "" });
+				return;
+			}
+		} catch {
+			// handled below by setting generic error state
+		}
+
+		setStatus("error");
+	};
 
 	return (
 		<form
 			className='relative mt-10 grid gap-5 overflow-hidden rounded-3xl border border-black/[0.06] bg-gradient-to-b from-white to-cream/40 p-6 shadow-[0_14px_44px_rgba(45,41,38,0.08)] md:p-8'
-			onSubmit={(e) => {
-				e.preventDefault();
-				setStatus("success");
-			}}>
+			onSubmit={onSubmit}>
 			<div className='relative z-10 grid gap-5'>
+				<input
+					type='checkbox'
+					name='botcheck'
+					className='hidden'
+					tabIndex={-1}
+					autoComplete='off'
+				/>
 				<div className='grid gap-4 md:grid-cols-2'>
 					<label className='grid gap-2'>
 						<span className='font-manrope text-sm font-semibold text-textPrimary/90'>
@@ -79,10 +124,20 @@ export function ContactForm() {
 							{t("contact.form.success")}
 						</p>
 					)}
+					{status === "error" && (
+						<p
+							role='status'
+							className='rounded-full bg-red-500/10 px-4 py-2 font-manrope text-sm font-medium text-red-700'>
+							{t("contact.form.error")}
+						</p>
+					)}
 					<button
 						type='submit'
+						disabled={status === "submitting"}
 						className={`${homePrimaryCta} sm:ms-auto`}>
-						{t("contact.form.submit")}
+						{status === "submitting"
+							? t("contact.form.submitting")
+							: t("contact.form.submit")}
 					</button>
 				</div>
 			</div>

@@ -237,7 +237,9 @@
 			"email": "Email",
 			"message": "Message",
 			"submit": "Send message",
-			"success": "Thanks—your message was sent."
+			"submitting": "Sending...",
+			"success": "Thanks—your message was sent.",
+			"error": "Sorry, your message could not be sent. Please try again."
 		},
 		"info": {
 			"heading": "Contact info",
