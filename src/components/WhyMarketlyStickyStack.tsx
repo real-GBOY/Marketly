@@ -14,9 +14,9 @@ export function WhyMarketlyStickyStack() {
 			{/* Panel 1 — Why Marketly (white, primary copy) */}
 			<section
 				id={WHY_MARKETLY_ID}
-				className='grid min-h-[100dvh] h-screen w-full place-content-center overflow-hidden bg-cream/25 sticky top-0'>
+				className='grid w-full place-content-center overflow-hidden bg-cream/25 px-0 py-10 min-h-[58svh] md:min-h-[64svh] lg:min-h-[100dvh] lg:h-screen lg:sticky lg:top-0'>
 				<motion.div
-					className='relative z-10 mx-auto flex max-h-[min(100dvh,100%)] w-full max-w-[1920px] flex-col justify-center px-5 py-16 md:px-9 md:py-20 lg:px-[137px]'
+					className='relative z-10 mx-auto flex max-h-[min(100dvh,100%)] w-full max-w-[1920px] flex-col justify-center px-5 py-6 md:px-9 md:py-8 lg:px-[137px] lg:py-20'
 					initial={{ opacity: 0, y: 24 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 0.35 }}
