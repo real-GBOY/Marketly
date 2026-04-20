@@ -1,6 +1,6 @@
 /** @format */
 
-import { Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Music2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import FooterTopEdgeSvg from "./FooterTopEdgeSvg";
@@ -17,27 +17,17 @@ const footerLinks = [
 
 const socialLinks = [
 	{
-		href: "https://twitter.com/",
-		icon: Twitter,
-		labelKey: "footer.social.twitter",
+		hrefKey: "contact.social.tiktokHref",
+		icon: Music2,
+		labelKey: "footer.social.tiktok",
 	},
 	{
-		href: "https://linkedin.com/",
-		icon: Linkedin,
-		labelKey: "footer.social.linkedin",
-	},
-	{
-		href: "https://github.com/",
-		icon: Github,
-		labelKey: "footer.social.github",
-	},
-	{
-		href: "https://facebook.com/",
+		hrefKey: "contact.social.facebookHref",
 		icon: Facebook,
 		labelKey: "footer.social.facebook",
 	},
 	{
-		href: "https://instagram.com/",
+		hrefKey: "contact.social.instagramHref",
 		icon: Instagram,
 		labelKey: "footer.social.instagram",
 	},
@@ -84,10 +74,10 @@ export function Footer() {
 						</div>
 
 						<div className='flex flex-wrap items-center gap-3'>
-							{socialLinks.map(({ href, icon: Icon, labelKey }) => (
+							{socialLinks.map(({ hrefKey, icon: Icon, labelKey }) => (
 								<a
 									key={labelKey}
-									href={href}
+									href={t(hrefKey)}
 									target='_blank'
 									rel='noreferrer'
 									aria-label={t(labelKey)}

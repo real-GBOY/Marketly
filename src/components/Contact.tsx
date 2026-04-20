@@ -143,18 +143,18 @@ export function Contact() {
 							</h3>
 							<div className='mt-5 flex flex-wrap gap-3'>
 								<a
+									href={t("contact.social.tiktokHref")}
+									target='_blank'
+									rel='noreferrer'
+									className='inline-flex h-10 items-center justify-center rounded-full border border-homerunMuted/25 bg-homerunSecondaryBtn px-4 font-manrope text-sm font-semibold text-homerunInk transition hover:bg-[#dedbd6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-homerunBlue/40'>
+									{t("contact.social.tiktok")}
+								</a>
+								<a
 									href={t("contact.social.instagramHref")}
 									target='_blank'
 									rel='noreferrer'
 									className='inline-flex h-10 items-center justify-center rounded-full border border-homerunMuted/25 bg-homerunSecondaryBtn px-4 font-manrope text-sm font-semibold text-homerunInk transition hover:bg-[#dedbd6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-homerunBlue/40'>
 									{t("contact.social.instagram")}
-								</a>
-								<a
-									href={t("contact.social.linkedinHref")}
-									target='_blank'
-									rel='noreferrer'
-									className='inline-flex h-10 items-center justify-center rounded-full border border-homerunMuted/25 bg-homerunSecondaryBtn px-4 font-manrope text-sm font-semibold text-homerunInk transition hover:bg-[#dedbd6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-homerunBlue/40'>
-									{t("contact.social.linkedin")}
 								</a>
 								<a
 									href={t("contact.social.facebookHref")}

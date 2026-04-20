@@ -35,12 +35,12 @@ export function Header() {
 	}));
 	const socialItems = [
 		{
-			label: t("contact.social.instagram"),
-			link: t("contact.social.instagramHref"),
+			label: t("contact.social.tiktok"),
+			link: t("contact.social.tiktokHref"),
 		},
 		{
-			label: t("contact.social.linkedin"),
-			link: t("contact.social.linkedinHref"),
+			label: t("contact.social.instagram"),
+			link: t("contact.social.instagramHref"),
 		},
 		{
 			label: t("contact.social.facebook"),

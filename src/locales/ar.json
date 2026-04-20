@@ -245,22 +245,22 @@
 		"info": {
 			"heading": "معلومات التواصل",
 			"email": "البريد الإلكتروني",
-			"emailValue": "hello@marketly.agency",
+			"emailValue": "marketly47@gmail.com",
 			"phone": "الهاتف",
-			"phoneValue": "+1 555 010 0200",
+			"phoneValue": "+20 10 26722160",
 			"whatsapp": "واتساب",
-			"whatsappValue": "+15550100200",
+			"whatsappValue": "+20 10 26722160",
 			"location": "الموقع",
 			"locationValue": "عن بُعد أو حضوري (حسب الطلب)"
 		},
 		"social": {
 			"heading": "روابط التواصل",
 			"instagram": "إنستغرام",
-			"instagramHref": "https://instagram.com/",
-			"linkedin": "لينكدإن",
-			"linkedinHref": "https://linkedin.com/",
+			"instagramHref": "https://www.instagram.com/marketly893?igsh=MXN0dmIwMWhrdmhuZg==",
+			"tiktok": "تيك توك",
+			"tiktokHref": "https://www.tiktok.com/@marketly08?_r=1&_t=ZS-95g9sEyqdKq",
 			"facebook": "فيسبوك",
-			"facebookHref": "https://facebook.com/"
+			"facebookHref": "https://www.facebook.com/share/1L43ijiK5t/"
 		}
 	},
 	"aboutPage": {
@@ -363,9 +363,7 @@
 		"agency": "ماركتلي",
 		"rights": "حقوق النشر © {{year}} {{agency}}. جميع الحقوق محفوظة.",
 		"social": {
-			"twitter": "تويتر",
-			"linkedin": "لينكد إن",
-			"github": "جيت هاب",
+			"tiktok": "تيك توك",
 			"facebook": "فيسبوك",
 			"instagram": "إنستغرام"
 		}

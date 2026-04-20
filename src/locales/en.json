@@ -245,22 +245,22 @@
 		"info": {
 			"heading": "Contact info",
 			"email": "Email",
-			"emailValue": "hello@marketly.agency",
+			"emailValue": "marketly47@gmail.com",
 			"phone": "Phone",
-			"phoneValue": "+1 555 010 0200",
+			"phoneValue": "+20 10 26722160",
 			"whatsapp": "WhatsApp",
-			"whatsappValue": "+15550100200",
+			"whatsappValue": "+20 10 26722160",
 			"location": "Location",
 			"locationValue": "Remote & on-site (by request)"
 		},
 		"social": {
 			"heading": "Social",
 			"instagram": "Instagram",
-			"instagramHref": "https://instagram.com/",
-			"linkedin": "LinkedIn",
-			"linkedinHref": "https://linkedin.com/",
+			"instagramHref": "https://www.instagram.com/marketly893?igsh=MXN0dmIwMWhrdmhuZg==",
+			"tiktok": "TikTok",
+			"tiktokHref": "https://www.tiktok.com/@marketly08?_r=1&_t=ZS-95g9sEyqdKq",
 			"facebook": "Facebook",
-			"facebookHref": "https://facebook.com/"
+			"facebookHref": "https://www.facebook.com/share/1L43ijiK5t/"
 		}
 	},
 	"aboutPage": {
@@ -363,9 +363,7 @@
 		"agency": "Marketly",
 		"rights": "Copyright © {{year}} {{agency}}. All rights reserved.",
 		"social": {
-			"twitter": "Twitter",
-			"linkedin": "LinkedIn",
-			"github": "GitHub",
+			"tiktok": "TikTok",
 			"facebook": "Facebook",
 			"instagram": "Instagram"
 		}
