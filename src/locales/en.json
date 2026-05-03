@@ -5,7 +5,7 @@
 		"about": "About Us",
 		"team": "Team",
 		"services": "Services",
-		"portfolio": "Portfolio",
+		"portfolio": "Success stories",
 		"blog": "Blog",
 		"contact": "Contact Us"
 	},
@@ -27,7 +27,7 @@
 		"product": "Services",
 		"team": "Team",
 		"pricing": "Contact",
-		"useCases": "Portfolio",
+		"useCases": "Success stories",
 		"learn": "Blog",
 		"logIn": "Contact us",
 		"startFree": "Start your project",
@@ -84,45 +84,42 @@
 		}
 	},
 	"sections": {
-		"portfolio": "Portfolio",
+		"successStories": "Success stories",
 		"blog": "Blog"
 	},
-	"portfolio": {
-		"kicker": "Selected work",
-		"heading": "Portfolio highlights",
-		"body": "A few examples of how we combine strategy, design, and content to help brands show up clearly and convert with confidence.",
-		"cta": "Start a project",
-		"view": "View case study",
+	"successStories": {
+		"kicker": "How we win together",
+		"heading": "Success stories from our team",
+		"body": "These are the kinds of challenges we love—where strategy, creative, and execution meet. Each story is a snapshot of how we partner with brands to turn goals into measurable momentum.",
+		"ctaTeam": "Meet the team",
+		"ctaProject": "Start a project",
+		"blockSituation": "The situation",
+		"blockAction": "What we did",
+		"blockOutcome": "The outcome",
 		"items": [
 			{
-				"tag": "Brand",
-				"title": "Brand refresh for a modern agency",
-				"excerpt": "A new visual system, messaging direction, and scalable components for consistent campaigns."
+				"tag": "Brand & social",
+				"title": "From scattered posts to a recognizable voice",
+				"lead": "A growing brand was active online but every channel felt like a different company. The team needed one story buyers could remember.",
+				"situation": "Inconsistent visuals, mixed tone, and no repeatable format meant engagement looked busy but rarely converted.",
+				"action": "We defined a tightened visual system, clarified messaging pillars, and rolled out a structured content rhythm with reusable templates.",
+				"outcome": "Campaigns aligned across platforms, internal approvals sped up, and the brand finally felt like one confident voice in the feed."
 			},
 			{
-				"tag": "Social",
-				"title": "Social content series that drives engagement",
-				"excerpt": "A weekly format with templates, hooks, and reporting to iterate fast across platforms."
+				"tag": "SEO & content",
+				"title": "Organic traffic that actually answers buyer questions",
+				"lead": "Traffic was flat because content spoke to keywords the team guessed—not to what prospects were actively searching.",
+				"situation": "Pages competed with each other. Blog topics drifted away from profitable intent, so rankings never turned into inquiries.",
+				"action": "We rebuilt clusters around pillar topics, aligned pages to clear search intents, and set a disciplined refresh cadence for core pages.",
+				"outcome": "Higher-quality sessions, clearer journeys from article to offer, and a roadmap the team could keep running without guesswork."
 			},
 			{
-				"tag": "Web",
-				"title": "High-converting landing page redesign",
-				"excerpt": "Improved structure, faster performance, and stronger CTAs with a clean, premium look."
-			},
-			{
-				"tag": "SEO",
-				"title": "SEO foundation + content roadmap",
-				"excerpt": "Technical cleanup, keyword mapping, and a content plan built around real search intent."
-			},
-			{
-				"tag": "Content",
-				"title": "Campaign creative for product launch",
-				"excerpt": "Cross-channel assets designed for clarity, consistency, and quick iteration."
-			},
-			{
-				"tag": "Strategy",
-				"title": "Channel strategy and performance tracking",
-				"excerpt": "A measurement framework that connects creative output to KPIs and next actions."
+				"tag": "Launch campaign",
+				"title": "A product launch with one narrative everywhere",
+				"lead": "A launch date was fixed, but creative was still splintered across landing pages, email, ads, and social—with no spine holding it together.",
+				"situation": "Messaging shifted between assets, delaying approvals and weakening the punch of the announcement window.",
+				"action": "We locked a single narrative arc: hook, proof points, objections, CTA—and shipped channel-specific cuts from that master story.",
+				"outcome": "Teams shipped faster together, creatives stayed consistent, and the launch window felt cohesive instead of improvised."
 			}
 		]
 	},
@@ -155,25 +152,11 @@
 				"readTime": "8 min read"
 			},
 			{
-				"tag": "Content",
-				"title": "Writing hooks that earn attention in 5 seconds",
-				"excerpt": "Improve clarity and curiosity with repeatable formulas for headlines, intros, and social captions.",
-				"date": "Feb 28, 2026",
-				"readTime": "4 min read"
-			},
-			{
-				"tag": "Growth",
-				"title": "Turning analytics into better creative decisions",
-				"excerpt": "A lightweight process to connect engagement data to creative iterations and content quality over time.",
-				"date": "Feb 18, 2026",
-				"readTime": "6 min read"
-			},
-			{
-				"tag": "Brand",
-				"title": "Brand consistency across websites, emails, and ads",
-				"excerpt": "Keep messaging and visuals aligned by defining voice, components, and approvals that scale with your team.",
-				"date": "Feb 10, 2026",
-				"readTime": "5 min read"
+				"tag": "Consumer psychology",
+				"title": "The hidden triggers that make people buy without thinking",
+				"excerpt": "By Shorouk Omar — cognitive biases brands use ethically, plus two more essays on rescuing content from zero traffic and a practical viral playbook.",
+				"date": "Apr 30, 2026",
+				"readTime": "18 min read"
 			}
 		]
 	},
@@ -380,8 +363,8 @@
 			"description": "Meet the strategists, creators, and builders at Marketly who plan campaigns, craft content, and ship experiences that help your brand grow."
 		},
 		"portfolio": {
-			"title": "Portfolio & Case Studies | Marketly",
-			"description": "Selected work from Marketly: strategy, design, and content that helps brands show up clearly and convert with confidence."
+			"title": "Success Stories | Marketly",
+			"description": "Stories of how Marketly partners with brands—from brand and social coherence to SEO, content, and launch campaigns—with outcomes the team stands behind."
 		},
 		"blogs": {
 			"title": "Blog & Insights | Marketly",

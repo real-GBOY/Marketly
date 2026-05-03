@@ -18,8 +18,7 @@ import { Seo } from "./components/Seo";
 import { BlogsPage } from "./components/BlogsPage";
 import { BlogDetailPage } from "./components/BlogDetailPage";
 import { PortfolioPage } from "./components/PortfolioPage";
-import { PortfolioDetailPage } from "./components/PortfolioDetailPage";
-import { Portfolio } from "./components/Portfolio";
+import { SuccessStories } from "./components/SuccessStories";
 import { TeamPage } from "./components/TeamPage";
 import { WhyMarketlyStickyStack } from "./components/WhyMarketlyStickyStack";
 
@@ -58,7 +57,7 @@ function HomePage() {
 				<Hero />
 				<WhyMarketlyStickyStack />
 				<About />
-				<Portfolio />
+				<SuccessStories />
 				<Blogs />
 				<PreContactCta />
 				<Contact />
@@ -78,7 +77,7 @@ function App() {
 				<Route path='/' element={<HomePage />} />
 				<Route path='/team' element={<TeamPage />} />
 				<Route path='/portfolio' element={<PortfolioPage />} />
-				<Route path='/portfolio/:id' element={<PortfolioDetailPage />} />
+				<Route path='/portfolio/:id' element={<Navigate to='/portfolio' replace />} />
 				<Route path='/blogs' element={<BlogsPage />} />
 				<Route path='/blogs/:id' element={<BlogDetailPage />} />
 				<Route path='/contact' element={<ContactPage />} />

@@ -12,7 +12,7 @@ const navLinks = [
 	{ kind: "hash" as const, href: "#about", key: "nav.about" },
 	{ kind: "route" as const, href: "/team", key: "nav.team" },
 	{ kind: "hash" as const, href: "#services", key: "nav.services" },
-	{ kind: "route" as const, href: "/portfolio", key: "nav.portfolio" },
+	{ kind: "hash" as const, href: "#success-stories", key: "nav.portfolio" },
 	{ kind: "route" as const, href: "/blogs", key: "nav.blog" },
 	{ kind: "route" as const, href: "/contact", key: "nav.contact" },
 ] as const;

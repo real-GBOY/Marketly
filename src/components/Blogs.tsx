@@ -14,7 +14,7 @@ import {
 } from "../theme/homepageSections";
 import { BoxReveal } from "./BoxReveal";
 
-// Use one office image for all mock items
+// Blog hero thumbnail (shared across posts)
 const OFFICE_IMG = new URL(
 	"../../assets/9caf5948-a733-47de-9d1d-70809876d17e.jpg",
 	import.meta.url,
@@ -29,7 +29,7 @@ type BlogItem = {
 	imageUrl: string;
 };
 
-const ITEMS_COUNT = 6;
+const ITEMS_COUNT = 4;
 const DEFAULT_VISIBLE_COUNT = 3;
 
 export function Blogs() {
@@ -50,7 +50,9 @@ export function Blogs() {
 		[t],
 	);
 
-	const visibleItems = showAll ? items : items.slice(0, DEFAULT_VISIBLE_COUNT);
+	const canExpandList = items.length > DEFAULT_VISIBLE_COUNT;
+	const visibleItems =
+		!canExpandList || showAll ? items : items.slice(0, DEFAULT_VISIBLE_COUNT);
 
 	return (
 		<section
@@ -76,18 +78,22 @@ export function Blogs() {
 						</BoxReveal>
 					</div>
 
-					<button
-						type='button'
-						onClick={() => setShowAll((v) => !v)}
-						aria-expanded={showAll}
-						aria-controls={`${uid}-grid`}
-						className={`${homeSecondaryCta} rtl:flex-row-reverse`}>
-						<span>{showAll ? t("blogs.showLess") : t("blogs.showAll")}</span>
-						<ArrowRight
-							className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5'
-							aria-hidden
-						/>
-					</button>
+					{canExpandList ? (
+						<button
+							type='button'
+							onClick={() => setShowAll((v) => !v)}
+							aria-expanded={showAll}
+							aria-controls={`${uid}-grid`}
+							className={`${homeSecondaryCta} rtl:flex-row-reverse`}>
+							<span>{showAll ? t("blogs.showLess") : t("blogs.showAll")}</span>
+							<ArrowRight
+								className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5'
+								aria-hidden
+							/>
+						</button>
+					) : (
+						<div className='md:min-h-[42px]' aria-hidden />
+					)}
 				</div>
 
 				<div

@@ -10,7 +10,7 @@ const footerLinks = [
 	{ to: "/#about", key: "nav.about" },
 	{ to: "/team", key: "nav.team" },
 	{ to: "/#services", key: "nav.services" },
-	{ to: "/portfolio", key: "nav.portfolio" },
+	{ to: "/#success-stories", key: "nav.portfolio" },
 	{ to: "/blogs", key: "nav.blog" },
 	{ to: "/contact", key: "nav.contact" },
 ] as const;
@@ -64,7 +64,7 @@ export function Footer() {
 								aria-label={t("footer.ariaNav")}>
 								{footerLinks.map(({ to, key }) => (
 									<Link
-										key={to + key}
+										key={key}
 										to={to}
 										className='relative inline-flex py-1 transition-colors duration-300 ease-out hover:text-textPrimary after:absolute after:bottom-0 after:start-0 after:h-[1.5px] after:w-full after:origin-left after:scale-x-0 after:bg-brand after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 rtl:after:origin-right'>
 										{t(key)}

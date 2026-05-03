@@ -8,7 +8,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 const DROPDOWN_LINKS = [
 	{ key: "homerunNav.product", href: "#services", kind: "hash" as const },
 	{ key: "homerunNav.team", href: "/team", kind: "route" as const },
-	{ key: "homerunNav.useCases", href: "#portfolio", kind: "hash" as const },
+	{ key: "homerunNav.useCases", href: "#success-stories", kind: "hash" as const },
 	{ key: "homerunNav.learn", href: "/blogs", kind: "route" as const },
 	{ key: "homerunNav.pricing", href: "/contact", kind: "route" as const },
 ] as const;

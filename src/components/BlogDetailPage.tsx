@@ -13,7 +13,7 @@ const OFFICE_IMG = new URL(
 	import.meta.url,
 ).href;
 
-const ITEMS_COUNT = 6;
+const ITEMS_COUNT = 4;
 
 const CONTENT_STRATEGY_ARTICLE = {
 	intro:
@@ -553,6 +553,491 @@ const DESIGN_SYSTEMS_FAQ_ARTICLE_AR = {
 	],
 };
 
+type ShoroukStat = { label: string; value: string };
+type ShoroukTrigger = { title: string; body: string };
+
+type ShoroukArticleSlice = {
+	anchor: string;
+	category: string;
+	title: string;
+	metaLine: string;
+	intro: string;
+	stats: ShoroukStat[];
+	triggersHeading?: string;
+	triggers?: ShoroukTrigger[];
+	whyHeading?: string;
+	whyBody?: string;
+	winHeading?: string;
+	winBody?: string;
+	stepsHeading?: string;
+	steps?: ShoroukTrigger[];
+	pickHeading?: string;
+	pickBody?: string;
+	formulaHeading?: string;
+	formulaLead?: string;
+	platformsHeading?: string;
+	platforms?: ShoroukTrigger[];
+	checklistHeading?: string;
+	checklist?: string[];
+	ctaNote?: string;
+};
+
+const SHOROUK_ARTICLES_EN: ShoroukArticleSlice[] = [
+	{
+		anchor: "shorouk-consumer-psychology",
+		category: "Consumer Psychology",
+		title: "The Hidden Triggers That Make People Buy Without Thinking",
+		metaLine: "Shorouk Omar · Apr 30, 2026 · 7 min read · Article 01",
+		intro:
+			"95% of purchasing decisions happen in the subconscious mind. Here's how leading brands leverage cognitive biases — and how you can apply the same ideas ethically.",
+		stats: [
+			{ value: "95%", label: "Subconscious decisions" },
+			{ value: "3×", label: "Higher conversions" },
+			{ value: "47s", label: "Avg. attention span" },
+		],
+		triggersHeading: "The 4 core bias triggers",
+		triggers: [
+			{
+				title: "Loss Aversion",
+				body: "People fear losing $50 about twice as much as gaining it. Frame offers around what they'll miss — not only what they'll gain.",
+			},
+			{
+				title: "Social Proof",
+				body: "We look to others to validate choices. Ratings, reviews, and “people bought this” signals reduce perceived risk.",
+			},
+			{
+				title: "Scarcity Effect",
+				body: `"Only a few left" creates urgency. Scarcity signals value and taps into FOMO-driven action.`,
+			},
+			{
+				title: "Reciprocity",
+				body: "Give first — a guide, trial, or useful content — and people feel a natural urge to reciprocate.",
+			},
+		],
+		whyHeading: "Why this matters for your brand",
+		whyBody:
+			"Understanding biases is not manipulation — it's meeting your audience where their minds already operate. Align messaging with how people naturally evaluate choices, reduce friction, and build trust.",
+		winHeading: "Quick win for your next campaign",
+		winBody:
+			"Replace \"Get 20% off\" with \"Don't miss your 20% savings — offer ends Friday.\" Loss-framed CTAs often beat gain-framed ones by roughly 15–30% in A/B tests.",
+	},
+	{
+		anchor: "shorouk-content-strategy",
+		category: "Content Strategy",
+		title:
+			"Why 90% of Content Gets Zero Traffic — And How to Be in the Other 10%",
+		metaLine: "Shorouk Omar · Apr 30, 2026 · 6 min read · Article 02",
+		intro:
+			"Most brands publish content nobody asked for. Here is the framework that flips that — and moves your blog toward real lead generation.",
+		stats: [
+			{ value: "90%", label: "Content gets no meaningful traffic" },
+			{ value: "3×", label: "ROI when strategy leads" },
+			{ value: "~6 mo", label: "Typical runway to traction" },
+		],
+		stepsHeading: "The 4-step framework",
+		steps: [
+			{
+				title: "1. Start with search intent, not random topics",
+				body: "Use Ahrefs or SEMrush to align with queries people actually search. Content that answers real questions tends to rank; purely “creative” ideas often don't.",
+			},
+			{
+				title: "2. Build topic clusters, not one-off posts",
+				body: "One strong pillar (~2k+ words) plus 8–12 cluster posts earns topical authority. Depth usually beats scattering thin articles.",
+			},
+			{
+				title: "3. Repurpose across every channel",
+				body: "One blog becomes a carousel, reel, newsletter, podcast angle — maximize reach without starting from scratch every time.",
+			},
+			{
+				title: "4. Measure what actually matters",
+				body: "Vanity metrics mislead. Watch time-on-page, scroll depth, and leads attributable to each piece.",
+			},
+		],
+		pickHeading: "Pick: Skyscraper technique",
+		pickBody:
+			"Find top-ranking content for your keyword, make yours meaningfully richer (data, structure, examples), then reach out to sites linking to the original. Teams often see backlinks multiply within ~90 days when execution is disciplined.",
+	},
+	{
+		anchor: "shorouk-viral-formula",
+		category: "Social Media Marketing",
+		title: "The Viral Content Formula Nobody Talks About",
+		metaLine: "Shorouk Omar · Apr 30, 2026 · 5 min read · Article 03",
+		intro:
+			"Viral outcomes are rarely random. Patterns show up repeatedly across tens of thousands of posts — here's what differentiated accounts do.",
+		stats: [
+			{ value: "Hook +", label: "Emotion + clarity" },
+			{ value: "1 idea", label: "Per post" },
+			{ value: "Hour 1", label: "Engagement spike window" },
+		],
+		formulaHeading: "Shorouk Omar's formula",
+		formulaLead: "Strong hook + Emotional trigger + Clear value = standout post.",
+		platformsHeading: "Platform snapshots",
+		platforms: [
+			{
+				title: "LinkedIn — B2B",
+				body: "Post Tues–Thu, roughly 7–9 AM. Stories usually outperform announcements; close with a question to drive comments.",
+			},
+			{
+				title: "Instagram — Visual-first",
+				body: "Reels commonly reach farther than still posts. Nail the opening 3 seconds before people scroll.",
+			},
+			{
+				title: "X — Conversation",
+				body: "Threads often beat singles. Opinion + data earns replies; nurture the thread.",
+			},
+			{
+				title: "TikTok — Fast reach",
+				body: "Authenticity beats over-polish. Trending audio can help; momentum often favors daily cadence early on.",
+			},
+		],
+		checklistHeading: "Non-negotiable checklist",
+		checklist: [
+			"Hook in the first beat — opening line stops the scroll.",
+			"One idea per asset — breadth dilutes resonance.",
+			"Build an obvious share cue (tag, save, send to a teammate).",
+			"Stay active in replies during the first hour after posting.",
+		],
+		ctaNote:
+			"Want a 30-day calendar mapped to your brand? Start by applying one article's framework weekly — psychology, intentional content, then distribution discipline.",
+	},
+];
+
+const SHOROUK_ARTICLES_AR: ShoroukArticleSlice[] = [
+	{
+		anchor: "shorouk-consumer-psychology",
+		category: "علم النفس الاستهلاكي",
+		title:
+			"العوامل الخفية التي تجعل الناس يشترون دون أن يدركوا ذلك بالكامل",
+		metaLine: "شروق عمر · 30 أبريل 2026 · 7 دقائق قراءة · المقال 01",
+		intro:
+			"تُتخذ نحو 95٪ من قرارات الشراء في العقل اللاواعي. هكذا تستخدم العلامات القوى الاستدلالية المعرفية بطريقة أخلاقية — ويمكنك أنت ذلك أيضاً.",
+		stats: [
+			{ value: "95%", label: "قرارات لاواعية" },
+			{ value: "٣×", label: "تحويل أعلى" },
+			{ value: "٤٧ ث", label: "متوسط مدة انتباه" },
+		],
+		triggersHeading: "أربعة محفزات انحياز أساسية",
+		triggers: [
+			{
+				title: "تجنّب الخسارة",
+				body: "الناس يخافون من خسارة مبلغ بقدر أكبر تقريباً مما يفرحون بربح مثله. اصاغ العروض على ما سيضيعون إذا لم يتصرفوا — لا المكسب فقط.",
+			},
+			{
+				title: "الدليل الاجتماعي",
+				body: "ننظر إلى الآخرين لنتأكد. التقييمات والمراجعات وإشارات «اشتراه آخرون» تخفّف الإحساس بالمخاطرة.",
+			},
+			{
+				title: "ندرة",
+				body: "عبارات مثل «تبقى القليل» تخلق استعجالاً؛ الندرة تشير إلى قيمة وتحرّك مخاوف الفوات.",
+			},
+			{
+				title: "المقابلة بالجميل",
+				body: "قدّم قيمة أولاً — دليل، تجربة محتوى مفيد — فيشعر الجمهور بند طبيعي للرد بالتفاعل أو الشراء.",
+			},
+		],
+		whyHeading: "لمَ يهم ذلك علامتك؟",
+		whyBody:
+			"فهم الانحيازات ليس مراوغة؛ إنه التقاء مع طريقة تفكير الجمهور. عندما تنسجم رسالتك مع كيف يقرّر الناس عملياً، تقل الاحتكاك وتقوى الثقة.",
+		winHeading: "فوز سريع لحملتك القادمة",
+		winBody:
+			"جرّب استبدال «احصل على خصم 20٪» بـ «لا تفوت توفير 20٪ — ينتهي الجمعة». صياغة الخسارة غالباً تتفوق بـ ١٥–٣٠٪ في تجارب A/B لترويسات البريد.",
+	},
+	{
+		anchor: "shorouk-content-strategy",
+		category: "استراتيجية المحتوى",
+		title:
+			"لماذا يحقق تسعين بالمئة من المحتوى صفر زيارات — وكيف تكون ضمن الباقين؟",
+		metaLine: "شروق عمر · 30 أبريل 2026 · 6 دقائق قراءة · المقال 02",
+		intro:
+			"كثير من العلامات ينشرون ما لم يطلب أحد بحثاً عنه. هذا الإطار يعكس المعادلة ويوجه مدونتك نحو توليد عملاء حقيقيين.",
+		stats: [
+			{ value: "90%", label: "محتوى بلا صدى يذكر" },
+			{ value: "٣×", label: "عائد أعلى عندما تسبق الخطة الإبداعة" },
+			{ value: "~٦ شهور", label: "مدى زمني واقعي للنتائج" },
+		],
+		stepsHeading: "إطار من أربع خطوات",
+		steps: [
+			{
+				title: "١. ابنِ الفكرة على نية البحث وليس عنواناً عشوائياً",
+				body: "استخدم Ahrefs أو SEMrush لمعرفة ما يبحثه الجمهور فعلياً. المحتوى الذي يجيب على أسئلة حقيقية أقرب إلى الترتيب.",
+			},
+			{
+				title: "٢. كتل موضوعات لا مقالات متفرقة",
+				body: "عمود رئيسي (~٢٠٠٠+ كلمة) مع ٨–١٢ مقالاً فرعياً يبني سلطة موضوعية. العمق عادة أفضل من الانتشار الضيق.",
+			},
+			{
+				title: "٣. أعد توظيف المحتوى عبر كل قناة",
+				body: "مقال واحد يصبح كاروسيل وريلاً وبودكاست واختصارات بريد — أقصى وصول مع أقل تكرار من الصفر.",
+			},
+			{
+				title: "٤. القِس ما يهم",
+				body: "مشاهدات الصفحة تخدع. راقب زمن الصفحة وعمق التمرير والعملاء المحتملين المنسبين لكل مقال.",
+			},
+		],
+		pickHeading: "توصيتي: تقنية الناطحة السحابية",
+		pickBody:
+			"اعثر على المحتوى الأعلى تصنيفاً لكلمة بحث هدفك، ثم طور نسختك بتفوق واضطهاد (بيانات، أمثلة، تجربة). تواصل مع المواقع التي تربط الأصل؛ التنفيذ الجيد غالباً يضاعف روابط backlinks خلال حوالي ٩٠ يوماً.",
+	},
+	{
+		anchor: "shorouk-viral-formula",
+		category: "التسويق عبر وسائل التواصل",
+		title:
+			"صياغة المحتوى الفيروسي التي لا يتحدّث عنها الجميع",
+		metaLine: "شروق عمر · 30 أبريل 2026 · 5 دقائق قراءة · المقال 03",
+		intro:
+			"الانتشار الواسع ليس ضربة حظ وحسب. بعد تحليل عشرات آلاف المنشورات، تكرّس أنماط واضحة لما يميّز الحسابات الأفضل.",
+		stats: [
+			{ value: "خطاف+", label: "مشاعر + قيمة واضحة" },
+			{ value: "فكرة", label: "واحدة لكل منشور" },
+			{ value: "ساعة ١", label: "نافذة التفاعل الحرجة" },
+		],
+		formulaHeading: "صيغة شروق عمر",
+		formulaLead: "خطاف قوي + محفّز عاطفي + قيمة واضحة = منشور يبرز.",
+		platformsHeading: "لمحة وفق المنصة",
+		platforms: [
+			{
+				title: "لينكدإن",
+				body: "يُشاع النشر بين الثُّلثاء والخميس حوالي صباحاً. القصص غالباً تتفوق على أخبار الشركة؛ أيّده بسؤال لزيادة التعليقات.",
+			},
+			{
+				title: "إنستغرام",
+				body: "الريلس غالباً يصل أكثر من الصورة الثابتة. احسم أول ثلاث ثوانٍ قبل التمرير.",
+			},
+			{
+				title: "إكس (تويتر)",
+				body: "سلسلة التغريدات غالباً تتفوق على التغريدة الواحدة. عبِّر عن رأي واضح مع رقم؛ تابع النقاش ضمن الخيط.",
+			},
+			{
+				title: "تيك توك",
+				body: "الصدق يضرب التزييف. الصوت أو الترند قد يدفِّع؛ الانتظام في أول ٣٠ يوماً مهّد شائعاً.",
+			},
+		],
+		checklistHeading: "قائمة لا تُستهان بها",
+		checklist: [
+			"الخطّاف في الذروة الأولى من السطر الافتتاحي يوقف التمرير.",
+			"فكرة واحدة لكل أصل؛ محاولة قول كل شيء لا تصل لأحد.",
+			"أضِف دفعاً مشاركة واضحاً (وسم، احفاظ، أو أرسل لزميل).",
+			"تفاعل مع التعليقات في الساعة الأولى بعد النشر.",
+		],
+		ctaNote:
+			"هل تريد تقويم محتوى ٣٠ يوماً وفق هويتك؟ طبّق أسبوعياً عموداً: علم قرار، ثم محتوى قصدياً، ثم الانضباط في النشر والتوزيع.",
+	},
+];
+
+function ShoroukCollectionBody({
+	isArabic,
+	articles,
+}: {
+	isArabic: boolean;
+	articles: ShoroukArticleSlice[];
+}) {
+	const tocIntro = isArabic
+		? "ثلاث مقالات عملية لشروق عمر لوكالة Marketly عن علم نفس الشراء، استراتيجية المحتوى، وفيرالية السوشال."
+		: "Three practical essays by Shorouk Omar around buying psychology, content strategy, and social distribution.";
+
+	const statLabelIntro = isArabic ? "نظرة سريعة" : "Snapshot";
+
+	return (
+		<div className='mt-10 border-t border-dividerOnLight pt-10 lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-10'>
+			<aside className='mb-8 lg:mb-0'>
+				<div className='rounded-2xl border border-dividerOnLight bg-cream/40 p-5 lg:sticky lg:top-24'>
+					<p className='font-manrope text-xs font-semibold uppercase tracking-[0.12em] text-textSecondary'>
+						{isArabic ? "في هذه الصفحة" : "On this page"}
+					</p>
+					<nav aria-label={isArabic ? "جدول المحتوى" : "Table of contents"}>
+						<ol className='mt-3 list-decimal space-y-2 ps-5 font-manrope text-sm text-textSecondary'>
+							{articles.map((article) => (
+								<li key={article.anchor}>
+									<a
+										className='text-brand underline-offset-2 hover:underline'
+										href={`#${article.anchor}`}>
+										{article.title}
+									</a>
+								</li>
+							))}
+						</ol>
+					</nav>
+				</div>
+			</aside>
+
+			<div className='space-y-14'>
+				<section className='rounded-2xl border border-dividerOnLight bg-brand/5 p-6'>
+					<p className='font-manrope text-base leading-relaxed text-textPrimary md:text-lg'>
+						{tocIntro}
+					</p>
+				</section>
+
+				{articles.map((article) => (
+					<section
+						key={article.anchor}
+						id={article.anchor}
+						className='scroll-mt-24 space-y-6 rounded-3xl border border-dividerOnLight bg-surface p-6 shadow-sm md:p-8'>
+						<div>
+							<p className='inline-flex rounded-full bg-brand/10 px-3 py-1 font-manrope text-xs font-semibold uppercase tracking-[0.12em] text-brand'>
+								{article.category}
+							</p>
+							<h2 className='mt-4 font-raleway text-2xl font-semibold tracking-tight text-textPrimary md:text-3xl'>
+								{article.title}
+							</h2>
+							<p className='mt-2 font-manrope text-sm text-textSecondary'>
+								{article.metaLine}
+							</p>
+							<p className='mt-4 font-manrope text-base leading-relaxed text-textSecondary md:text-lg'>
+								{article.intro}
+							</p>
+						</div>
+
+						<div>
+							<p className='font-manrope text-xs font-semibold uppercase tracking-[0.12em] text-textSecondary'>
+								{statLabelIntro}
+							</p>
+							<ul className='mt-3 grid gap-3 sm:grid-cols-3'>
+								{article.stats.map((stat) => (
+									<li
+										key={`${article.anchor}-${stat.label}`}
+										className='rounded-2xl border border-brand/20 bg-gradient-to-b from-brand/10 to-brand/5 px-4 py-4 text-center shadow-sm'>
+										<span className='font-raleway text-2xl font-semibold text-textPrimary'>
+											{stat.value}
+										</span>
+										<p className='mt-1 font-manrope text-xs font-medium text-textSecondary md:text-sm'>
+											{stat.label}
+										</p>
+									</li>
+								))}
+							</ul>
+						</div>
+
+						{article.triggers?.length ? (
+							<div>
+								<h3 className='font-raleway text-xl font-semibold text-textPrimary'>
+									{article.triggersHeading}
+								</h3>
+								<div className='mt-4 grid gap-4 md:grid-cols-2'>
+									{article.triggers.map((item) => (
+										<div
+											key={item.title}
+											className='rounded-2xl border border-dividerOnLight bg-cream/30 p-4'>
+											<p className='font-raleway text-base font-semibold text-textPrimary'>
+												{item.title}
+											</p>
+											<p className='mt-2 font-manrope text-sm leading-relaxed text-textSecondary'>
+												{item.body}
+											</p>
+										</div>
+									))}
+								</div>
+								{article.whyBody ? (
+									<>
+										<h3 className='mt-8 font-raleway text-xl font-semibold text-textPrimary'>
+											{article.whyHeading}
+										</h3>
+										<p className='mt-3 font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
+											{article.whyBody}
+										</p>
+									</>
+								) : null}
+								{article.winBody ? (
+									<div className='rounded-2xl border border-brand/25 bg-brand/5 p-5'>
+										<p className='font-manrope text-sm font-semibold text-textPrimary'>
+											{article.winHeading}
+										</p>
+										<p className='mt-2 font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
+											{article.winBody}
+										</p>
+									</div>
+								) : null}
+							</div>
+						) : null}
+
+						{article.steps?.length ? (
+							<div>
+								<h3 className='font-raleway text-xl font-semibold text-textPrimary'>
+									{article.stepsHeading}
+								</h3>
+								<div className='mt-4 grid gap-4 md:grid-cols-2'>
+									{article.steps.map((step) => (
+										<article
+											key={step.title}
+											className='rounded-2xl border border-dividerOnLight bg-surface p-4 shadow-sm'>
+											<p className='font-manrope text-sm font-semibold text-textPrimary'>
+												{step.title}
+											</p>
+											<p className='mt-2 font-manrope text-sm leading-relaxed text-textSecondary'>
+												{step.body}
+											</p>
+										</article>
+									))}
+								</div>
+								{article.pickBody ? (
+									<div className='mt-6 rounded-2xl border border-dividerOnLight bg-cream/40 p-5'>
+										<p className='font-manrope text-sm font-semibold text-textPrimary'>
+											{article.pickHeading}
+										</p>
+										<p className='mt-2 font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
+											{article.pickBody}
+										</p>
+									</div>
+								) : null}
+							</div>
+						) : null}
+
+						{article.formulaLead ? (
+							<div className='space-y-6'>
+								<div>
+									<h3 className='font-raleway text-xl font-semibold text-textPrimary'>
+										{article.formulaHeading}
+									</h3>
+									<p className='mt-3 rounded-2xl border border-brand/20 bg-brand/10 p-5 font-manrope text-base font-medium text-textPrimary md:text-lg'>
+										{article.formulaLead}
+									</p>
+								</div>
+								{article.platforms?.length ? (
+									<div>
+										<h3 className='font-raleway text-xl font-semibold text-textPrimary'>
+											{article.platformsHeading}
+										</h3>
+										<ul className='mt-4 space-y-3'>
+											{article.platforms.map((p) => (
+												<li
+													key={p.title}
+													className='rounded-2xl border border-dividerOnLight px-4 py-3'>
+													<p className='font-manrope text-sm font-semibold text-textPrimary'>
+														{p.title}
+													</p>
+													<p className='mt-2 font-manrope text-sm leading-relaxed text-textSecondary'>
+														{p.body}
+													</p>
+												</li>
+											))}
+										</ul>
+									</div>
+								) : null}
+								{article.checklist?.length ? (
+									<div>
+										<h3 className='font-raleway text-xl font-semibold text-textPrimary'>
+											{article.checklistHeading}
+										</h3>
+										<ul className='mt-3 list-disc space-y-2 ps-5 font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
+											{article.checklist.map((line) => (
+												<li key={line}>{line}</li>
+											))}
+										</ul>
+									</div>
+								) : null}
+								{article.ctaNote ? (
+									<p className='rounded-2xl border border-brand/25 bg-gradient-to-r from-brand/10 via-brand/5 to-transparent p-5 text-center font-manrope text-sm leading-relaxed text-textPrimary md:text-base'>
+										{article.ctaNote}
+									</p>
+								) : null}
+							</div>
+						) : null}
+					</section>
+				))}
+			</div>
+		</div>
+	);
+}
+
 export function BlogDetailPage() {
 	const { t, i18n } = useTranslation();
 	const params = useParams();
@@ -575,7 +1060,7 @@ export function BlogDetailPage() {
 	}, [index, t]);
 
 	const pageTitle = t("seo.blogPost.title", { title: data.title });
-	const isArabic = i18n.resolvedLanguage?.startsWith("ar");
+	const isArabic = (i18n.resolvedLanguage ?? "").startsWith("ar");
 	const fullArticle =
 		index === 0
 			? isArabic
@@ -590,6 +1075,9 @@ export function BlogDetailPage() {
 						? DESIGN_SYSTEMS_FAQ_ARTICLE_AR
 						: DESIGN_SYSTEMS_FAQ_ARTICLE
 					: null;
+
+	const shoroukCollection =
+		index === 3 ? (isArabic ? SHOROUK_ARTICLES_AR : SHOROUK_ARTICLES_EN) : null;
 
 	return (
 		<FramedPageShell>
@@ -638,7 +1126,12 @@ export function BlogDetailPage() {
 							{data.excerpt}
 						</p>
 
-						{fullArticle ? (
+						{shoroukCollection ? (
+							<ShoroukCollectionBody
+								isArabic={isArabic}
+								articles={shoroukCollection}
+							/>
+						) : fullArticle ? (
 							<div className='mt-10 border-t border-dividerOnLight pt-10 lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-10'>
 								<aside className='mb-8 lg:mb-0'>
 									<div className='rounded-2xl border border-dividerOnLight bg-cream/40 p-5 lg:sticky lg:top-24'>
