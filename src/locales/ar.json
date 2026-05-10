@@ -129,6 +129,9 @@
 		"showAll": "عرض الكل",
 		"showLess": "عرض أقل",
 		"readMore": "اقرأ المزيد",
+		"readArticleLink": "اقرأ المقال: {{title}}",
+		"backToListing": "كل مقالات المدونة",
+		"backToListingAria": "العودة إلى قائمة المدونة — كل المقالات والنصائح",
 		"items": [
 			{
 				"tag": "استراتيجية",

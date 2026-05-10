@@ -129,10 +129,12 @@ export function Blogs() {
 								</p>
 								<Link
 									to={`/blogs/${index}`}
-									className='inline-flex items-center gap-2 text-sm font-semibold text-homerunInk transition-colors group-hover:text-homerunBlue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-homerunBlue/40'>
-									{t("blogs.readMore")}
+									className='inline-flex max-w-[min(100%,16rem)] items-center gap-2 text-end text-sm font-semibold leading-snug text-homerunInk transition-colors group-hover:text-homerunBlue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-homerunBlue/40 sm:max-w-none'>
+									<span className='line-clamp-2 sm:line-clamp-3'>
+										{t("blogs.readArticleLink", { title: item.title })}
+									</span>
 									<ArrowRight
-										className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5'
+										className='size-4 shrink-0 self-end transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 sm:self-center'
 										aria-hidden
 									/>
 								</Link>

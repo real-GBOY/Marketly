@@ -129,6 +129,9 @@
 		"showAll": "Show all",
 		"showLess": "Show less",
 		"readMore": "Read more",
+		"readArticleLink": "Read article: {{title}}",
+		"backToListing": "All blog articles",
+		"backToListingAria": "Back to blog listing — all articles and insights",
 		"items": [
 			{
 				"tag": "Strategy",

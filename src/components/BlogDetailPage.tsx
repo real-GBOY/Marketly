@@ -1104,9 +1104,10 @@ export function BlogDetailPage() {
 				<div className='mb-6 flex items-center gap-3'>
 					<Link
 						to='/blogs'
+						aria-label={t("blogs.backToListingAria")}
 						className='inline-flex items-center gap-2 text-sm font-semibold text-textPrimary transition hover:text-brand rtl:flex-row-reverse'>
-						<ArrowLeft className='size-4' aria-hidden />
-						<span>{t("blogs.readMore")}</span>
+						<ArrowLeft className='size-4 shrink-0' aria-hidden />
+						<span>{t("blogs.backToListing")}</span>
 					</Link>
 				</div>
 
