@@ -13,6 +13,12 @@ export type SeoProps = {
 	/** Path under site root for OG image, or absolute URL. */
 	imagePath?: string;
 	ogType?: "website" | "article";
+	/** ISO 8601 — sets `article:published_time` when `ogType` is `article`. */
+	articlePublishedTime?: string;
+	/** ISO 8601 — sets `article:modified_time` when `ogType` is `article`. */
+	articleModifiedTime?: string;
+	/** One or more JSON-LD objects (BlogPosting, ItemList, etc.). */
+	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 	noindex?: boolean;
 };
 
@@ -22,6 +28,9 @@ export function Seo({
 	path,
 	imagePath = DEFAULT_OG_IMAGE_PATH,
 	ogType = "website",
+	articlePublishedTime,
+	articleModifiedTime,
+	jsonLd,
 	noindex,
 }: SeoProps) {
 	const { i18n } = useTranslation();
@@ -30,6 +39,11 @@ export function Seo({
 	const canonical = absoluteUrl(pathname);
 	const ogImage = absoluteUrl(imagePath);
 	const ogLocale = i18n.resolvedLanguage === "ar" ? "ar_AR" : "en_US";
+	const jsonLdBlocks = jsonLd
+		? Array.isArray(jsonLd)
+			? jsonLd
+			: [jsonLd]
+		: [];
 
 	return (
 		<Helmet>
@@ -49,11 +63,25 @@ export function Seo({
 			<meta property='og:image' content={ogImage} />
 			<meta property='og:locale' content={ogLocale} />
 			<meta property='og:site_name' content={i18n.t("seo.siteName")} />
+			{ogType === "article" && articlePublishedTime ? (
+				<meta property='article:published_time' content={articlePublishedTime} />
+			) : null}
+			{ogType === "article" && articleModifiedTime ? (
+				<meta property='article:modified_time' content={articleModifiedTime} />
+			) : null}
 
 			<meta name='twitter:card' content='summary_large_image' />
 			<meta name='twitter:title' content={title} />
 			<meta name='twitter:description' content={description} />
 			<meta name='twitter:image' content={ogImage} />
+
+			{jsonLdBlocks.map((block, i) => (
+				<script
+					key={`jsonld-${String(block["@type"] ?? "Thing")}-${i}`}
+					type='application/ld+json'>
+					{JSON.stringify(block)}
+				</script>
+			))}
 		</Helmet>
 	);
 }

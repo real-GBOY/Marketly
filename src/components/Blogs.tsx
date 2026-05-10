@@ -13,6 +13,7 @@ import {
 	homeSecondaryCta,
 	homeSectionPad,
 } from "../theme/homepageSections";
+import { BLOG_POST_COUNT } from "../lib/blogSeo";
 import { BoxReveal } from "./BoxReveal";
 
 type BlogItem = {
@@ -24,7 +25,6 @@ type BlogItem = {
 	imageUrl: string;
 };
 
-const ITEMS_COUNT = 4;
 const DEFAULT_VISIBLE_COUNT = 3;
 
 export function Blogs() {
@@ -34,7 +34,7 @@ export function Blogs() {
 
 	const items = useMemo<BlogItem[]>(
 		() =>
-			Array.from({ length: ITEMS_COUNT }, (_, i) => ({
+			Array.from({ length: BLOG_POST_COUNT }, (_, i) => ({
 				tag: t(`blogs.items.${i}.tag`),
 				title: t(`blogs.items.${i}.title`),
 				excerpt: t(`blogs.items.${i}.excerpt`),

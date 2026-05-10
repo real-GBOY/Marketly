@@ -25,7 +25,7 @@ const TEAM_PHOTO_FALLBACK: Record<string, string> = {
 	amira:
 		"https://i.postimg.cc/ZnWfrL7z/Whats-App-Image-2026-05-08-at-10-19-10-(1).jpg",
 	salma:
-		"https://i.postimg.cc/ZR1DskqK/Whats-App-Image-2026-04-04-at-22-30-58.jpg",
+		"https://i.postimg.cc/66ZCF37T/Whats-App-Image-2026-05-11-at-02-41-34.jpg",
 	nesma:
 		"https://i.postimg.cc/mZSZqygw/Whats-App-Image-2026-05-08-at-10-19-09-(1).jpg",
 	ola: "https://i.postimg.cc/Dztmvv9F/Whats-App-Image-2026-05-08-at-10-48-52.jpg",

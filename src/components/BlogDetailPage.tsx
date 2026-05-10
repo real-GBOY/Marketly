@@ -8,13 +8,16 @@ import {
 	MARKETING_EXCELLENCE_SERIES_AR,
 	MARKETING_EXCELLENCE_SERIES_EN,
 } from "../blog/marketingExcellence2026";
+import {
+	BLOG_POST_COUNT as ITEMS_COUNT,
+	BLOG_POST_PUBLISHED_ISO,
+} from "../lib/blogSeo";
 import { BLOG_HERO_IMAGE_URL } from "../lib/blogHeroImage";
+import { absoluteUrl, DEFAULT_OG_IMAGE_PATH } from "../lib/siteUrl";
 import type { ShoroukArticleSlice } from "../types/blogCollectionArticle";
 import { Footer } from "./Footer";
 import { FramedPageShell } from "./FramedPageShell";
 import { Seo } from "./Seo";
-
-const ITEMS_COUNT = 4;
 
 const CONTENT_STRATEGY_ARTICLE = {
 	intro:
@@ -1019,6 +1022,39 @@ export function BlogDetailPage() {
 
 	const pageTitle = t("seo.blogPost.title", { title: data.title });
 	const isArabic = (i18n.resolvedLanguage ?? "").startsWith("ar");
+
+	const blogPostingJsonLd = useMemo(() => {
+		const pageUrl = absoluteUrl(`/blogs/${index}`);
+		const siteName = t("seo.siteName");
+		return {
+			"@context": "https://schema.org",
+			"@type": "BlogPosting",
+			headline: data.title,
+			description: data.excerpt,
+			image: [absoluteUrl(BLOG_HERO_IMAGE_URL)],
+			url: pageUrl,
+			datePublished: BLOG_POST_PUBLISHED_ISO[index],
+			dateModified: BLOG_POST_PUBLISHED_ISO[index],
+			author: {
+				"@type": "Organization",
+				name: siteName,
+			},
+			publisher: {
+				"@type": "Organization",
+				name: siteName,
+				logo: {
+					"@type": "ImageObject",
+					url: absoluteUrl(DEFAULT_OG_IMAGE_PATH),
+				},
+			},
+			mainEntityOfPage: {
+				"@type": "WebPage",
+				"@id": pageUrl,
+			},
+			keywords: data.tag,
+			articleSection: data.tag,
+		};
+	}, [data.excerpt, data.tag, data.title, index, t]);
 	const fullArticle =
 		index === 0
 			? isArabic
@@ -1060,6 +1096,9 @@ export function BlogDetailPage() {
 				path={`/blogs/${index}`}
 				imagePath={BLOG_HERO_IMAGE_URL}
 				ogType='article'
+				articlePublishedTime={BLOG_POST_PUBLISHED_ISO[index]}
+				articleModifiedTime={BLOG_POST_PUBLISHED_ISO[index]}
+				jsonLd={blogPostingJsonLd}
 			/>
 			<main className='mx-auto max-w-[1920px] px-5 py-10 text-charcoal md:px-9 md:py-14 lg:px-[120px]'>
 				<div className='mb-6 flex items-center gap-3'>
