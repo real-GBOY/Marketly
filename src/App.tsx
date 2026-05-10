@@ -54,14 +54,16 @@ function HomePage() {
 			<OrganizationJsonLd />
 			<div className='relative mx-auto w-full max-w-[1920px] rounded-[1.75rem] border border-black/[0.06] bg-white shadow-[0_16px_80px_rgba(0,0,0,0.09)] sm:rounded-[2.25rem] md:rounded-[3rem]'>
 				<HomerunHeroNav />
-				<Hero />
-				<WhyMarketlyStickyStack />
-				<About />
-				<SuccessStories />
-				<Blogs />
-				<PreContactCta />
-				<Contact />
-				<Footer />
+				<main id='main-content' tabIndex={-1} className='min-w-0'>
+					<Hero />
+					<WhyMarketlyStickyStack />
+					<About />
+					<SuccessStories />
+					<Blogs />
+					<PreContactCta />
+					<Contact />
+					<Footer />
+				</main>
 			</div>
 		</div>
 	);

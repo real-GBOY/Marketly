@@ -83,13 +83,13 @@ export function TeamPage() {
 						<h1 className='font-raleway text-4xl font-semibold tracking-tight text-white md:text-5xl lg:text-6xl'>
 							{t("teamPage.heading")}
 						</h1>
-						<p className='mx-auto mt-4 max-w-[68ch] font-manrope text-base leading-relaxed text-white/80 md:text-lg'>
+						<p className='mx-auto mt-4 max-w-[68ch] font-manrope text-base leading-relaxed text-white md:text-lg'>
 							{t("teamPage.subtitle")}
 						</p>
 					</div>
 				</section>
 
-				<main
+				<section
 					className='relative mx-auto max-w-[1920px] px-5 py-12 md:px-9 md:py-16 lg:px-[137px]'
 					aria-label={t("teamPage.mainAria")}>
 					<ul className='grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
@@ -118,7 +118,7 @@ export function TeamPage() {
 										<h2 className='font-raleway text-sm font-semibold leading-tight tracking-tight text-white md:text-base'>
 											{member.name}
 										</h2>
-										<p className='mt-0.5 font-manrope text-xs font-medium text-white/75'>
+										<p className='mt-0.5 font-manrope text-xs font-medium text-white'>
 											{member.role}
 										</p>
 									</div>
@@ -126,7 +126,7 @@ export function TeamPage() {
 							</motion.li>
 						))}
 					</ul>
-				</main>
+				</section>
 
 				<Footer />
 			</div>

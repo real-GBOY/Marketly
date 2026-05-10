@@ -75,20 +75,20 @@ function StackCard({
 					<div className='grid gap-6 p-5 md:grid-cols-[1.1fr_1.2fr] md:items-stretch md:gap-10 md:p-8 lg:grid-cols-[1.2fr_1.35fr]'>
 						<div className='relative z-10 flex min-h-0 min-w-0 flex-col justify-between gap-6'>
 							<div>
-								<p className='font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-white/85'>
+								<p className='font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-white'>
 									{role}
 								</p>
 								<h3 className='mt-3 font-raleway text-2xl font-semibold tracking-tight text-white md:text-3xl lg:text-4xl'>
 									{title}
 								</h3>
-								<p className='mt-4 max-w-[64ch] font-manrope text-sm leading-relaxed text-white/85 md:text-base lg:text-lg lg:leading-relaxed'>
+								<p className='mt-4 max-w-[64ch] font-manrope text-sm leading-relaxed text-white md:text-base md:leading-relaxed lg:text-lg lg:leading-relaxed'>
 									{description}
 								</p>
 							</div>
 
 							<Link
 								to='/contact'
-								className='inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 font-manrope text-sm font-semibold text-white transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40'>
+								className='inline-flex w-fit items-center gap-2 rounded-full border-2 border-white/50 bg-white/20 px-4 py-2 font-manrope text-sm font-semibold text-white shadow-sm transition hover:border-white/70 hover:bg-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent'>
 								{ctaLabel}
 								<span aria-hidden>→</span>
 							</Link>

@@ -1100,7 +1100,7 @@ export function BlogDetailPage() {
 				articleModifiedTime={BLOG_POST_PUBLISHED_ISO[index]}
 				jsonLd={blogPostingJsonLd}
 			/>
-			<main className='mx-auto max-w-[1920px] px-5 py-10 text-charcoal md:px-9 md:py-14 lg:px-[120px]'>
+			<div className='mx-auto max-w-[1920px] px-5 py-10 text-charcoal md:px-9 md:py-14 lg:px-[120px]'>
 				<div className='mb-6 flex items-center gap-3'>
 					<Link
 						to='/blogs'
@@ -1276,7 +1276,7 @@ export function BlogDetailPage() {
 						:	null}
 					</div>
 				</article>
-			</main>
+			</div>
 
 			<Footer />
 		</FramedPageShell>
