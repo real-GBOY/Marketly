@@ -16,11 +16,9 @@ import {
 } from "../theme/homepageSections";
 import { BoxReveal } from "./BoxReveal";
 
-// Local assets (replaces remote image URLs)
-const IMG_A = new URL(
-	"../../assets/9caf5948-a733-47de-9d1d-70809876d17e.jpg",
-	import.meta.url,
-).href;
+/** Home About team stack cards (all roles). */
+const TEAM_STACK_CARD_IMAGE =
+	"https://i.postimg.cc/dV60yRgg/e.jpg";
 
 type StackCardData = {
 	title: string;
@@ -139,28 +137,28 @@ export function About() {
 				title: t("about.team.0.name"),
 				role: t("about.team.0.role"),
 				description: t("about.team.0.bio"),
-				imageUrl: IMG_A,
+				imageUrl: TEAM_STACK_CARD_IMAGE,
 				colorClass: "bg-[#5a82ff]",
 			},
 			{
 				title: t("about.team.1.name"),
 				role: t("about.team.1.role"),
 				description: t("about.team.1.bio"),
-				imageUrl: IMG_A,
+				imageUrl: TEAM_STACK_CARD_IMAGE,
 				colorClass: "bg-[#4B73FF]",
 			},
 			{
 				title: t("about.team.2.name"),
 				role: t("about.team.2.role"),
 				description: t("about.team.2.bio"),
-				imageUrl: IMG_A,
+				imageUrl: TEAM_STACK_CARD_IMAGE,
 				colorClass: "bg-[#382260]",
 			},
 			{
 				title: t("about.team.3.name"),
 				role: t("about.team.3.role"),
 				description: t("about.team.3.bio"),
-				imageUrl: IMG_A,
+				imageUrl: TEAM_STACK_CARD_IMAGE,
 				colorClass: "bg-[#2D2926]",
 			},
 		],

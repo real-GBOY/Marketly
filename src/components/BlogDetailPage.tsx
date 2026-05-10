@@ -4,14 +4,15 @@ import { ArrowLeft } from "lucide-react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
+import {
+	MARKETING_EXCELLENCE_SERIES_AR,
+	MARKETING_EXCELLENCE_SERIES_EN,
+} from "../blog/marketingExcellence2026";
+import { BLOG_HERO_IMAGE_URL } from "../lib/blogHeroImage";
+import type { ShoroukArticleSlice } from "../types/blogCollectionArticle";
 import { Footer } from "./Footer";
 import { FramedPageShell } from "./FramedPageShell";
 import { Seo } from "./Seo";
-
-const OFFICE_IMG = new URL(
-	"../../assets/9caf5948-a733-47de-9d1d-70809876d17e.jpg",
-	import.meta.url,
-).href;
 
 const ITEMS_COUNT = 4;
 
@@ -200,7 +201,7 @@ const CONTENT_STRATEGY_ARTICLE_AR = {
 
 const DESIGN_SYSTEMS_ARTICLE = {
 	intro:
-		"Marketing teams waste hundreds of hours recreating assets from scratch: mismatched fonts, off-brand colors, and inconsistent button styles. A well-built design system removes this friction and helps teams move faster without sacrificing brand consistency.",
+		"Marketing teams waste hundreds of hours recreating assets from scratch: mismatched fonts, off-brand colors, and inconsistent button styles. A well-built design system removes this friction and helps teams move faster without sacrificing brand consistency.\n\nThe most searched questions around marketing design systems are often the same blockers teams face during adoption. The second half of this guide answers them in a practical, implementation-first way—ideal for People Also Ask-style SEO and internal enablement.",
 	toc: [
 		"Why marketing teams need design systems",
 		"The 5 core elements to standardize",
@@ -208,11 +209,21 @@ const DESIGN_SYSTEMS_ARTICLE = {
 		"Common standardization mistakes",
 		"How to roll it out across your team",
 		"Call to action",
+		"People Also Ask — top-searched questions, implementation-first",
+		"What is a design system for marketing teams?",
+		"What should be standardized in a marketing design system?",
+		"How is a design system different from a brand style guide?",
+		"How long does it take to build a marketing design system?",
+		"What tools do marketing teams use?",
+		"How do you drive team adoption?",
 	],
 	quickStats: [
 		"Campaigns can launch up to 3x faster with strong design systems",
 		"Higher brand recognition within 12 months of implementation",
 		"Production time drops when reusable components replace ad-hoc design",
+		"Design systems can reduce design production time by up to 50%",
+		"Figma + Notion can cover around 80% of team operational needs",
+		"Training workshops can increase adoption by up to 3x",
 	],
 	commonFailures: [
 		"Over-documenting instead of building scannable, usable standards",
@@ -220,6 +231,11 @@ const DESIGN_SYSTEMS_ARTICLE = {
 		"Designing in a vacuum without team input",
 		"Treating the system as a one-time project",
 		"Standardizing everything and leaving no room for creativity",
+		"Building rules without reusable components teams can apply immediately",
+		"Launching too big instead of starting with a focused v1",
+		"No ownership model for updates, maintenance, and governance",
+		"Skipping enablement and expecting adoption to happen automatically",
+		"Not aligning system decisions with day-to-day campaign workflows",
 	],
 	steps: [
 		{
@@ -246,159 +262,6 @@ const DESIGN_SYSTEMS_ARTICLE = {
 			title: "Evolve continuously",
 			body: "Update your system as your brand evolves to keep it relevant and trusted.",
 		},
-	],
-	seoBestPractices: [
-		"Document typography rules with exact sizes, weights, and line heights",
-		"Define a tokenized color palette with canonical hex values",
-		"Set logo clearspace and misuse examples to prevent brand drift",
-		"Standardize image style with visual do/don't references",
-		"Ship reusable UI components for common campaign patterns",
-		"Pair every guideline with real component examples in the design library",
-		"Keep docs lightweight, searchable, and connected to daily workflows",
-	],
-	metrics: [
-		"Time-to-launch per campaign before vs. after system adoption",
-		"Asset reusability rate across channels and teams",
-		"Brand consistency score in design/QA reviews",
-		"Design handoff revision rounds per campaign",
-		"Adoption rate of approved templates and components",
-		"Content production throughput without quality regression",
-	],
-	faq: [
-		{
-			question: "What should be standardized first?",
-			answer:
-				"Start with the highest-impact and most-repeated assets: typography, color tokens, logo usage, and top UI components.",
-		},
-		{
-			question: "Do we need both guidelines and components?",
-			answer:
-				"Yes. Guidelines define the rules, and components are reusable implementations of those rules.",
-		},
-		{
-			question: "How do we keep the system from going stale?",
-			answer:
-				"Assign clear ownership, establish review cycles, and include active contributors from marketing and design teams.",
-		},
-		{
-			question: "How big should the first version be?",
-			answer:
-				"Keep V1 intentionally small and useful. A tight set of core standards outperforms a giant unused documentation set.",
-		},
-	],
-};
-
-const DESIGN_SYSTEMS_ARTICLE_AR = {
-	intro:
-		"فرق التسويق تهدر ساعات طويلة في إعادة تصميم الأصول من الصفر: خطوط غير متسقة، ألوان خارج الهوية، وأزرار مختلفة في كل حملة. نظام تصميم جيد يقلل الفوضى ويزيد سرعة التنفيذ مع الحفاظ على ثبات العلامة.",
-	toc: [
-		"لماذا تحتاج فرق التسويق إلى Design System؟",
-		"ما العناصر الخمسة الأساسية التي يجب توحيدها؟",
-		"ما الفرق بين المكونات والإرشادات؟",
-		"أخطاء شائعة في التوحيد",
-		"كيف تطبّق النظام داخل الفريق؟",
-		"دعوة للبدء",
-	],
-	quickStats: [
-		"الحملات قد تنطلق بسرعة تصل إلى 3x مع نظام تصميم قوي",
-		"تحسن ملحوظ في تميّز العلامة خلال 12 شهراً",
-		"تقليل وقت الإنتاج عبر الأصول القابلة لإعادة الاستخدام",
-	],
-	commonFailures: [
-		"الإفراط في التوثيق بدل بناء نظام عملي",
-		"غياب مالك واضح للنظام",
-		"تصميم النظام بعيداً عن احتياجات الفرق",
-		"اعتبار النظام مشروعاً مؤقتاً لا يتطور",
-		"محاولة توحيد كل شيء ومنع المرونة الإبداعية",
-	],
-	steps: [
-		{
-			title: "المرحلة 1: المراجعة Audit",
-			body: "اجمع الأصول الحالية وحدد الاختلافات والمكونات الأكثر تكراراً.",
-		},
-		{
-			title: "المرحلة 2: التعريف Define",
-			body: "اتفق على القرارات الأساسية: الألوان، الخطوط، والمكونات المحورية.",
-		},
-		{
-			title: "المرحلة 3: البناء Build",
-			body: "أنشئ مكتبة Figma، والـ tokens، ومركز التوثيق. ابدأ صغيراً وعملياً.",
-		},
-		{
-			title: "المرحلة 4: التدريب Train",
-			body: "نفّذ ورش عمل تُظهر كيف يوفّر النظام الوقت ويُسهّل العمل اليومي.",
-		},
-		{
-			title: "ابدأ بمكاسب سريعة",
-			body: "وحّد أهم 10 أصول مستخدمة أولاً لبناء زخم اعتماد داخلي.",
-		},
-		{
-			title: "طوّر النظام باستمرار",
-			body: "حدّث النظام مع تطور الهوية واحتياجات الحملات.",
-		},
-	],
-	seoBestPractices: [
-		"وثّق قواعد Typography بأحجام وأوزان واضحة",
-		"عرّف Color Tokens دقيقة ومعتمدة",
-		"حدد قواعد استخدام الشعار والأخطاء الممنوعة",
-		"وحّد أسلوب الصور والأمثلة الصحيحة والخاطئة",
-		"وفّر مكونات جاهزة للحملات المتكررة",
-		"اربط كل Guideline بمكوّن فعلي داخل المكتبة",
-		"اجعل التوثيق قصيراً وقابلاً للبحث وسهل التطبيق",
-	],
-	metrics: [
-		"زمن إطلاق الحملة قبل وبعد النظام",
-		"نسبة إعادة استخدام الأصول بين الفرق",
-		"مستوى الاتساق البصري في مراجعات الجودة",
-		"عدد جولات التعديل قبل الإطلاق",
-		"نسبة تبنّي القوالب والمكونات المعتمدة",
-		"زيادة الإنتاجية دون تراجع الجودة",
-	],
-	faq: [
-		{
-			question: "ما أول ما يجب توحيده؟",
-			answer:
-				"ابدأ بالعناصر الأكثر تأثيراً وتكراراً: الخطوط، الألوان، الشعار، والمكونات الأساسية.",
-		},
-		{
-			question: "هل نحتاج Guidelines وComponents معاً؟",
-			answer: "نعم. الإرشادات تحدد القواعد، والمكونات تطبقها بشكل جاهز وقابل لإعادة الاستخدام.",
-		},
-		{
-			question: "كيف نمنع النظام من أن يصبح قديماً؟",
-			answer: "بتعيين مسؤول واضح ومراجعات دورية وتعاون مستمر مع الفرق المستخدمة.",
-		},
-		{
-			question: "ما حجم النسخة الأولى؟",
-			answer: "نسخة صغيرة عملية أفضل من نظام ضخم لا يستخدمه أحد.",
-		},
-	],
-};
-
-const DESIGN_SYSTEMS_FAQ_ARTICLE = {
-	intro:
-		"The most searched questions around marketing design systems are often the same blockers teams face during adoption. This FAQ section answers them in a practical, implementation-first way so teams can standardize faster and avoid common rollout mistakes.",
-	toc: [
-		"What is a design system for marketing teams?",
-		"What should be standardized in a marketing design system?",
-		"How is a design system different from a brand style guide?",
-		"How long does it take to build a marketing design system?",
-		"What tools do marketing teams use?",
-		"How do you drive team adoption?",
-	],
-	quickStats: [
-		"Design systems can reduce design production time by up to 50%",
-		"Figma + Notion can cover around 80% of team operational needs",
-		"Training workshops can increase adoption by up to 3x",
-	],
-	commonFailures: [
-		"Building rules without reusable components teams can apply immediately",
-		"Launching too big instead of starting with a focused v1",
-		"No ownership model for updates, maintenance, and governance",
-		"Skipping enablement and expecting adoption to happen automatically",
-		"Not aligning system decisions with day-to-day campaign workflows",
-	],
-	steps: [
 		{
 			title: "What is a design system for marketing teams?",
 			body: "A shared library of reusable assets, rules, and guidelines that keeps ads, emails, landing pages, and social content consistent with your brand.",
@@ -425,6 +288,13 @@ const DESIGN_SYSTEMS_FAQ_ARTICLE = {
 		},
 	],
 	seoBestPractices: [
+		"Document typography rules with exact sizes, weights, and line heights",
+		"Define a tokenized color palette with canonical hex values",
+		"Set logo clearspace and misuse examples to prevent brand drift",
+		"Standardize image style with visual do/don't references",
+		"Ship reusable UI components for common campaign patterns",
+		"Pair every guideline with real component examples in the design library",
+		"Keep docs lightweight, searchable, and connected to daily workflows",
 		"Structure FAQ content using concise question-first headings",
 		"Include implementation-ready answers, not only definitions",
 		"Add FAQ schema markup to increase rich-result eligibility",
@@ -433,6 +303,12 @@ const DESIGN_SYSTEMS_FAQ_ARTICLE = {
 		"Refresh high-performing FAQs based on new team questions",
 	],
 	metrics: [
+		"Time-to-launch per campaign before vs. after system adoption",
+		"Asset reusability rate across channels and teams",
+		"Brand consistency score in design/QA reviews",
+		"Design handoff revision rounds per campaign",
+		"Adoption rate of approved templates and components",
+		"Content production throughput without quality regression",
 		"FAQ organic impressions and click-through rate over time",
 		"Rich snippet and People Also Ask appearance frequency",
 		"Time-to-answer for internal team onboarding questions",
@@ -441,6 +317,26 @@ const DESIGN_SYSTEMS_FAQ_ARTICLE = {
 		"Content production speed and quality consistency post rollout",
 	],
 	faq: [
+		{
+			question: "What should be standardized first?",
+			answer:
+				"Start with the highest-impact and most-repeated assets: typography, color tokens, logo usage, and top UI components.",
+		},
+		{
+			question: "Do we need both guidelines and components?",
+			answer:
+				"Yes. Guidelines define the rules, and components are reusable implementations of those rules.",
+		},
+		{
+			question: "How do we keep the system from going stale?",
+			answer:
+				"Assign clear ownership, establish review cycles, and include active contributors from marketing and design teams.",
+		},
+		{
+			question: "How big should the first version be?",
+			answer:
+				"Keep V1 intentionally small and useful. A tight set of core standards outperforms a giant unused documentation set.",
+		},
 		{
 			question: "What is a design system for marketing teams?",
 			answer:
@@ -464,10 +360,17 @@ const DESIGN_SYSTEMS_FAQ_ARTICLE = {
 	],
 };
 
-const DESIGN_SYSTEMS_FAQ_ARTICLE_AR = {
+const DESIGN_SYSTEMS_ARTICLE_AR = {
 	intro:
-		"أكثر الأسئلة بحثاً حول أنظمة التصميم التسويقية غالباً هي نفس التحديات التي تعطل التنفيذ داخل الفرق. هذا الدليل يقدّم إجابات عملية تساعدك على التطبيق السريع.",
+		"فرق التسويق تهدر ساعات طويلة في إعادة تصميم الأصول من الصفر: خطوط غير متسقة، ألوان خارج الهوية، وأزرار مختلفة في كل حملة. نظام تصميم جيد يقلل الفوضى ويزيد سرعة التنفيذ مع الحفاظ على ثبات العلامة.\n\nأكثر الأسئلة بحثاً حول أنظمة التصميم التسويقية غالباً هي نفس التحديات التي تعطل التنفيذ داخل الفرق. النصف الثاني من هذا الدليل يجيب عنها بأسلوب عملي أولاً—مناسب لـPeople Also Ask ولتمكين الفريق.",
 	toc: [
+		"لماذا تحتاج فرق التسويق إلى Design System؟",
+		"ما العناصر الخمسة الأساسية التي يجب توحيدها؟",
+		"ما الفرق بين المكونات والإرشادات؟",
+		"أخطاء شائعة في التوحيد",
+		"كيف تطبّق النظام داخل الفريق؟",
+		"دعوة للبدء",
+		"People Also Ask — أسئلة بحث شائعة بإجابات قابلة للتطبيق",
 		"ما هو Design System لفرق التسويق؟",
 		"ما الذي يجب توحيده أولاً؟",
 		"ما الفرق بين Design System وBrand Guide؟",
@@ -476,11 +379,19 @@ const DESIGN_SYSTEMS_FAQ_ARTICLE_AR = {
 		"كيف نضمن تبنّي الفريق له؟",
 	],
 	quickStats: [
+		"الحملات قد تنطلق بسرعة تصل إلى 3x مع نظام تصميم قوي",
+		"تحسن ملحوظ في تميّز العلامة خلال 12 شهراً",
+		"تقليل وقت الإنتاج عبر الأصول القابلة لإعادة الاستخدام",
 		"قد يقل وقت الإنتاج التصميمي حتى 50%",
 		"Figma + Notion يغطيان احتياج أغلب الفرق",
 		"ورش التدريب قد ترفع الاعتماد حتى 3x",
 	],
 	commonFailures: [
+		"الإفراط في التوثيق بدل بناء نظام عملي",
+		"غياب مالك واضح للنظام",
+		"تصميم النظام بعيداً عن احتياجات الفرق",
+		"اعتبار النظام مشروعاً مؤقتاً لا يتطور",
+		"محاولة توحيد كل شيء ومنع المرونة الإبداعية",
 		"توثيق القواعد دون توفير مكونات جاهزة",
 		"إطلاق كبير ومعقد بدلاً من نسخة أولى مركزة",
 		"غياب الحوكمة والمسؤولية الواضحة",
@@ -488,6 +399,30 @@ const DESIGN_SYSTEMS_FAQ_ARTICLE_AR = {
 		"عدم مواءمة النظام مع طريقة عمل الفريق اليومية",
 	],
 	steps: [
+		{
+			title: "المرحلة 1: المراجعة Audit",
+			body: "اجمع الأصول الحالية وحدد الاختلافات والمكونات الأكثر تكراراً.",
+		},
+		{
+			title: "المرحلة 2: التعريف Define",
+			body: "اتفق على القرارات الأساسية: الألوان، الخطوط، والمكونات المحورية.",
+		},
+		{
+			title: "المرحلة 3: البناء Build",
+			body: "أنشئ مكتبة Figma، والـ tokens، ومركز التوثيق. ابدأ صغيراً وعملياً.",
+		},
+		{
+			title: "المرحلة 4: التدريب Train",
+			body: "نفّذ ورش عمل تُظهر كيف يوفّر النظام الوقت ويُسهّل العمل اليومي.",
+		},
+		{
+			title: "ابدأ بمكاسب سريعة",
+			body: "وحّد أهم 10 أصول مستخدمة أولاً لبناء زخم اعتماد داخلي.",
+		},
+		{
+			title: "طوّر النظام باستمرار",
+			body: "حدّث النظام مع تطور الهوية واحتياجات الحملات.",
+		},
 		{
 			title: "ما هو Design System للتسويق؟",
 			body: "مصدر موحد للهوية البصرية واللفظية مع أصول قابلة لإعادة الاستخدام عبر القنوات.",
@@ -514,6 +449,13 @@ const DESIGN_SYSTEMS_FAQ_ARTICLE_AR = {
 		},
 	],
 	seoBestPractices: [
+		"وثّق قواعد Typography بأحجام وأوزان واضحة",
+		"عرّف Color Tokens دقيقة ومعتمدة",
+		"حدد قواعد استخدام الشعار والأخطاء الممنوعة",
+		"وحّد أسلوب الصور والأمثلة الصحيحة والخاطئة",
+		"وفّر مكونات جاهزة للحملات المتكررة",
+		"اربط كل Guideline بمكوّن فعلي داخل المكتبة",
+		"اجعل التوثيق قصيراً وقابلاً للبحث وسهل التطبيق",
 		"استخدم صياغة سؤال/جواب واضحة وقصيرة",
 		"قدّم إجابات قابلة للتنفيذ وليست تعريفات عامة فقط",
 		"أضف FAQ Schema لتحسين فرص الظهور المميز",
@@ -522,6 +464,12 @@ const DESIGN_SYSTEMS_FAQ_ARTICLE_AR = {
 		"حدّث الأسئلة باستمرار وفق أسئلة الفريق الجديدة",
 	],
 	metrics: [
+		"زمن إطلاق الحملة قبل وبعد النظام",
+		"نسبة إعادة استخدام الأصول بين الفرق",
+		"مستوى الاتساق البصري في مراجعات الجودة",
+		"عدد جولات التعديل قبل الإطلاق",
+		"نسبة تبنّي القوالب والمكونات المعتمدة",
+		"زيادة الإنتاجية دون تراجع الجودة",
 		"مرات الظهور والنقر لصفحات FAQ",
 		"معدل الظهور في Rich Snippets وPeople Also Ask",
 		"خفض وقت الرد على أسئلة الفرق الداخلية",
@@ -530,6 +478,23 @@ const DESIGN_SYSTEMS_FAQ_ARTICLE_AR = {
 		"تحسن سرعة الإنتاج مع الحفاظ على الجودة",
 	],
 	faq: [
+		{
+			question: "ما أول ما يجب توحيده؟",
+			answer:
+				"ابدأ بالعناصر الأكثر تأثيراً وتكراراً: الخطوط، الألوان، الشعار، والمكونات الأساسية.",
+		},
+		{
+			question: "هل نحتاج Guidelines وComponents معاً؟",
+			answer: "نعم. الإرشادات تحدد القواعد، والمكونات تطبقها بشكل جاهز وقابل لإعادة الاستخدام.",
+		},
+		{
+			question: "كيف نمنع النظام من أن يصبح قديماً؟",
+			answer: "بتعيين مسؤول واضح ومراجعات دورية وتعاون مستمر مع الفرق المستخدمة.",
+		},
+		{
+			question: "ما حجم النسخة الأولى؟",
+			answer: "نسخة صغيرة عملية أفضل من نظام ضخم لا يستخدمه أحد.",
+		},
 		{
 			question: "ما هو نظام التصميم لفرق التسويق؟",
 			answer:
@@ -551,35 +516,6 @@ const DESIGN_SYSTEMS_FAQ_ARTICLE_AR = {
 				"بالمشاركة المبكرة، التدريب، الملكية الواضحة، وجعل استخدام النظام أسرع من البدائل.",
 		},
 	],
-};
-
-type ShoroukStat = { label: string; value: string };
-type ShoroukTrigger = { title: string; body: string };
-
-type ShoroukArticleSlice = {
-	anchor: string;
-	category: string;
-	title: string;
-	metaLine: string;
-	intro: string;
-	stats: ShoroukStat[];
-	triggersHeading?: string;
-	triggers?: ShoroukTrigger[];
-	whyHeading?: string;
-	whyBody?: string;
-	winHeading?: string;
-	winBody?: string;
-	stepsHeading?: string;
-	steps?: ShoroukTrigger[];
-	pickHeading?: string;
-	pickBody?: string;
-	formulaHeading?: string;
-	formulaLead?: string;
-	platformsHeading?: string;
-	platforms?: ShoroukTrigger[];
-	checklistHeading?: string;
-	checklist?: string[];
-	ctaNote?: string;
 };
 
 const SHOROUK_ARTICLES_EN: ShoroukArticleSlice[] = [
@@ -827,14 +763,12 @@ const SHOROUK_ARTICLES_AR: ShoroukArticleSlice[] = [
 function ShoroukCollectionBody({
 	isArabic,
 	articles,
+	collectionIntro,
 }: {
 	isArabic: boolean;
 	articles: ShoroukArticleSlice[];
+	collectionIntro: string;
 }) {
-	const tocIntro = isArabic
-		? "ثلاث مقالات عملية لشروق عمر لوكالة Marketly عن علم نفس الشراء، استراتيجية المحتوى، وفيرالية السوشال."
-		: "Three practical essays by Shorouk Omar around buying psychology, content strategy, and social distribution.";
-
 	const statLabelIntro = isArabic ? "نظرة سريعة" : "Snapshot";
 
 	return (
@@ -863,7 +797,7 @@ function ShoroukCollectionBody({
 			<div className='space-y-14'>
 				<section className='rounded-2xl border border-dividerOnLight bg-brand/5 p-6'>
 					<p className='font-manrope text-base leading-relaxed text-textPrimary md:text-lg'>
-						{tocIntro}
+						{collectionIntro}
 					</p>
 				</section>
 
@@ -1031,6 +965,30 @@ function ShoroukCollectionBody({
 								) : null}
 							</div>
 						) : null}
+
+						{article.faqs?.length ? (
+							<div className='mt-4 space-y-4'>
+								<h3 className='font-raleway text-xl font-semibold text-textPrimary'>
+									{isArabic
+										? "أسئلة يبحث عنها الناس أيضاً"
+										: "People Also Ask"}
+								</h3>
+								<div className='space-y-3'>
+									{article.faqs.map((faq) => (
+										<article
+											key={faq.question}
+											className='rounded-2xl border border-dividerOnLight bg-surface p-4 shadow-sm'>
+											<h4 className='font-raleway text-base font-semibold text-textPrimary'>
+												{faq.question}
+											</h4>
+											<p className='mt-2 font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
+												{faq.answer}
+											</p>
+										</article>
+									))}
+								</div>
+							</div>
+						) : null}
 					</section>
 				))}
 			</div>
@@ -1070,14 +1028,29 @@ export function BlogDetailPage() {
 				? isArabic
 					? DESIGN_SYSTEMS_ARTICLE_AR
 					: DESIGN_SYSTEMS_ARTICLE
-				: index === 2
-					? isArabic
-						? DESIGN_SYSTEMS_FAQ_ARTICLE_AR
-						: DESIGN_SYSTEMS_FAQ_ARTICLE
-					: null;
+				: null;
 
-	const shoroukCollection =
-		index === 3 ? (isArabic ? SHOROUK_ARTICLES_AR : SHOROUK_ARTICLES_EN) : null;
+	const articleCollection = useMemo(() => {
+		if (index === 2) {
+			return {
+				articles: isArabic ? SHOROUK_ARTICLES_AR : SHOROUK_ARTICLES_EN,
+				intro: isArabic
+					? "ثلاث مقالات عملية لشروق عمر لوكالة Marketly عن علم نفس الشراء، استراتيجية المحتوى، وفيرالية السوشال."
+					: "Three practical essays by Shorouk Omar around buying psychology, content strategy, and social distribution.",
+			};
+		}
+		if (index === 3) {
+			return {
+				articles: isArabic
+					? MARKETING_EXCELLENCE_SERIES_AR
+					: MARKETING_EXCELLENCE_SERIES_EN,
+				intro: isArabic
+					? "سلسلة «تميّز التسويق» ٢٠٢٦: خمس مقالات SEO لشركات التسويق—عائد المحتوى، أتمتة البريد، استراتيجية السوشال، موازنة SEO والإعلان، والتسويق المبني على البيانات—مع صياغة People Also Ask."
+					: "Marketing Excellence Series 2026: five SEO-ready posts for marketing companies—content ROI, email automation, social strategy, SEO vs paid balance, and data-driven analytics—with People Also Ask sections for rich results.",
+			};
+		}
+		return null;
+	}, [index, isArabic]);
 
 	return (
 		<FramedPageShell>
@@ -1085,7 +1058,7 @@ export function BlogDetailPage() {
 				title={pageTitle}
 				description={data.excerpt}
 				path={`/blogs/${index}`}
-				imagePath={OFFICE_IMG}
+				imagePath={BLOG_HERO_IMAGE_URL}
 				ogType='article'
 			/>
 			<main className='mx-auto max-w-[1920px] px-5 py-10 text-charcoal md:px-9 md:py-14 lg:px-[120px]'>
@@ -1101,7 +1074,7 @@ export function BlogDetailPage() {
 				<article className='overflow-hidden rounded-3xl border border-dividerOnLight bg-surface shadow-[0_18px_50px_rgba(2,6,23,0.08)]'>
 					<div className='relative'>
 						<img
-							src={OFFICE_IMG}
+							src={BLOG_HERO_IMAGE_URL}
 							alt={data.title}
 							className='h-[280px] w-full object-cover md:h-[360px]'
 						/>
@@ -1126,10 +1099,11 @@ export function BlogDetailPage() {
 							{data.excerpt}
 						</p>
 
-						{shoroukCollection ? (
+						{articleCollection ? (
 							<ShoroukCollectionBody
 								isArabic={isArabic}
-								articles={shoroukCollection}
+								articles={articleCollection.articles}
+								collectionIntro={articleCollection.intro}
 							/>
 						) : fullArticle ? (
 							<div className='mt-10 border-t border-dividerOnLight pt-10 lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-10'>

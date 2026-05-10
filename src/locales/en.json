@@ -140,16 +140,9 @@
 			{
 				"tag": "Design",
 				"title": "Design systems for marketing teams: what to standardize",
-				"excerpt": "Create reusable UI patterns that speed up production while keeping campaigns consistent across channels.",
+				"excerpt": "Reusable UI patterns for consistent campaigns—plus a People Also Ask section with the top searched questions on marketing design systems, answered for rollout and SEO.",
 				"date": "Mar 14, 2026",
-				"readTime": "5 min read"
-			},
-			{
-				"tag": "FAQ",
-				"title": "People Also Ask: design systems for marketing teams",
-				"excerpt": "The most searched questions on marketing design systems, answered in a clear, implementation-first format.",
-				"date": "Apr 25, 2026",
-				"readTime": "8 min read"
+				"readTime": "13 min read"
 			},
 			{
 				"tag": "Consumer psychology",
@@ -157,6 +150,13 @@
 				"excerpt": "By Shorouk Omar — cognitive biases brands use ethically, plus two more essays on rescuing content from zero traffic and a practical viral playbook.",
 				"date": "Apr 30, 2026",
 				"readTime": "18 min read"
+			},
+			{
+				"tag": "SEO series",
+				"title": "Marketing Excellence: 5 SEO posts for marketing companies",
+				"excerpt": "From our 2026 PDF series—content ROI, email automation, social strategy, SEO vs paid, and data-driven analytics—structured for search and People Also Ask.",
+				"date": "May 10, 2026",
+				"readTime": "46 min read"
 			}
 		]
 	},
@@ -252,20 +252,9 @@
 		"subtitle": "A creative marketing agency that helps brands grow and connect with their audience through strategy, content, and design."
 	},
 	"teamPage": {
-		"kicker": "Our team",
 		"heading": "Meet the people behind Marketly",
 		"subtitle": "Strategists, creators, and builders who plan campaigns, craft content, and ship experiences that help your brand grow.",
 		"mainAria": "Team directory",
-		"filterAria": "Filter team by discipline",
-		"resultsCount": "{{count}} people",
-		"filters": {
-			"all": "All",
-			"leadership": "Leadership",
-			"strategy": "Strategy",
-			"social": "Social",
-			"design": "Design",
-			"development": "Development"
-		},
 		"members": [
 			{
 				"id": "shrouk",

@@ -3,6 +3,7 @@ import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { useId, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { BLOG_HERO_IMAGE_URL } from "../lib/blogHeroImage";
 import {
 	homeBodyText,
 	homeCardBorder,
@@ -13,12 +14,6 @@ import {
 	homeSectionPad,
 } from "../theme/homepageSections";
 import { BoxReveal } from "./BoxReveal";
-
-// Blog hero thumbnail (shared across posts)
-const OFFICE_IMG = new URL(
-	"../../assets/9caf5948-a733-47de-9d1d-70809876d17e.jpg",
-	import.meta.url,
-).href;
 
 type BlogItem = {
 	tag: string;
@@ -45,7 +40,7 @@ export function Blogs() {
 				excerpt: t(`blogs.items.${i}.excerpt`),
 				date: t(`blogs.items.${i}.date`),
 				readTime: t(`blogs.items.${i}.readTime`),
-				imageUrl: OFFICE_IMG,
+				imageUrl: BLOG_HERO_IMAGE_URL,
 			})),
 		[t],
 	);

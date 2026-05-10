@@ -1,22 +1,15 @@
 /** @format */
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Footer } from "./Footer";
 import { FramedPageShell } from "./FramedPageShell";
 import { Seo } from "./Seo";
 
-type TeamMemberCategory =
-	| "strategy"
-	| "social"
-	| "design"
-	| "development"
-	| "leadership";
-
 type TeamMember = {
 	id: string;
-	category: TeamMemberCategory;
+	category: string;
 	name: string;
 	role: string;
 	bio: string;
@@ -25,37 +18,27 @@ type TeamMember = {
 	email?: string;
 };
 
-const FILTER_ORDER = [
-	"all",
-	"leadership",
-	"strategy",
-	"social",
-	"design",
-	"development",
-] as const;
-
-type FilterId = (typeof FILTER_ORDER)[number];
-
 /** Used when `photo` is missing or fails to load (same keys as locale `id`) */
 const TEAM_PHOTO_FALLBACK: Record<string, string> = {
-	shrouk: "https://i.postimg.cc/PJPYw0My/sh.jpg",
+	shrouk:
+		"https://i.postimg.cc/cLFnSN1J/Whats-App-Image-2026-05-08-at-10-48-51.jpg",
 	amira:
-		"https://i.postimg.cc/5yCj1Jgz/Whats-App-Image-2026-04-04-at-22-30-54.jpg",
+		"https://i.postimg.cc/ZnWfrL7z/Whats-App-Image-2026-05-08-at-10-19-10-(1).jpg",
 	salma:
 		"https://i.postimg.cc/ZR1DskqK/Whats-App-Image-2026-04-04-at-22-30-58.jpg",
 	nesma:
-		"https://i.postimg.cc/c4c8XQDQ/Whats-App-Image-2026-04-04-at-22-30-59.jpg",
-	ola: "https://i.postimg.cc/WpHytk6v/Whats-App-Image-2026-04-04-at-22-30-59-(1).jpg",
+		"https://i.postimg.cc/mZSZqygw/Whats-App-Image-2026-05-08-at-10-19-09-(1).jpg",
+	ola: "https://i.postimg.cc/Dztmvv9F/Whats-App-Image-2026-05-08-at-10-48-52.jpg",
 	esraa:
-		"https://i.postimg.cc/VkjZ7Hyw/Whats-App-Image-2026-04-04-at-22-31-00.jpg",
+		"https://i.postimg.cc/hPFw9kBX/Whats-App-Image-2026-05-08-at-10-48-50.jpg",
 	asmaa:
-		"https://i.postimg.cc/fWcKQS2q/Whats-App-Image-2026-04-04-at-22-31-10.jpg",
+		"https://i.postimg.cc/mDJnpq15/Whats-App-Image-2026-05-08-at-10-19-10-(2).jpg",
 	roqaya:
-		"https://i.postimg.cc/SQHp35Ps/Whats-App-Image-2026-04-04-at-22-31-16.jpg",
+		"https://i.postimg.cc/PqGkNC5V/Whats-App-Image-2026-05-08-at-10-19-09.jpg",
 	sanaa:
-		"https://i.postimg.cc/QMNLcrFP/Whats-App-Image-2026-04-04-at-22-31-17.jpg",
+		"https://i.postimg.cc/vHqY8891/Whats-App-Image-2026-05-08-at-10-19-10.jpg",
 	maibel:
-		"https://i.postimg.cc/FRq2tdTQ/Whats-App-Image-2026-04-04-at-23-13-37.jpg",
+		"https://i.postimg.cc/gjcpd12P/Whats-App-Image-2026-05-08-at-10-18-55.jpg",
 };
 
 function teamMemberPhotoSrc(member: TeamMember): string {
@@ -65,7 +48,6 @@ function teamMemberPhotoSrc(member: TeamMember): string {
 
 export function TeamPage() {
 	const { t } = useTranslation();
-	const [active, setActive] = useState<FilterId>("all");
 
 	const members = useMemo(() => {
 		const list = t("teamPage.members", {
@@ -73,9 +55,6 @@ export function TeamPage() {
 		}) as TeamMember[];
 		return Array.isArray(list) ? list : [];
 	}, [t]);
-
-	const filtered =
-		active === "all" ? members : members.filter((m) => m.category === active);
 
 	return (
 		<FramedPageShell>
@@ -101,10 +80,7 @@ export function TeamPage() {
 						</div>
 					</div>
 					<div className='relative z-10 mx-auto max-w-[1920px] px-5 pb-2 pt-16 text-center sm:pt-[4.5rem] md:px-9 md:pb-4 md:pt-[5.25rem] lg:px-[137px]'>
-						<p className='font-manrope text-xs font-semibold uppercase tracking-[0.22em] text-brand'>
-							{t("teamPage.kicker")}
-						</p>
-						<h1 className='mt-3 font-raleway text-4xl font-semibold tracking-tight text-white md:text-5xl lg:text-6xl'>
+						<h1 className='font-raleway text-4xl font-semibold tracking-tight text-white md:text-5xl lg:text-6xl'>
 							{t("teamPage.heading")}
 						</h1>
 						<p className='mx-auto mt-4 max-w-[68ch] font-manrope text-base leading-relaxed text-white/80 md:text-lg'>
@@ -116,36 +92,8 @@ export function TeamPage() {
 				<main
 					className='relative mx-auto max-w-[1920px] px-5 py-12 md:px-9 md:py-16 lg:px-[137px]'
 					aria-label={t("teamPage.mainAria")}>
-					<div
-						className='flex flex-wrap items-center justify-center gap-2 md:gap-3'
-						role='tablist'
-						aria-label={t("teamPage.filterAria")}>
-						{FILTER_ORDER.map((id) => {
-							const isOn = active === id;
-							const labelKey =
-								id === "all" ?
-									"teamPage.filters.all"
-								:	`teamPage.filters.${id}`;
-							return (
-								<button
-									key={id}
-									type='button'
-									role='tab'
-									aria-selected={isOn}
-									onClick={() => setActive(id)}
-									className={`rounded-full px-3 py-1.5 text-xs font-semibold transition md:px-4 md:text-sm ${
-										isOn ?
-											"bg-brand text-white shadow-sm"
-										:	"bg-white/10 text-white/85 hover:bg-white/15"
-									}`}>
-									{t(labelKey)}
-								</button>
-							);
-						})}
-					</div>
-
-					<ul className='mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
-						{filtered.map((member) => (
+					<ul className='grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+						{members.map((member) => (
 							<motion.li
 								key={member.id}
 								layout
