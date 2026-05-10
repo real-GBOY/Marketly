@@ -73,7 +73,7 @@ export function Blogs() {
 						</BoxReveal>
 					</div>
 
-					{canExpandList ? (
+					{canExpandList ?
 						<button
 							type='button'
 							onClick={() => setShowAll((v) => !v)}
@@ -86,9 +86,7 @@ export function Blogs() {
 								aria-hidden
 							/>
 						</button>
-					) : (
-						<div className='md:min-h-[42px]' aria-hidden />
-					)}
+					:	<div className='md:min-h-[42px]' aria-hidden />}
 				</div>
 
 				<div
@@ -114,7 +112,9 @@ export function Blogs() {
 								<span className='inline-flex items-center rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-brand'>
 									{item.tag}
 								</span>
-								<time className='text-xs font-manrope text-homerunMuted'>{item.date}</time>
+								<time className='text-xs font-manrope text-homerunMuted'>
+									{item.date}
+								</time>
 							</div>
 
 							<h3 className='mt-4 font-dynapuff text-xl font-bold tracking-tight text-homerunInk transition-colors group-hover:text-homerunBlue md:text-2xl'>
@@ -124,13 +124,18 @@ export function Blogs() {
 							<p className={`mt-3 ${homeBodyText}`}>{item.excerpt}</p>
 
 							<div className='mt-5 flex items-center justify-between gap-4'>
-								<p className='text-xs font-manrope text-homerunMuted'>{item.readTime}</p>
-									<Link
-										to={`/blogs/${index}`}
-										className='inline-flex items-center gap-2 text-sm font-semibold text-homerunInk transition-colors group-hover:text-homerunBlue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-homerunBlue/40'>
+								<p className='text-xs font-manrope text-homerunMuted'>
+									{item.readTime}
+								</p>
+								<Link
+									to={`/blogs/${index}`}
+									className='inline-flex items-center gap-2 text-sm font-semibold text-homerunInk transition-colors group-hover:text-homerunBlue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-homerunBlue/40'>
 									{t("blogs.readMore")}
-									<ArrowRight className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5' aria-hidden />
-									</Link>
+									<ArrowRight
+										className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5'
+										aria-hidden
+									/>
+								</Link>
 							</div>
 						</article>
 					))}
@@ -139,4 +144,3 @@ export function Blogs() {
 		</section>
 	);
 }
-

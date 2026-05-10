@@ -106,7 +106,7 @@ const CONTENT_STRATEGY_ARTICLE = {
 			question:
 				"What is the difference between content strategy and content marketing?",
 			answer:
-				'Content strategy is the plan (why, who, and what). Content marketing is execution (publishing and distribution).',
+				"Content strategy is the plan (why, who, and what). Content marketing is execution (publishing and distribution).",
 		},
 	],
 };
@@ -488,11 +488,13 @@ const DESIGN_SYSTEMS_ARTICLE_AR = {
 		},
 		{
 			question: "هل نحتاج Guidelines وComponents معاً؟",
-			answer: "نعم. الإرشادات تحدد القواعد، والمكونات تطبقها بشكل جاهز وقابل لإعادة الاستخدام.",
+			answer:
+				"نعم. الإرشادات تحدد القواعد، والمكونات تطبقها بشكل جاهز وقابل لإعادة الاستخدام.",
 		},
 		{
 			question: "كيف نمنع النظام من أن يصبح قديماً؟",
-			answer: "بتعيين مسؤول واضح ومراجعات دورية وتعاون مستمر مع الفرق المستخدمة.",
+			answer:
+				"بتعيين مسؤول واضح ومراجعات دورية وتعاون مستمر مع الفرق المستخدمة.",
 		},
 		{
 			question: "ما حجم النسخة الأولى؟",
@@ -558,7 +560,7 @@ const SHOROUK_ARTICLES_EN: ShoroukArticleSlice[] = [
 			"Understanding biases is not manipulation — it's meeting your audience where their minds already operate. Align messaging with how people naturally evaluate choices, reduce friction, and build trust.",
 		winHeading: "Quick win for your next campaign",
 		winBody:
-			"Replace \"Get 20% off\" with \"Don't miss your 20% savings — offer ends Friday.\" Loss-framed CTAs often beat gain-framed ones by roughly 15–30% in A/B tests.",
+			'Replace "Get 20% off" with "Don\'t miss your 20% savings — offer ends Friday." Loss-framed CTAs often beat gain-framed ones by roughly 15–30% in A/B tests.',
 	},
 	{
 		anchor: "shorouk-content-strategy",
@@ -609,7 +611,8 @@ const SHOROUK_ARTICLES_EN: ShoroukArticleSlice[] = [
 			{ value: "Hour 1", label: "Engagement spike window" },
 		],
 		formulaHeading: "Shorouk Omar's formula",
-		formulaLead: "Strong hook + Emotional trigger + Clear value = standout post.",
+		formulaLead:
+			"Strong hook + Emotional trigger + Clear value = standout post.",
 		platformsHeading: "Platform snapshots",
 		platforms: [
 			{
@@ -645,8 +648,7 @@ const SHOROUK_ARTICLES_AR: ShoroukArticleSlice[] = [
 	{
 		anchor: "shorouk-consumer-psychology",
 		category: "علم النفس الاستهلاكي",
-		title:
-			"العوامل الخفية التي تجعل الناس يشترون دون أن يدركوا ذلك بالكامل",
+		title: "العوامل الخفية التي تجعل الناس يشترون دون أن يدركوا ذلك بالكامل",
 		metaLine: "شروق عمر · 30 أبريل 2026 · 7 دقائق قراءة · المقال 01",
 		intro:
 			"تُتخذ نحو 95٪ من قرارات الشراء في العقل اللاواعي. هكذا تستخدم العلامات القوى الاستدلالية المعرفية بطريقة أخلاقية — ويمكنك أنت ذلك أيضاً.",
@@ -720,8 +722,7 @@ const SHOROUK_ARTICLES_AR: ShoroukArticleSlice[] = [
 	{
 		anchor: "shorouk-viral-formula",
 		category: "التسويق عبر وسائل التواصل",
-		title:
-			"صياغة المحتوى الفيروسي التي لا يتحدّث عنها الجميع",
+		title: "صياغة المحتوى الفيروسي التي لا يتحدّث عنها الجميع",
 		metaLine: "شروق عمر · 30 أبريل 2026 · 5 دقائق قراءة · المقال 03",
 		intro:
 			"الانتشار الواسع ليس ضربة حظ وحسب. بعد تحليل عشرات آلاف المنشورات، تكرّس أنماط واضحة لما يميّز الحسابات الأفضل.",
@@ -844,7 +845,7 @@ function ShoroukCollectionBody({
 							</ul>
 						</div>
 
-						{article.triggers?.length ? (
+						{article.triggers?.length ?
 							<div>
 								<h3 className='font-raleway text-xl font-semibold text-textPrimary'>
 									{article.triggersHeading}
@@ -863,7 +864,7 @@ function ShoroukCollectionBody({
 										</div>
 									))}
 								</div>
-								{article.whyBody ? (
+								{article.whyBody ?
 									<>
 										<h3 className='mt-8 font-raleway text-xl font-semibold text-textPrimary'>
 											{article.whyHeading}
@@ -872,8 +873,8 @@ function ShoroukCollectionBody({
 											{article.whyBody}
 										</p>
 									</>
-								) : null}
-								{article.winBody ? (
+								:	null}
+								{article.winBody ?
 									<div className='rounded-2xl border border-brand/25 bg-brand/5 p-5'>
 										<p className='font-manrope text-sm font-semibold text-textPrimary'>
 											{article.winHeading}
@@ -882,11 +883,11 @@ function ShoroukCollectionBody({
 											{article.winBody}
 										</p>
 									</div>
-								) : null}
+								:	null}
 							</div>
-						) : null}
+						:	null}
 
-						{article.steps?.length ? (
+						{article.steps?.length ?
 							<div>
 								<h3 className='font-raleway text-xl font-semibold text-textPrimary'>
 									{article.stepsHeading}
@@ -905,7 +906,7 @@ function ShoroukCollectionBody({
 										</article>
 									))}
 								</div>
-								{article.pickBody ? (
+								{article.pickBody ?
 									<div className='mt-6 rounded-2xl border border-dividerOnLight bg-cream/40 p-5'>
 										<p className='font-manrope text-sm font-semibold text-textPrimary'>
 											{article.pickHeading}
@@ -914,11 +915,11 @@ function ShoroukCollectionBody({
 											{article.pickBody}
 										</p>
 									</div>
-								) : null}
+								:	null}
 							</div>
-						) : null}
+						:	null}
 
-						{article.formulaLead ? (
+						{article.formulaLead ?
 							<div className='space-y-6'>
 								<div>
 									<h3 className='font-raleway text-xl font-semibold text-textPrimary'>
@@ -928,7 +929,7 @@ function ShoroukCollectionBody({
 										{article.formulaLead}
 									</p>
 								</div>
-								{article.platforms?.length ? (
+								{article.platforms?.length ?
 									<div>
 										<h3 className='font-raleway text-xl font-semibold text-textPrimary'>
 											{article.platformsHeading}
@@ -948,8 +949,8 @@ function ShoroukCollectionBody({
 											))}
 										</ul>
 									</div>
-								) : null}
-								{article.checklist?.length ? (
+								:	null}
+								{article.checklist?.length ?
 									<div>
 										<h3 className='font-raleway text-xl font-semibold text-textPrimary'>
 											{article.checklistHeading}
@@ -960,21 +961,19 @@ function ShoroukCollectionBody({
 											))}
 										</ul>
 									</div>
-								) : null}
-								{article.ctaNote ? (
+								:	null}
+								{article.ctaNote ?
 									<p className='rounded-2xl border border-brand/25 bg-gradient-to-r from-brand/10 via-brand/5 to-transparent p-5 text-center font-manrope text-sm leading-relaxed text-textPrimary md:text-base'>
 										{article.ctaNote}
 									</p>
-								) : null}
+								:	null}
 							</div>
-						) : null}
+						:	null}
 
-						{article.faqs?.length ? (
+						{article.faqs?.length ?
 							<div className='mt-4 space-y-4'>
 								<h3 className='font-raleway text-xl font-semibold text-textPrimary'>
-									{isArabic
-										? "أسئلة يبحث عنها الناس أيضاً"
-										: "People Also Ask"}
+									{isArabic ? "أسئلة يبحث عنها الناس أيضاً" : "People Also Ask"}
 								</h3>
 								<div className='space-y-3'>
 									{article.faqs.map((faq) => (
@@ -991,7 +990,7 @@ function ShoroukCollectionBody({
 									))}
 								</div>
 							</div>
-						) : null}
+						:	null}
 					</section>
 				))}
 			</div>
@@ -1056,33 +1055,34 @@ export function BlogDetailPage() {
 		};
 	}, [data.excerpt, data.tag, data.title, index, t]);
 	const fullArticle =
-		index === 0
-			? isArabic
-				? CONTENT_STRATEGY_ARTICLE_AR
-				: CONTENT_STRATEGY_ARTICLE
-			: index === 1
-				? isArabic
-					? DESIGN_SYSTEMS_ARTICLE_AR
-					: DESIGN_SYSTEMS_ARTICLE
-				: null;
+		index === 0 ?
+			isArabic ? CONTENT_STRATEGY_ARTICLE_AR
+			:	CONTENT_STRATEGY_ARTICLE
+		: index === 1 ?
+			isArabic ? DESIGN_SYSTEMS_ARTICLE_AR
+			:	DESIGN_SYSTEMS_ARTICLE
+		:	null;
 
 	const articleCollection = useMemo(() => {
 		if (index === 2) {
 			return {
 				articles: isArabic ? SHOROUK_ARTICLES_AR : SHOROUK_ARTICLES_EN,
-				intro: isArabic
-					? "ثلاث مقالات عملية لشروق عمر لوكالة Marketly عن علم نفس الشراء، استراتيجية المحتوى، وفيرالية السوشال."
-					: "Three practical essays by Shorouk Omar around buying psychology, content strategy, and social distribution.",
+				intro:
+					isArabic ?
+						"ثلاث مقالات عملية لشروق عمر لوكالة Marketly عن علم نفس الشراء، استراتيجية المحتوى، وفيرالية السوشال."
+					:	"Three practical essays by Shorouk Omar around buying psychology, content strategy, and social distribution.",
 			};
 		}
 		if (index === 3) {
 			return {
-				articles: isArabic
-					? MARKETING_EXCELLENCE_SERIES_AR
-					: MARKETING_EXCELLENCE_SERIES_EN,
-				intro: isArabic
-					? "سلسلة «تميّز التسويق» ٢٠٢٦: خمس مقالات SEO لشركات التسويق—عائد المحتوى، أتمتة البريد، استراتيجية السوشال، موازنة SEO والإعلان، والتسويق المبني على البيانات—مع صياغة People Also Ask."
-					: "Marketing Excellence Series 2026: five SEO-ready posts for marketing companies—content ROI, email automation, social strategy, SEO vs paid balance, and data-driven analytics—with People Also Ask sections for rich results.",
+				articles:
+					isArabic ?
+						MARKETING_EXCELLENCE_SERIES_AR
+					:	MARKETING_EXCELLENCE_SERIES_EN,
+				intro:
+					isArabic ?
+						"سلسلة «تميّز التسويق» ٢٠٢٦: خمس مقالات SEO لشركات التسويق—عائد المحتوى، أتمتة البريد، استراتيجية السوشال، موازنة SEO والإعلان، والتسويق المبني على البيانات—مع صياغة People Also Ask."
+					:	"Marketing Excellence Series 2026: five SEO-ready posts for marketing companies—content ROI, email automation, social strategy, SEO vs paid balance, and data-driven analytics—with People Also Ask sections for rich results.",
 			};
 		}
 		return null;
@@ -1138,13 +1138,13 @@ export function BlogDetailPage() {
 							{data.excerpt}
 						</p>
 
-						{articleCollection ? (
+						{articleCollection ?
 							<ShoroukCollectionBody
 								isArabic={isArabic}
 								articles={articleCollection.articles}
 								collectionIntro={articleCollection.intro}
 							/>
-						) : fullArticle ? (
+						: fullArticle ?
 							<div className='mt-10 border-t border-dividerOnLight pt-10 lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-10'>
 								<aside className='mb-8 lg:mb-0'>
 									<div className='rounded-2xl border border-dividerOnLight bg-cream/40 p-5 lg:sticky lg:top-24'>
@@ -1183,9 +1183,9 @@ export function BlogDetailPage() {
 
 									<section className='rounded-2xl border border-dividerOnLight bg-surface p-6'>
 										<h2 className='font-raleway text-2xl font-semibold text-textPrimary md:text-3xl'>
-											{isArabic
-												? "لماذا تفشل أغلب الاستراتيجيات؟"
-												: "Why most content strategies fail"}
+											{isArabic ?
+												"لماذا تفشل أغلب الاستراتيجيات؟"
+											:	"Why most content strategies fail"}
 										</h2>
 										<ul className='mt-4 list-disc space-y-2 ps-5 font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
 											{fullArticle.commonFailures.map((point) => (
@@ -1216,9 +1216,9 @@ export function BlogDetailPage() {
 
 									<section className='rounded-2xl border border-dividerOnLight bg-surface p-6'>
 										<h2 className='font-raleway text-2xl font-semibold text-textPrimary md:text-3xl'>
-											{isArabic
-												? "أفضل ممارسات SEO لتعزيز النتائج"
-												: "SEO best practices to amplify your results"}
+											{isArabic ?
+												"أفضل ممارسات SEO لتعزيز النتائج"
+											:	"SEO best practices to amplify your results"}
 										</h2>
 										<ul className='mt-4 list-disc space-y-2 ps-5 font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
 											{fullArticle.seoBestPractices.map((item) => (
@@ -1229,9 +1229,9 @@ export function BlogDetailPage() {
 
 									<section className='rounded-2xl border border-dividerOnLight bg-surface p-6'>
 										<h2 className='font-raleway text-2xl font-semibold text-textPrimary md:text-3xl'>
-											{isArabic
-												? "كيف تقيس أداء المحتوى"
-												: "How to measure content performance"}
+											{isArabic ?
+												"كيف تقيس أداء المحتوى"
+											:	"How to measure content performance"}
 										</h2>
 										<ul className='mt-4 list-disc space-y-2 ps-5 font-manrope text-sm leading-relaxed text-textSecondary md:text-base'>
 											{fullArticle.metrics.map((metric) => (
@@ -1242,7 +1242,9 @@ export function BlogDetailPage() {
 
 									<section>
 										<h2 className='font-raleway text-2xl font-semibold text-textPrimary md:text-3xl'>
-											{isArabic ? "الأسئلة الشائعة" : "Frequently asked questions"}
+											{isArabic ?
+												"الأسئلة الشائعة"
+											:	"Frequently asked questions"}
 										</h2>
 										<div className='mt-4 space-y-4'>
 											{fullArticle.faq.map((item) => (
@@ -1262,14 +1264,15 @@ export function BlogDetailPage() {
 
 									<section className='rounded-2xl border border-brand/20 bg-gradient-to-r from-brand/10 via-brand/5 to-transparent p-6 text-center'>
 										<p className='font-manrope text-base leading-relaxed text-textPrimary md:text-lg'>
-											{isArabic
-												? "جاهز لبناء نظام محتوى وتصميم يرفع نتائج أعمالك فعلياً؟"
-												: "Ready to build a content strategy that actually drives revenue for your business?"}
+											{isArabic ?
+												"جاهز لبناء نظام محتوى وتصميم يرفع نتائج أعمالك فعلياً؟"
+											:	"Ready to build a content strategy that actually drives revenue for your business?"
+											}
 										</p>
 									</section>
 								</div>
 							</div>
-						) : null}
+						:	null}
 					</div>
 				</article>
 			</main>

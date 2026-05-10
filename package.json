@@ -8,6 +8,7 @@
     "build": "node scripts/sitemap.mjs && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "preview:host": "vite preview --host 127.0.0.1 --port 4173",
     "typecheck": "tsc --noEmit -p tsconfig.app.json"
   },
   "dependencies": {
