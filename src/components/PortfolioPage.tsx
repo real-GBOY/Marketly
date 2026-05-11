@@ -3,6 +3,7 @@
 import { useTranslation } from "react-i18next";
 import { Footer } from "./Footer";
 import { FramedPageShell } from "./FramedPageShell";
+import { PortfolioShowcase } from "./PortfolioShowcase";
 import { SuccessStories } from "./SuccessStories";
 import { Seo } from "./Seo";
 
@@ -16,7 +17,8 @@ export function PortfolioPage() {
 				path='/portfolio'
 			/>
 			<div className='text-charcoal'>
-				<SuccessStories />
+				<PortfolioShowcase />
+				<SuccessStories hidePortfolioCta />
 				<Footer />
 			</div>
 		</FramedPageShell>

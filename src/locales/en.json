@@ -85,6 +85,7 @@
 	},
 	"sections": {
 		"successStories": "Success stories",
+		"portfolioShowcase": "Portfolio showcase",
 		"blog": "Blog"
 	},
 	"successStories": {
@@ -92,7 +93,7 @@
 		"heading": "Success stories from our team",
 		"body": "These are the kinds of challenges we love—where strategy, creative, and execution meet. Each story is a snapshot of how we partner with brands to turn goals into measurable momentum.",
 		"ctaTeam": "Meet the team",
-		"ctaProject": "Start a project",
+		"ctaShowcase": "Show case",
 		"blockSituation": "The situation",
 		"blockAction": "What we did",
 		"blockOutcome": "The outcome",
@@ -120,6 +121,34 @@
 				"situation": "Messaging shifted between assets, delaying approvals and weakening the punch of the announcement window.",
 				"action": "We locked a single narrative arc: hook, proof points, objections, CTA—and shipped channel-specific cuts from that master story.",
 				"outcome": "Teams shipped faster together, creatives stayed consistent, and the launch window felt cohesive instead of improvised."
+			}
+		]
+	},
+	"portfolioPage": {
+		"kicker": "Showcase",
+		"heading": "See the work behind the stories",
+		"body": "A short reel from our team—then a quick look at how we think about brand, content, and launches when we partner with you.",
+		"videoBadge": "Featured video",
+		"videoAria": "Graduation project showcase video",
+		"videoCaption": "Hosted on Google Drive. If playback asks for sign-in, open the file with a viewer account or adjust sharing to “Anyone with the link.”",
+		"cardsHeading": "How we show up on a project",
+		"socialLead": "Follow us for more reels, launches, and day-to-day work from the team.",
+		"socialNavAria": "Marketly on social media",
+		"cards": [
+			{
+				"tag": "Clarity",
+				"title": "One story, many channels",
+				"desc": "We align tone, visuals, and cadence so every touchpoint feels like the same brand—not a patchwork of one-off posts."
+			},
+			{
+				"tag": "Depth",
+				"title": "Content that earns attention",
+				"desc": "From SEO clusters to campaign narratives, we build substance buyers can trust—not noise that fades after the first scroll."
+			},
+			{
+				"tag": "Momentum",
+				"title": "Launches that ship together",
+				"desc": "We lock a spine narrative early so approvals, assets, and channels move in sync when the clock is ticking."
 			}
 		]
 	},

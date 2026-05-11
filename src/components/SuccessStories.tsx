@@ -25,7 +25,12 @@ type StoryItem = {
 
 const STORY_COUNT = 3;
 
-export function SuccessStories() {
+type SuccessStoriesProps = {
+	/** When true, hides the “Show case” link (e.g. on `/portfolio` where it would be redundant). */
+	hidePortfolioCta?: boolean;
+};
+
+export function SuccessStories({ hidePortfolioCta = false }: SuccessStoriesProps) {
 	const { t } = useTranslation();
 
 	const items = useMemo<StoryItem[]>(
@@ -75,15 +80,17 @@ export function SuccessStories() {
 								aria-hidden
 							/>
 						</Link>
-						<Link
-							to='/contact'
-							className={`${homeSecondaryCta} justify-center rtl:flex-row-reverse`}>
-							<span>{t("successStories.ctaProject")}</span>
-							<ArrowRight
-								className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5'
-								aria-hidden
-							/>
-						</Link>
+						{hidePortfolioCta ? null : (
+							<Link
+								to='/portfolio'
+								className={`${homeSecondaryCta} justify-center rtl:flex-row-reverse`}>
+								<span>{t("successStories.ctaShowcase")}</span>
+								<ArrowRight
+									className='size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5'
+									aria-hidden
+								/>
+							</Link>
+						)}
 					</div>
 				</div>
 
