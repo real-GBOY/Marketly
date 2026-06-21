@@ -89,7 +89,7 @@ export function TeamPage() {
 					</div>
 				</section>
 
-				<section
+npm				<section
 					className='relative mx-auto max-w-[1920px] px-5 py-12 md:px-9 md:py-16 lg:px-[137px]'
 					aria-label={t("teamPage.mainAria")}>
 					<ul className='grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>

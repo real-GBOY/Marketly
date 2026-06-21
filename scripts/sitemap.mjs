@@ -15,7 +15,7 @@ const base = (process.env.VITE_SITE_URL || "https://marketly.agency").replace(
 );
 
 /** Keep blog URL count in sync with `BLOG_POST_PUBLISHED_ISO.length` in `src/lib/blogSeo.ts`. */
-const BLOG_POST_COUNT = 4;
+const BLOG_POST_COUNT = 3;
 
 const paths = [
 	"/",

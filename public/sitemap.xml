@@ -40,9 +40,4 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://marketly.agency/blogs/3</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
 </urlset>

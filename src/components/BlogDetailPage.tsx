@@ -5,10 +5,6 @@ import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 import {
-	MARKETING_EXCELLENCE_SERIES_AR,
-	MARKETING_EXCELLENCE_SERIES_EN,
-} from "../blog/marketingExcellence2026";
-import {
 	BLOG_POST_COUNT as ITEMS_COUNT,
 	BLOG_POST_PUBLISHED_ISO,
 } from "../lib/blogSeo";
@@ -1071,18 +1067,6 @@ export function BlogDetailPage() {
 					isArabic ?
 						"ثلاث مقالات عملية لشروق عمر لوكالة Marketly عن علم نفس الشراء، استراتيجية المحتوى، وفيرالية السوشال."
 					:	"Three practical essays by Shorouk Omar around buying psychology, content strategy, and social distribution.",
-			};
-		}
-		if (index === 3) {
-			return {
-				articles:
-					isArabic ?
-						MARKETING_EXCELLENCE_SERIES_AR
-					:	MARKETING_EXCELLENCE_SERIES_EN,
-				intro:
-					isArabic ?
-						"سلسلة «تميّز التسويق» ٢٠٢٦: خمس مقالات SEO لشركات التسويق—عائد المحتوى، أتمتة البريد، استراتيجية السوشال، موازنة SEO والإعلان، والتسويق المبني على البيانات—مع صياغة People Also Ask."
-					:	"Marketing Excellence Series 2026: five SEO-ready posts for marketing companies—content ROI, email automation, social strategy, SEO vs paid balance, and data-driven analytics—with People Also Ask sections for rich results.",
 			};
 		}
 		return null;
